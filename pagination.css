@@ -1,0 +1,67 @@
+
+.db-pagination {
+    display: inline-block;
+    /*width: 60%;*/
+    /*height: 100%;*/
+    /*background-color: green;*/
+    margin: 0px;
+    padding: 0px;
+    text-align: center;
+    list-style: none;
+}
+
+.db-pagination .basedli {
+    /*display: inline-block;*/
+    /*border: 1px solid silver;*/
+    width: 40px;
+    height: 40px;
+    float: left;
+    /*box-sizing: border-box;*/
+    /*background-color: aqua;*/
+    text-align: center;
+    font-size: 16px;
+    transition: background-color 0.5s;
+    border-radius: 50%;
+    margin: 0px 10px;
+    color: #666666;
+}
+
+.db-pagination .basedli span{
+    display: block;
+    width: 100%;
+    border-radius: 50%;
+    cursor: pointer;
+    line-height: 40px;
+    text-decoration: none;
+    border: 1px solid #E5E5E5;
+
+}
+
+.db-pagination .active {
+    background-color: #13d1be;
+    border-color: #13d1be;
+    color: #f9f9f9;
+}
+
+/*省略号按钮样式*/
+.db-pagination .ellipsis {
+
+}
+
+/*下一页按钮*/
+.db-pagination .btn-right {
+
+}
+
+/*上一页按钮*/
+.db-pagination .btn-left {
+
+}
+
+.db-pagination .disabled {
+    color: silver;
+}
+
+.db-pagination .disabled:hover{
+    cursor: not-allowed;
+}
