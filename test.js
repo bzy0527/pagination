@@ -1,15 +1,9 @@
-DBFX.RegisterNamespace("DBFX.Web.Controls");
-DBFX.RegisterNamespace("DBFX.Design");
-DBFX.RegisterNamespace("DBFX.Serializer");
-DBFX.RegisterNamespace("DBFX.Design.ControlDesigners");
 
-DBFX.Web.Controls.Pagination = function (b) {
-    var pi = DBFX.Web.Controls.Control("Pagination");
-    pi.ClassDescriptor.Designers.splice(1, 0, "DBFX.Design.ControlDesigners.PaginationDesigner");
-    pi.ClassDescriptor.Serializer = "DBFX.Serializer.PaginationSerializer";
+Pagination = function (b) {
+    var pi = new Object();
 
     pi.VisualElement = document.createElement("DIV");
-    pi.OnCreateHandle();
+    // pi.OnCreateHandle();
 
 
     pi.defaults = {
@@ -30,20 +24,19 @@ DBFX.Web.Controls.Pagination = function (b) {
         callback:function(){}    //回调
     }
 
-    pi.totalDatasCount = 0;
+    pi.totalDatasCount = 0.1;
 
-    //接收数据对象
+    //TODO:接收数据对象
     pi.dataSource = { };
     Object.defineProperty(pi,"DataSource",{
-       get:function() {
-           return pi.dataSource;
-       },
+        get:function() {
+            return pi.dataSource;
+        },
         set:function(v){
-           pi.dataSource = v;
-           //解析拿到的数据
+            pi.dataSource = v;
+            //解析拿到的数据
             pi.analysisSource(v);
-
-           //刷新数据
+            //刷新数据
             pi.refreshData();
             //布局按钮
             pi.reLayoutViews();
@@ -53,7 +46,7 @@ DBFX.Web.Controls.Pagination = function (b) {
     //所有按钮字符串集合
     pi.allBtnTexts = [];
 
-    //解析数据源数据
+    //TODO:解析数据源数据
     pi.analysisSource = function (dataSource) {
 
         if(Object.prototype.toString.call(pi.dataSource)=="[object Object]"){
@@ -73,14 +66,12 @@ DBFX.Web.Controls.Pagination = function (b) {
     pi.refreshData = function () {
         //确定需要展示的总页数
         pi.defaults.totalPages = Math.ceil(pi.totalDatasCount/pi.defaults.perPageDatasCount);
-
-        pi.defaults.currentPage = pi.defaults.currentPage > pi.defaults.totalPages && pi.defaults.currentPage > 1 ? pi.defaults.totalPages : pi.defaults.currentPage;
-
-        console.log("当前选中页数："+pi.defaults.currentPage);
         var curPage = pi.defaults.currentPage;
         var totalPages = pi.defaults.totalPages;
         var sideCount = pi.defaults.count%2==0 ? pi.defaults.count-1 : pi.defaults.count;
 
+        console.log("刷新数据");
+        console.log("总页数"+totalPages);
         sideCount = sideCount<3 ? 3 : sideCount;
 
         //保存所有按钮的显示字符
@@ -132,7 +123,7 @@ DBFX.Web.Controls.Pagination = function (b) {
                 }
 
             }else {//3、当前点击页处于右侧时
-                // console.log('右=============');
+                console.log('右=============');
                 for (var i=0;i<(sideCount+1)*2;i++){
                     pi.allBtnTexts[i]= totalPages - ((sideCount*2)-i);
                     if(i<sideCount){
@@ -153,7 +144,6 @@ DBFX.Web.Controls.Pagination = function (b) {
             }
         }else {//总页数为0时
             pi.allBtnTexts[0] = "暂无数据";
-            pi.container.style.color = "red";
         }
     }
 
@@ -199,8 +189,8 @@ DBFX.Web.Controls.Pagination = function (b) {
 
 
         //按钮少于3个时
-        if(pi.allBtnTexts.length < 3){
-            pi.container.innerText = pi.allBtnTexts[0];
+        if(pi.allBtnTexts.length <= 3){
+            pi.VisualElement.innerText = pi.allBtnTexts[0];
             return ;
         }
         //清空已经存在的列表
@@ -219,11 +209,7 @@ DBFX.Web.Controls.Pagination = function (b) {
             //li样式
             liE.style.width = Math.floor(wh)+"px";
             liE.style.height = Math.floor(wh)+"px";
-            liE.style.fontSize = pi.fSize;
-            liE.style.fontStyle = pi.fStyle;
-            liE.style.fontFamily = pi.fFamily;
-            liE.style.fontWeight = "bold";
-
+            liE.style.fontSize = "16px";
             liE.style.cssFloat = cssF;
 
             liE.style.textAlign = "center";
@@ -234,20 +220,19 @@ DBFX.Web.Controls.Pagination = function (b) {
             liE.style.marginRight = Math.floor(marginLR)+"px";
             liE.style.marginTop = Math.floor(marginTB)+"px";
             liE.style.marginBottom = Math.floor(marginTB)+"px";
-            liE.style.color = pi.fColor;
+
+            liE.style.color = "#666";
             liE.style.boxSizing = "border-box";
 
 
             //span样式
             span.style.display = "block";
             span.style.width = "100%";
-            span.style.borderRadius = pi.btnBorderR;
+            span.style.borderRadius = "50%";
             span.style.cursor = "pointer";
             span.style.lineHeight = Math.floor(wh)+"px";
             span.style.textDecoration = "none";
-            // span.style.border = "1px solid #E5E5E5";
-            span.style.border = pi.btnBorderW +" solid "+ pi.btnBorderC;
-            span.style.backgroundColor = pi.btnBgC;
+            span.style.border = "1px solid #E5E5E5";
             span.style.boxSizing = "border-box";
 
 
@@ -290,9 +275,10 @@ DBFX.Web.Controls.Pagination = function (b) {
     }
 
     //TODO:点击时执行的方法  参数包含：当前页码、总页码、每页数据量……
-    // pi.PageIndexChanged = function () {
-    //
-    // }
+    pi.handleBtnClick = function (data) {
+        console.log('hannnnnn');
+        console.log(data);
+    }
 
     //处理点击事件
     pi.mouseClick = function (e) {
@@ -318,78 +304,22 @@ DBFX.Web.Controls.Pagination = function (b) {
                 pi.defaults.currentPage = parseInt(target.innerText);
                 break;
         }
-        //TODO:执行pi.PageIndexChanged,
-
-        pi.currentPage = pi.defaults.currentPage;
-        pi.perPageCount = pi.defaults.perPageDatasCount;
-
-
-        if (pi.Command != undefined && pi.Command != null) {
-            pi.Command.Sender = pi;
-            pi.Command.Execute();
-        }
-        if(pi.PageIndexChanged != undefined && pi.PageIndexChanged.GetType() == "Command"){
-            pi.PageIndexChanged.Sender = pi;
-            pi.PageIndexChanged.Execute();
-        }
-
-        if(pi.PageIndexChanged != undefined && pi.PageIndexChanged.GetType() == "function"){
-                pi.PageIndexChanged(e,pi);
-        }
+        //TODO:执行pi.handleBtnClick,
+        var data = {};
+        data.currentPage = pi.defaults.currentPage;
+        data.perPageCount = pi.defaults.perPageDatasCount;
+        pi.handleBtnClick(data);
 
         //先刷新显示数据
         pi.refreshData();
         //创建并布局按钮
         pi.reLayoutViews();
-
-
     }
 
-    pi.pWidth = "400px";
-    pi.pHeight = "25px";
 
-    //按钮样式设置
-    //按钮边框宽度
-    pi.btnBorderW = "1px";
-    Object.defineProperty(pi,"BtnBorderW",{
-        get:function () {
-            return pi.btnBorderW;
-        },
-        set:function (v) {
-            pi.btnBorderW = v;
-        }
-    });
-    //按钮圆角
-    pi.btnBorderR = "5px";
-    Object.defineProperty(pi,"BtnBorderR",{
-        get:function () {
-            return pi.btnBorderR;
-        },
-        set:function (v) {
-            pi.btnBorderR = v;
-        }
-    });
-    //按钮边框颜色
-    pi.btnBorderC = "#E5E5E5";
-    Object.defineProperty(pi,"BtnBorderC",{
-        get:function () {
-            return pi.btnBorderC;
-        },
-        set:function (v) {
-            pi.btnBorderC = v;
-        }
-    });
-    //按钮背景色
-    pi.btnBgC = "transparent";
-    Object.defineProperty(pi,"BtnBgC",{
-        get:function () {
-            return pi.btnBgC;
-        },
-        set:function (v) {
-            pi.btnBgC = v;
-        }
-    });
-
+    //
+    pi.pWidth = "800px";
+    pi.pHeight = "50px";
     //按钮高亮（被选中）时背景色
     pi.selectedC = "#13d1be";
     Object.defineProperty(pi,"SelectedC",{
@@ -409,7 +339,6 @@ DBFX.Web.Controls.Pagination = function (b) {
             pi.selectedTextC = v;
         }
     });
-
 
 
     /*==================================平台属性配置begin=======================================================*/
@@ -438,28 +367,6 @@ DBFX.Web.Controls.Pagination = function (b) {
         // console.log(cssObj.width);
         pi.reLayoutViews();
     }
-
-    pi.fSize = "12px";
-    pi.SetFontSize = function (v) {
-        pi.fSize = v;
-    }
-
-    pi.fFamily = "宋体";
-    pi.SetFontFamily = function (v) {
-        pi.fFamily = v;
-    }
-
-    pi.fStyle = "normal";
-    pi.SetFontStyle = function (v) {
-        pi.fStyle = v;
-    }
-
-    pi.fColor = "#666";
-    pi.SetColor = function (v) {
-        pi.fColor = v;
-    }
-
-
 
     /*==================================平台属性配置end=======================================================*/
 
@@ -506,59 +413,4 @@ DBFX.Web.Controls.Pagination = function (b) {
 
     pi.onload();
     return pi;
-}
-
-DBFX.Serializer.PaginationSerializer = function () {
-    //系列化
-    this.Serialize = function (c, xe, ns) {
-        DBFX.Serializer.SerialProperty("BtnBorderW", c.BtnBorderW, xe);
-        DBFX.Serializer.SerialProperty("BtnBorderR", c.BtnBorderR, xe);
-        DBFX.Serializer.SerialProperty("BtnBorderC", c.BtnBorderC, xe);
-        DBFX.Serializer.SerialProperty("BtnBgC", c.BtnBgC, xe);
-        DBFX.Serializer.SerialProperty("SelectedC", c.SelectedC, xe);
-        DBFX.Serializer.SerialProperty("SelectedTextC", c.SelectedTextC, xe);
-        //序列化方法
-        DBFX.Serializer.SerializeCommand("PageIndexChanged", c.PageIndexChanged, xe);
-    }
-
-    //反系列化
-    this.DeSerialize = function (c, xe, ns) {
-        DBFX.Serializer.DeSerialProperty("BtnBorderW", c, xe);
-        DBFX.Serializer.DeSerialProperty("BtnBorderR", c, xe);
-        DBFX.Serializer.DeSerialProperty("BtnBorderC", c, xe);
-        DBFX.Serializer.DeSerialProperty("BtnBgC", c, xe);
-        DBFX.Serializer.DeSerialProperty("SelectedC", c, xe);
-        DBFX.Serializer.DeSerialProperty("SelectedTextC", c, xe);
-        //对方法反序列化
-        DBFX.Serializer.DeSerializeCommand("PageIndexChanged", c, xe);
-    }
-
-
-}
-DBFX.Design.ControlDesigners.PaginationDesigner = function () {
-
-    var obdc = new DBFX.Web.Controls.GroupPanel();
-    obdc.OnCreateHandle();
-    obdc.OnCreateHandle = function () {
-        DBFX.Resources.LoadResource("design/DesignerTemplates/FormDesignerTemplates/PaginationDesigner.scrp", function (od) {
-            od.DataContext = obdc.dataContext;
-            //设计器中绑定事件处理
-            od.EventListBox = od.FormContext.Form.FormControls.EventListBox;
-            od.EventListBox.ItemSource = [{EventName:"PageIndexChanged",EventCode:undefined,Command:od.dataContext.PageIndexChanged,Control:od.dataContext}];
-        }, obdc);
-    }
-
-    //事件处理程序
-    obdc.DataContextChanged = function (e) {
-        obdc.DataBind(e);
-        if(obdc.EventListBox != undefined){
-            obdc.EventListBox.ItemSource = [{EventName:"PageIndexChanged",EventCode:undefined,Command:obdc.dataContext.PageIndexChanged,Control:obdc.dataContext}];
-        }
-    }
-
-    obdc.HorizonScrollbar = "hidden";
-    obdc.OnCreateHandle();
-    obdc.Class = "VDE_Design_ObjectGeneralDesigner";
-    obdc.Text = "分页导航控件";
-    return obdc;
 }

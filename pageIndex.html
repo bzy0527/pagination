@@ -12,15 +12,48 @@
     <script src="pagination.js"></script>
 </head>
 <body>
-
+<div id="div" style="width: 800px;height: 200px;border: 1px solid red"></div>
+<!--<div id="btn" style="width: 100px;height: 50px;border: 1px solid goldenrod">点击</div>-->
 <script>
     var pi = new DBFX.Web.Controls.Pagination();
 
-    document.body.appendChild(pi.VisualElement);
 
-    console.log(pi);
+    var divE = document.getElementById('div');
+    divE.appendChild(pi.VisualElement);
+    // pi.SetWidth("620px");
+    // pi.SetHeight("80px");
+    var datas = 2000;
+    // pi.SetColor("red");
+
+
+    pi.DataSource = {
+        dataCount:2000,//总数据量
+        perPageCount:30//每页加载数据量
+    };
+
+    // var arr = [];
+
+
+    // console.log(Object.prototype.toString.call(pi.dataSource));
+
+
+
+    // pi.handleBtnClick = function (data) {
+    //     pi.DataSource = {
+    //         dataCount:1800,//总数据量
+    //         perPageCount:30//每页加载数据量
+    //     };
+    //     console.log(data);
+    // }
+
     var imageJson = {"Title":"深蓝软件资质图片","ImageFolder":"深蓝软件资质图片","Images":[{"Text":"图片1","ImageUrl":"https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1532479885&di=4849881dd356166c526a051233b41362&imgtype=jpg&er=1&src=http%3A%2F%2Fwww.wallcoo.com%2Fnature%2FApple_OSX_Mountain_Lion_Secret_Wallpapers%2Fwallpapers%2F3200x2000%2FCosmos02.jpg","Width":"100","Height":"333"},{"Text":"图片2","ImageUrl":"https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1531885166733&di=fba7e2538af1655a623359bb7c24b00f&imgtype=0&src=http%3A%2F%2Fattach.bbs.miui.com%2Falbum%2F201605%2F09%2F155052ru0wm064s8jh0mju.jpg","Width":"100","Height":"333"},{"Text":"图片3","ImageUrl":"https://timgsa.baidu.com/timg?image&quality=80&size=b10000_10000&sec=1531875126&di=d84b5fe838246d6da664d95afa5cf43b&src=http://photo.sohu.com/20050120/Img224038709.jpg","Width":"100","Height":"333"}]};
     // console.log(JSON.stringify(imageJson));
+
+    // console.log(Object.prototype.toString.call(imageJson));
+    // var btn = document.getElementById("btn");
+    // btn.onmousedown = function (ev) {
+    //     console.log('点击');
+    // }
 
 </script>
 </body>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>test</title>
+    <script src="test.js"></script>
+</head>
+<body>
+
+<div id="div" style="width: 800px;height: 200px;border: 1px solid red"></div>
+<script>
+    var pi = new Pagination();
+
+
+    var divE = document.getElementById('div');
+    divE.appendChild(pi.VisualElement);
+    // pi.SetWidth("620px");
+    // pi.SetHeight("80px");
+    pi.DataSource = {
+        dataCount:2000,//总数据量
+        perPageCount:30//每页加载数据量
+    };
+</script>
+</body>
+</html>
