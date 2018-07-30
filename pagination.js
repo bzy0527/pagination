@@ -209,9 +209,9 @@ DBFX.Web.Controls.Pagination = function (b) {
         //根据计算的显示字符集合创建按钮
         for(var j=0;j<pi.allBtnTexts.length;j++){
             var liE = document.createElement('li');
-            liE.addEventListener('mousedown',pi.mouseClick,false);
             var span = document.createElement('span');
             span.innerText = pi.allBtnTexts[j];
+            span.addEventListener('mousedown',pi.mouseClick,false);
             liE.appendChild(span);
 
             //设定显示样式
@@ -266,7 +266,7 @@ DBFX.Web.Controls.Pagination = function (b) {
                 //设置"不可用"样式
                 span.style.color = "silver";
                 span.style.cursor = "not-allowed";
-                liE.removeEventListener('mousedown',pi.mouseClick,false);
+                span.removeEventListener('mousedown',pi.mouseClick,false);
             }
 
             if(curPage==pi.defaults.totalPages && j==pi.allBtnTexts.length-1){
@@ -274,7 +274,7 @@ DBFX.Web.Controls.Pagination = function (b) {
                 //设置"不可用"样式
                 span.style.color = "silver";
                 span.style.cursor = "not-allowed";
-                liE.removeEventListener('mousedown',pi.mouseClick,false);
+                span.removeEventListener('mousedown',pi.mouseClick,false);
             }
 
             //显示"省略号"时样式
