@@ -14,3 +14,46 @@
     height: 100%;
     position: relative;
 }
+
+.Pagination .Pagination_Container {
+    list-style: none;
+    padding: 0px;
+    margin: 0px;
+    text-align: center;
+    display: inline-block;
+
+}
+
+.Pagination_Container .Pagination_Button{
+    box-sizing: border-box;
+    font-weight: bold;
+    text-align: center;
+    transition: background-color 0.5s;
+    border-radius: 50%;
+}
+
+.Pagination_Container .Pagination_ButtonText {
+    display: block;
+    width: 100%;
+    cursor: pointer;
+    text-decoration: none;
+    box-sizing: border-box;
+}
+
+.Pagination_Container .Pagination_ButtonDisabled {
+    display: block;
+    width: 100%;
+    text-decoration: none;
+    box-sizing: border-box;
+    color: silver;
+    cursor: not-allowed;
+}
+
+.Pagination_Container .Pagination_Button .Pagination_ButtonEllipsis {
+    display: block;
+    width: 100%;
+    cursor: default;
+    text-decoration: none;
+    box-sizing: border-box;
+    border: 0px!important;
+}

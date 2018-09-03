@@ -211,7 +211,9 @@ DBFX.Web.Controls.Pagination = function (b) {
         //根据计算的显示字符集合创建按钮
         for(var j=0;j<pi.allBtnTexts.length;j++){
             var liE = document.createElement('li');
+            liE.className = "Pagination_Button";
             var span = document.createElement('span');
+            span.className = "Pagination_ButtonText";
             span.innerText = pi.allBtnTexts[j];
             span.addEventListener('mousedown',pi.mouseClick,false);
             liE.appendChild(span);
@@ -224,34 +226,21 @@ DBFX.Web.Controls.Pagination = function (b) {
             liE.style.fontSize = pi.fSize;
             liE.style.fontStyle = pi.fStyle;
             liE.style.fontFamily = pi.fFamily;
-            liE.style.fontWeight = "bold";
 
             liE.style.cssFloat = cssF;
 
-            liE.style.textAlign = "center";
-            liE.style.transition = "background-color 0.5s";
-            liE.style.borderRadius = "50%";
-            // liE.style.margin = "0px 10px";
             liE.style.marginLeft = Math.floor(marginLR)+"px";
             liE.style.marginRight = Math.floor(marginLR)+"px";
             liE.style.marginTop = Math.floor(marginTB)+"px";
             liE.style.marginBottom = Math.floor(marginTB)+"px";
             liE.style.color = pi.fColor;
-            liE.style.boxSizing = "border-box";
 
 
             //span样式
-            span.style.display = "block";
-            span.style.width = "100%";
             span.style.borderRadius = pi.btnBorderR;
-            span.style.cursor = "pointer";
             span.style.lineHeight = Math.floor(wh)+"px";
-            span.style.textDecoration = "none";
-            // span.style.border = "1px solid #E5E5E5";
             span.style.border = pi.btnBorderW +" solid "+ pi.btnBorderC;
             span.style.backgroundColor = pi.btnBgC;
-            span.style.boxSizing = "border-box";
-
 
 
             //当前显示页面添加激活样式
@@ -263,27 +252,18 @@ DBFX.Web.Controls.Pagination = function (b) {
             }
 
             //设置前一页和后一页为不可用状态
-            if(curPage==1 && j==0){
-                // span.classList.add('disabled');
+            if((curPage==1 && j==0) || (curPage==pi.defaults.totalPages && j==pi.allBtnTexts.length-1)){
                 //设置"不可用"样式
-                span.style.color = "silver";
-                span.style.cursor = "not-allowed";
+                span.className = "Pagination_ButtonDisabled";
                 span.removeEventListener('mousedown',pi.mouseClick,false);
             }
 
-            if(curPage==pi.defaults.totalPages && j==pi.allBtnTexts.length-1){
-                // span.classList.add('disabled');
-                //设置"不可用"样式
-                span.style.color = "silver";
-                span.style.cursor = "not-allowed";
-                span.removeEventListener('mousedown',pi.mouseClick,false);
-            }
 
             //显示"省略号"时样式
-
             if(span.innerText == pi.defaults.ellipsis){
-                span.style.cursor = "default";
-                span.style.border = "0";
+                span.className = "Pagination_ButtonEllipsis";
+                // span.style.cursor = "default";
+                // span.style.border = "0";
             }
 
             pi.container.appendChild(liE);
@@ -467,34 +447,15 @@ DBFX.Web.Controls.Pagination = function (b) {
 
     pi.onload = function () {
         var ve = pi.VisualElement;
-        // ve.style.width = pi.pWidth;
-        // ve.style.height = pi.pHeight;
-        // ve.style.borderRadius = "5px";
-        // ve.style.border = "1px solid black";
-        // ve.style.textAlign = "center";
-        // ve.style.lineHeight = pi.pHeight;
-        // ve.style.overflow = "hidden";
 
         pi.innerContainer = document.createElement('div');
         pi.innerContainer.className = "Pagination_InnerContainer";
-        // pi.innerContainer.style.width = "100%";
-        // pi.innerContainer.style.height = "100%";
-        // pi.innerContainer.style.position = "relative";
-        // pi.innerContainer.style.overflow = "hidden";
         ve.appendChild(pi.innerContainer);
 
         //创建分页容器ul
         pi.container = document.createElement("ul");
-        // pi.container.classList.add("db-pagination");
-        pi.container.style.listStyle = "none";
-        pi.container.style.padding = "0px";
-        pi.container.style.margin = "0px";
-        pi.container.style.textAlign = "center";
-        // pi.container.style.overflow = "hidden";
-        pi.container.style.display = "inline-block";
-
+        pi.container.className = "Pagination_Container";
         pi.innerContainer.appendChild(pi.container);
-
 
         //先刷新数据
         pi.refreshData();
