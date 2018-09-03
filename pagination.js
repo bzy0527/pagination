@@ -9,6 +9,7 @@ DBFX.Web.Controls.Pagination = function (b) {
     pi.ClassDescriptor.Serializer = "DBFX.Serializer.PaginationSerializer";
 
     pi.VisualElement = document.createElement("DIV");
+    pi.VisualElement.className = "Pagination";
     pi.OnCreateHandle();
 
 
@@ -16,7 +17,7 @@ DBFX.Web.Controls.Pagination = function (b) {
         perPageDatasCount:30,//每页展示数据量
         totalDatasCount:0.1,//总数据量
         currentPage:1,//当前第几页,默认当前页为第1页
-        totalPages:0,//总页数
+        totalPages:1,//总页数
         prevCls:'prev',            //上一页class
         nextCls:'next',            //下一页class
         prevContent:'<',        //上一页内容
@@ -30,7 +31,7 @@ DBFX.Web.Controls.Pagination = function (b) {
         callback:function(){}    //回调
     }
 
-    pi.totalDatasCount = 0;
+    pi.totalDatasCount = 1;
 
     //接收数据对象
     pi.dataSource = { };
@@ -77,6 +78,7 @@ DBFX.Web.Controls.Pagination = function (b) {
         pi.defaults.currentPage = pi.defaults.currentPage > pi.defaults.totalPages && pi.defaults.currentPage > 1 ? pi.defaults.totalPages : pi.defaults.currentPage;
 
         console.log("当前选中页数："+pi.defaults.currentPage);
+
         var curPage = pi.defaults.currentPage;
         var totalPages = pi.defaults.totalPages;
         var sideCount = pi.defaults.count%2==0 ? pi.defaults.count-1 : pi.defaults.count;
@@ -465,19 +467,19 @@ DBFX.Web.Controls.Pagination = function (b) {
 
     pi.onload = function () {
         var ve = pi.VisualElement;
-        ve.style.width = pi.pWidth;
-        ve.style.height = pi.pHeight;
-        ve.style.borderRadius = "5px";
-        ve.style.border = "1px solid black";
-        ve.style.textAlign = "center";
-        ve.style.lineHeight = pi.pHeight;
-        // ve.style.backgroundColor = "#cbcbcb";
-        ve.style.overflow = "hidden";
+        // ve.style.width = pi.pWidth;
+        // ve.style.height = pi.pHeight;
+        // ve.style.borderRadius = "5px";
+        // ve.style.border = "1px solid black";
+        // ve.style.textAlign = "center";
+        // ve.style.lineHeight = pi.pHeight;
+        // ve.style.overflow = "hidden";
 
         pi.innerContainer = document.createElement('div');
-        pi.innerContainer.style.width = "100%";
-        pi.innerContainer.style.height = "100%";
-        pi.innerContainer.style.position = "relative";
+        pi.innerContainer.className = "Pagination_InnerContainer";
+        // pi.innerContainer.style.width = "100%";
+        // pi.innerContainer.style.height = "100%";
+        // pi.innerContainer.style.position = "relative";
         // pi.innerContainer.style.overflow = "hidden";
         ve.appendChild(pi.innerContainer);
 
@@ -491,10 +493,6 @@ DBFX.Web.Controls.Pagination = function (b) {
         // pi.container.style.overflow = "hidden";
         pi.container.style.display = "inline-block";
 
-        // pi.container.style.position = "absolute";
-        // pi.container.style.left = "30%";
-        // pi.container.style.top = "50%";
-        // pi.container.style.transform = "translate(-30%,-50%)";
         pi.innerContainer.appendChild(pi.container);
 
 
@@ -519,6 +517,7 @@ DBFX.Serializer.PaginationSerializer = function () {
         DBFX.Serializer.SerialProperty("SelectedTextC", c.SelectedTextC, xe);
         //序列化方法
         DBFX.Serializer.SerializeCommand("PageIndexChanged", c.PageIndexChanged, xe);
+
     }
 
     //反系列化
@@ -530,7 +529,7 @@ DBFX.Serializer.PaginationSerializer = function () {
         DBFX.Serializer.DeSerialProperty("SelectedC", c, xe);
         DBFX.Serializer.DeSerialProperty("SelectedTextC", c, xe);
         //对方法反序列化
-        DBFX.Serializer.DeSerializeCommand("PageIndexChanged", c, xe);
+        DBFX.Serializer.DeSerializeCommand("PageIndexChanged", xe, c);
     }
 
 

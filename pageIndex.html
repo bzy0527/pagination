@@ -8,7 +8,7 @@
     <script src="https://lc.dbazure.cn/dbfx/dbfx.data.js"></script>
     <script src="https://lc.dbazure.cn/dbfx/dbfx.commodel.js"></script>
     <script src="https://lc.dbazure.cn/dbfxui/dbfx.web.controls.js"></script>
-    <!--<link rel="stylesheet" href="pagination.css">-->
+    <link rel="stylesheet" href="pagination.css">
     <script src="pagination.js"></script>
 </head>
 <body>
@@ -20,18 +20,49 @@
 
     var divE = document.getElementById('div');
     divE.appendChild(pi.VisualElement);
-    pi.SetWidth("620px");
+    // pi.SetWidth("620px");
     // pi.SetHeight("80px");
     var datas = 2000;
     // pi.SetColor("red");
 
 
     pi.DataSource = {
-        dataCount:2000,//总数据量
+        dataCount:0,//总数据量
         perPageCount:30//每页加载数据量
     };
+    //
+    // console.log(pi.DataSource.length);
 
-    // var arr = [];
+
+
+    // var arr = [{
+    //     "Display_Name" = "IMG_0003.JPG";
+    // MsgBody = "MsgBody_dbsoftpimage";
+    // "_ID" = 0;
+    // filepath = "assets-library://asset/asset.JPG?id=16436E4C-4769-4830-A504-5DA7B6FA3297&ext=JPG";
+    // isupload = 1;
+    // serverResponseCode = 200;
+    // serverResponseMessage = "([{\\\"Url\\\":[\\\"http://wx.dbazure.com.cn:8210/imgs/dbsoft_20180801145737234.jpg\\\"],\\\"State\\\":0}])";
+    // },
+    // {
+    //     "Display_Name" = "IMG_0002.JPG";
+    //     MsgBody = "MsgBody_dbsoftpimage";
+    //     "_ID" = 0;
+    //     filepath = "assets-library://asset/asset.JPG?id=3C87D09B-9814-4E88-8F53-D085A9043BB9&ext=JPG";
+    //     isupload = 1;
+    //     serverResponseCode = 200;
+    //     serverResponseMessage = "([{\\\"Url\\\":[\\\"http://wx.dbazure.com.cn:8210/imgs/dbsoft_20180801145737228.jpg\\\"],\\\"State\\\":0}])";
+    // },
+    // {
+    //     "Display_Name" = "IMG_0001.JPG";
+    //     MsgBody = "MsgBody_dbsoftpimage";
+    //     "_ID" = 0;
+    //     filepath = "assets-library://asset/asset.JPG?id=041A9AB0-4815-42A1-8437-5A4DC3EC3EF3&ext=JPG";
+    //     isupload = 1;
+    //     serverResponseCode = 200;
+    //     serverResponseMessage = "([{\\\"Url\\\":[\\\"http://wx.dbazure.com.cn:8210/imgs/dbsoft_20180801145737224.jpg\\\"],\\\"State\\\":0}])";
+    // }];
+
 
 
     // console.log(Object.prototype.toString.call(pi.dataSource));

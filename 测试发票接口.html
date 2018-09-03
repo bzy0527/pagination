@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>测试发票接口</title>
+</head>
+<body>
+
+
+<script>
+    var obj = {
+        "Data": {
+        datagram: {
+            globalInfo: {
+                "terminalCode" : "0",
+                "appId" : "H5251YKP",
+                "version" : "2.0",
+                "interfaceCode" : "ECXML.DDJS.BC.E_INV",
+                "interfaceMode" : "0",
+                "userMode" : "0",
+                "callbackUrl" : "",
+                "userName" : "H5251YKP0000001",
+                "passWord" : "67807001",
+                "taxpayerId" : "140301205308229171",
+                "authorizationCode" : "IBMZIG3386",
+                "requestCode" : "H5251YKP",
+                "requestTime" : "20180803100759",
+                "responseCode" : "",
+                "dataExchangeId" : "H5251YKP20180803897551237"
+            },
+            returnStateInfo: {
+                returnCode: '',
+                    returnMessage: ''
+            },
+            Data: {
+                dataDescription: {
+                    zipCode: "0",
+                        encryptCode: "0",
+                        codeType: ''
+                },
+                content: {
+                    FPKJXX_FPTXX: {
+                        "_id" : "5b29f2b68e6e15274060ce60",
+                            "FPQQLSH" : "5b29f2b68e6e15274060ce60",
+                            "DDH" : "5b29d9868e6e1527405e462a",
+                            "CPLX" : "0",
+                            "JFFS" : "0",
+                            "NSRSBH" : "140301205308229171",
+                            "NSRMC" : "航信测试企业一",
+                            "SWJG_DM" : "IBMZIG3386",
+                            "FJH" : "",
+                            "DKBZ" : "0",
+                            "SGBZ" : "Y",
+                            "PYDM" : "000001",
+                            "KPXM" : "餐饮服务",
+                            "BMB_BBH" : "3070401000000000000",
+                            "XHF_NSRSBH" : "140301205308229171",
+                            "XHFMC" : "航信测试企业一",
+                            "XHF_DZDH" : "杏石口路甲18号020-28381999",
+                            "XHF_YHZH" : "",
+                            "GHF_SJ" : "13019128907",
+                            "GHF_EMAIL" : "",
+                            "GHFMC" : "个人",
+                            "GHF_NSRSBH" : "",
+                            "GHF_DZDH" : "",
+                            "GHFQYLX" : "03",
+                            "GHF_YHZH" : "",
+                            "HY_DM" : "",
+                            "HY_MC" : "",
+                            "KPY" : "1384",
+                            "SKY" : "1384",
+                            "FHR" : "1384",
+                            "KPRQ" : "018-06-20 14:22:10",
+                            "KPLX" : 2,
+                            "FPZL_DM" : "51",
+                            "YFP_DM" : "111005117101",
+                            "YFP_HM" : "57942475",
+                            "TSCHBZ" : "0",
+                            "QD_BZ" : "1",
+                            "CHYY" : "121212",
+                            "KPHJJE" : -18.0,
+                            "HJBHSJE" : -16.92,
+                            "HJSE" : -1.08,
+                            "DYBZ" : "0",
+                            "BZ" : "121212",
+                            "SPBMJC_BZ" : "1",
+                            "BYZD1" : "",
+                            "BYZD2" : "",
+                            "BYZD3" : "",
+                            "BYZD4" : "",
+                            "BYZD5" : "",
+                            "FPKJXX_XMXXS" : [
+                            {
+                                "XMMC" : "餐饮服务",
+                                "XMDW" : "",
+                                "GGXH" : "",
+                                "XMSL" : -1.0,
+                                "HSBZ" : "1",
+                                "FPHXZ" : "0",
+                                "XMDJ" : 18.0,
+                                "SPBM" : "3070401000000000000",
+                                "ZXBM" : "123",
+                                "YHZCBS" : "0",
+                                "LSLBS" : "",
+                                "ZZSTSGL" : "",
+                                "XMJE" : -18.0,
+                                "SL" : 0.06,
+                                "SE" : -1.08,
+                                "KCE" : "",
+                                "BYZD1" : "1",
+                                "BYZD2" : "2",
+                                "BYZD3" : "3",
+                                "BYZD4" : "4",
+                                "BYZD5" : "5"
+                            }
+                        ]
+                    }
+                }
+            }
+        },
+        signtype: '',
+        signature: ''
+    },
+        "Url" : "http://60.194.106.82:10053/H5Webkpgl/eiInterface.action",
+        "Type" : 1.0,
+        "RegCode" : "67807001"
+    };
+
+
+
+
+    //正常的
+    var obj1 = {
+        "Data" : {
+            "datagram" : {
+                "globalInfo" : {
+                    "terminalCode" : "0",
+                    "appId" : "H5251YKP",
+                    "version" : "2.0",
+                    "interfaceCode" : "ECXML.DDJS.BC.E_INV",
+                    "interfaceMode" : "0",
+                    "userMode" : "0",
+                    "callbackUrl" : "",
+                    "userName" : "H5251YKP0000001",
+                    "passWord" : "67807001",
+                    "taxpayerId" : "140301205308229171",
+                    "authorizationCode" : "IBMZIG3386",
+                    "requestCode" : "H5251YKP",
+                    "requestTime" : "20180803100759",
+                    "responseCode" : "",
+                    "dataExchangeId" : "H5251YKP20180803897551237"
+                },
+                "returnStateInfo" : {
+                    "returnCode" : "",
+                    "returnMessage" : ""
+                },
+                "Data" : {
+                    "dataDescription" : {
+                        "zipCode" : "0",
+                        "encryptCode" : "0",
+                        "codeType" : ""
+                    },
+                    "content" : {
+                        "FPKJXX_FPTXX" : {
+                            "DDH" : "5b151bedc86f1db93b2021df",
+                            "FPQQLSH" : "5b63b8f97424819b6785f38c",
+                            "CPLX" : "0",
+                            "JFFS" : "0",
+                            "NSRSBH" : "140301205308229171",
+                            "NSRMC" : "航信测试企业一",
+                            "SWJG_DM" : "IBMZIG3386",
+                            "FJH" : "",
+                            "DKBZ" : "0",
+                            "SGBZ" : "Y",
+                            "PYDM" : "000001",
+                            "KPXM" : "餐饮服务",
+                            "BMB_BBH" : "3070401000000000000",
+                            "XHF_NSRSBH" : "140301205308229171",
+                            "XHFMC" : "航信测试企业一",
+                            "XHF_DZDH" : "杏石口路甲18号020-28381999",
+                            "XHF_YHZH" : "",
+                            "GHF_SJ" : "13756010257",
+                            "GHF_EMAIL" : "",
+                            "GHFMC" : "个人",
+                            "GHF_NSRSBH" : "",
+                            "GHF_DZDH" : "",
+                            "GHFQYLX" : "03",
+                            "GHF_YHZH" : "",
+                            "HY_DM" : "",
+                            "HY_MC" : "",
+                            "KPY" : "1301",
+                            "SKY" : "1301",
+                            "FHR" : "1301",
+                            "KPRQ" : "018-08-03 10:07:53",
+                            "KPLX" : "1",
+                            "FPZL_DM" : "51",
+                            "YFP_DM" : "",
+                            "YFP_HM" : "",
+                            "TSCHBZ" : "0",
+                            "QD_BZ" : "1",
+                            "CHYY" : "",
+                            "KPHJJE" : 61.0,
+                            "HJBHSJE" : 57.34,
+                            "HJSE" : 3.66,
+                            "DYBZ" : "0",
+                            "BZ" : "",
+                            "SPBMJC_BZ" : "1",
+                            "BYZD1" : "",
+                            "BYZD2" : "",
+                            "BYZD3" : "",
+                            "BYZD4" : "",
+                            "BYZD5" : "",
+                            "DDZT_CODE" : -1.0,
+                            "DDZT_MSG" : "待开票",
+                            "IvcFlag" : 0.0,
+                            "RedFlag" : 1.0,
+                            "ID" : "201806040018",
+                            "GHF_Email" : ""
+                        },
+                        "FPKJXX_XMXXS" : [
+                            {
+                                "XMMC" : "餐饮服务",
+                                "XMDW" : "",
+                                "GGXH" : "",
+                                "XMSL" : 1.0,
+                                "HSBZ" : "1",
+                                "FPHXZ" : "0",
+                                "XMDJ" : 61.0,
+                                "SPBM" : "3070401000000000000",
+                                "ZXBM" : "123",
+                                "YHZCBS" : "0",
+                                "LSLBS" : "",
+                                "ZZSTSGL" : "",
+                                "XMJE" : 61.0,
+                                "SL" : 0.06,
+                                "SE" : 3.66,
+                                "KCE" : "",
+                                "BYZD1" : "1",
+                                "BYZD2" : "2",
+                                "BYZD3" : "3",
+                                "BYZD4" : "4",
+                                "BYZD5" : "5"
+                            }
+                        ]
+                    }
+                }
+            },
+            "signtype" : "",
+            "signature" : ""
+        },
+        "Url" : "http://60.194.106.82:10053/H5Webkpgl/eiInterface.action",
+        "Type" : 1.0,
+        "RegCode" : "67807001"
+    }
+
+
+
+    var jsonStr = JSON.stringify(obj);
+    console.log(jsonStr);
+
+    var da = new Date();
+    var la = da.toLocaleDateString();
+    var y = da.getSeconds();
+    var laa = new Date(la);
+    console.log(da);
+    console.log(la);
+
+</script>
+</body>
+</html>
