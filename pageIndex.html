@@ -12,16 +12,19 @@
     <script src="pagination.js"></script>
 </head>
 <body>
-<div id="div" style="width: 800px;height: 200px;border: 1px solid red"></div>
+<div id="div" style="width: 800px;height: 200px;border: 1px solid red">
+    <div id="btn" style="width: 50px;height: 20px;border: 1px solid blue;display: inline-block;overflow: hidden">hell0</div>
+</div>
 <!--<div id="btn" style="width: 100px;height: 50px;border: 1px solid goldenrod">点击</div>-->
 <script>
     var pi = new DBFX.Web.Controls.Pagination();
 
-
     var divE = document.getElementById('div');
+    pi.VisualElement.style.display = "inline-block";
+
     divE.appendChild(pi.VisualElement);
-    // pi.SetWidth("620px");
-    // pi.SetHeight("80px");
+    pi.SetWidth("820px");
+    pi.SetHeight("80px");
     var datas = 2000;
     // pi.SetColor("red");
 
@@ -30,6 +33,15 @@
         dataCount:600,//总数据量
         perPageCount:30//每页加载数据量
     };
+
+    var btn = document.getElementById("btn");
+    btn.onclick = function (ev) {
+        pi.DataSource = {
+            dataCount:300,//总数据量
+            perPageCount:30//每页加载数据量
+        };
+    }
+
     //
     // console.log(pi.DataSource.length);
 

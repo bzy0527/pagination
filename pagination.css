@@ -1,18 +1,61 @@
+/*css变量定义
+定义规范：--选择器名-伪类、伪元素名-样式名
+1、选择器名不多于三级，中间用下划线_链接；
+2、样式名使用JavaScript中规范的css样式名；
+3、变量值设置遵守css样式赋值规范；
+4、如果同个对象应用在不同层级下，则需要把css变量命名在对应的层级下；
+
+示例：--Pagination_Container_Button-borderRadius：50%；
+*/
+.Pagination{
+    /*分页控件 圆角大小*/
+    --Pagination_borderRadius:5px;
+    /*分页控件 边框样式*/
+    --Pagination_border: 1px solid black;
+    --Pagination_backgroundColor:transparent;
+
+    /*分页控件 按钮样式*/
+    --Pagination_Container_Button-fontWeight:bold;
+    /*分页控件 按钮默认样式*/
+    --Pagination_Container_ButtonText-border:1px solid #E5E5E5;
+    --Pagination_Container_ButtonText-borderRadius:5px;
+    --Pagination_Container_ButtonText-backgroundColor:transparent;
+    /*分页控件 按钮失效样式*/
+    --Pagination_Container_ButtonDisabled-color:silver;
+    --Pagination_Container_ButtonDisabled-border:1px solid #E5E5E5;
+    --Pagination_Container_ButtonDisabled-backgroundColor:transparent;
+    --Pagination_Container_ButtonDisabled-borderRadius:5px;
+
+    /*分页控件 按钮选中样式*/
+    --Pagination_Container_ButtonSelected-color:#f9f9f9;
+    --Pagination_Container_ButtonSelected-border:1px solid #13d1be;
+    --Pagination_Container_ButtonSelected-backgroundColor:#13d1be;
+    --Pagination_Container_ButtonSelected-borderRadius:5px;
+
+}
+
 
 .Pagination {
+    vertical-align: top;
     width: 400px;
     height: 25px;
     line-height: 25px;
-    border-radius: 5px;
-    border: 1px solid black;
     text-align: center;
     overflow: hidden;
+    border-radius: var(--Pagination_borderRadius);
+    border: var(--Pagination_border);
+    background-color: var(--Pagination_backgroundColor);
 }
 
 .Pagination .Pagination_InnerContainer {
     width: 100%;
     height: 100%;
     position: relative;
+
+    display: flex; /* IE10 */
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .Pagination .Pagination_Container {
@@ -21,15 +64,21 @@
     margin: 0px;
     text-align: center;
     display: inline-block;
-
 }
 
 .Pagination_Container .Pagination_Button{
     box-sizing: border-box;
-    font-weight: bold;
+    font-weight: var(--Pagination_Container_Button-fontWeight);
     text-align: center;
     transition: background-color 0.5s;
     border-radius: 50%;
+
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
 
 .Pagination_Container .Pagination_ButtonText {
@@ -38,6 +87,9 @@
     cursor: pointer;
     text-decoration: none;
     box-sizing: border-box;
+    border: var(--Pagination_Container_ButtonText-border);
+    border-radius: var(--Pagination_Container_ButtonText-borderRadius);
+    background-color: var(--Pagination_Container_ButtonText-backgroundColor);
 }
 
 .Pagination_Container .Pagination_ButtonDisabled {
@@ -45,8 +97,24 @@
     width: 100%;
     text-decoration: none;
     box-sizing: border-box;
-    color: silver;
+    color: var(--Pagination_Container_ButtonDisabled-color);
     cursor: not-allowed;
+    border: var(--Pagination_Container_ButtonDisabled-border);
+    border-radius: var(--Pagination_Container_ButtonDisabled-borderRadius);
+    background-color: var(--Pagination_Container_ButtonDisabled-backgroundColor);
+}
+
+/*Pagination_ButtonSelected*/
+.Pagination_Container .Pagination_ButtonSelected {
+    display: block;
+    width: 100%;
+    cursor: pointer;
+    text-decoration: none;
+    box-sizing: border-box;
+    color: var(--Pagination_Container_ButtonSelected-color);
+    border: var(--Pagination_Container_ButtonSelected-border);
+    background-color: var(--Pagination_Container_ButtonSelected-backgroundColor);
+    border-radius: var(--Pagination_Container_ButtonSelected-borderRadius);
 }
 
 .Pagination_Container .Pagination_Button .Pagination_ButtonEllipsis {

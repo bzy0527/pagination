@@ -41,6 +41,7 @@ DBFX.Web.Controls.Pagination = function (b) {
        },
         set:function(v){
            pi.dataSource = v;
+            pi.defaults.currentPage = 1;
            //解析拿到的数据
             pi.analysisSource(v);
 
@@ -237,18 +238,18 @@ DBFX.Web.Controls.Pagination = function (b) {
 
 
             //span样式
-            span.style.borderRadius = pi.btnBorderR;
+            // span.style.borderRadius = pi.btnBorderR;
+            // span.style.border = pi.btnBorderW +" solid "+ pi.btnBorderC;
+            // span.style.backgroundColor = pi.btnBgC;
             span.style.lineHeight = Math.floor(wh)+"px";
-            span.style.border = pi.btnBorderW +" solid "+ pi.btnBorderC;
-            span.style.backgroundColor = pi.btnBgC;
-
 
             //当前显示页面添加激活样式
             if(pi.allBtnTexts[j]==curPage){
                 // span.classList.add("active");
-                span.style.backgroundColor = pi.selectedC;
-                span.style.borderColor = pi.selectedC;
-                span.style.color = pi.selectedTextC;
+                span.className = "Pagination_ButtonSelected";
+                // span.style.backgroundColor = pi.selectedC;
+                // span.style.borderColor = pi.selectedC;
+                // span.style.color = pi.selectedTextC;
             }
 
             //设置前一页和后一页为不可用状态
@@ -310,6 +311,7 @@ DBFX.Web.Controls.Pagination = function (b) {
             pi.Command.Sender = pi;
             pi.Command.Execute();
         }
+
         if(pi.PageIndexChanged != undefined && pi.PageIndexChanged.GetType() == "Command"){
             pi.PageIndexChanged.Sender = pi;
             pi.PageIndexChanged.Execute();
@@ -470,12 +472,12 @@ DBFX.Web.Controls.Pagination = function (b) {
 DBFX.Serializer.PaginationSerializer = function () {
     //系列化
     this.Serialize = function (c, xe, ns) {
-        DBFX.Serializer.SerialProperty("BtnBorderW", c.BtnBorderW, xe);
-        DBFX.Serializer.SerialProperty("BtnBorderR", c.BtnBorderR, xe);
-        DBFX.Serializer.SerialProperty("BtnBorderC", c.BtnBorderC, xe);
-        DBFX.Serializer.SerialProperty("BtnBgC", c.BtnBgC, xe);
-        DBFX.Serializer.SerialProperty("SelectedC", c.SelectedC, xe);
-        DBFX.Serializer.SerialProperty("SelectedTextC", c.SelectedTextC, xe);
+        // DBFX.Serializer.SerialProperty("BtnBorderW", c.BtnBorderW, xe);
+        // DBFX.Serializer.SerialProperty("BtnBorderR", c.BtnBorderR, xe);
+        // DBFX.Serializer.SerialProperty("BtnBorderC", c.BtnBorderC, xe);
+        // DBFX.Serializer.SerialProperty("BtnBgC", c.BtnBgC, xe);
+        // DBFX.Serializer.SerialProperty("SelectedC", c.SelectedC, xe);
+        // DBFX.Serializer.SerialProperty("SelectedTextC", c.SelectedTextC, xe);
         //序列化方法
         DBFX.Serializer.SerializeCommand("PageIndexChanged", c.PageIndexChanged, xe);
 
@@ -483,12 +485,12 @@ DBFX.Serializer.PaginationSerializer = function () {
 
     //反系列化
     this.DeSerialize = function (c, xe, ns) {
-        DBFX.Serializer.DeSerialProperty("BtnBorderW", c, xe);
-        DBFX.Serializer.DeSerialProperty("BtnBorderR", c, xe);
-        DBFX.Serializer.DeSerialProperty("BtnBorderC", c, xe);
-        DBFX.Serializer.DeSerialProperty("BtnBgC", c, xe);
-        DBFX.Serializer.DeSerialProperty("SelectedC", c, xe);
-        DBFX.Serializer.DeSerialProperty("SelectedTextC", c, xe);
+        // DBFX.Serializer.DeSerialProperty("BtnBorderW", c, xe);
+        // DBFX.Serializer.DeSerialProperty("BtnBorderR", c, xe);
+        // DBFX.Serializer.DeSerialProperty("BtnBorderC", c, xe);
+        // DBFX.Serializer.DeSerialProperty("BtnBgC", c, xe);
+        // DBFX.Serializer.DeSerialProperty("SelectedC", c, xe);
+        // DBFX.Serializer.DeSerialProperty("SelectedTextC", c, xe);
         //对方法反序列化
         DBFX.Serializer.DeSerializeCommand("PageIndexChanged", xe, c);
     }
