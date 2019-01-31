@@ -76,6 +76,8 @@ DBFX.Web.Controls.Pagination = function (b) {
         //确定需要展示的总页数
         pi.defaults.totalPages = Math.ceil(pi.totalDatasCount/pi.defaults.perPageDatasCount);
 
+        pi.defaults.totalPages = pi.defaults.totalPages==0 ? 1:pi.defaults.totalPages;
+
         pi.defaults.currentPage = pi.defaults.currentPage > pi.defaults.totalPages && pi.defaults.currentPage > 1 ? pi.defaults.totalPages : pi.defaults.currentPage;
 
         console.log("当前选中页数："+pi.defaults.currentPage);
@@ -155,8 +157,11 @@ DBFX.Web.Controls.Pagination = function (b) {
                 pi.allBtnTexts[totalPages+1] = pi.defaults.nextContent;
             }
         }else {//总页数为0时
-            pi.allBtnTexts[0] = "暂无数据";
-            pi.container.style.color = "red";
+            // pi.allBtnTexts[0] = "暂无数据";
+            // pi.container.style.color = "red";
+            pi.allBtnTexts[1] = 1;
+            pi.allBtnTexts[0] = pi.defaults.prevContent;
+            pi.allBtnTexts[2] = pi.defaults.nextContent;
         }
     }
 
