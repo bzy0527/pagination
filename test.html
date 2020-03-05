@@ -20,6 +20,67 @@
         dataCount:2000,//总数据量
         perPageCount:30//每页加载数据量
     };
+
+    /**   三*/
+
+    var aaa = "hello";
+
+    function test(aaa) {
+        aaa = aaa + 123;
+
+        //1、此处打印的aaa的值
+        console.log(aaa);
+
+
+    }
+
+    test(aaa);
+    //2、此处打印的aaa的值
+    console.log(aaa);
+
+
+    /**   四*/
+
+    var arr01 = [1,4,25,6,34,656,45,345];
+    function test02(arr) {
+
+        arr.forEach(function (item) {
+            if(item>=30){
+                return;
+            }
+            console.log("hello");
+        })
+
+        console.log("world");
+
+        if(arr.length>7){
+            return "nihao";
+        }
+
+        console.log("china");
+
+        return "gggg";
+    }
+
+    var rr = test02(arr01);
+    console.log(rr);
+
+    /**   五*/
+
+    var obj = {name:"jack",age:22,sex:"男",school:"吉林大学",IDNum:"220110199702041123",phone:"13211221122"};
+
+    function test03(obj) {
+        obj.age = 24;
+        obj.name = "rose";
+    }
+    console.log(obj.age);
+    console.log(obj.name);
+
+    /**   六*/
+    var IDNum = "220110199702041123";
+
+
+
 </script>
 </body>
 </html>

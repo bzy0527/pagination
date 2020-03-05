@@ -8,8 +8,8 @@
     <script src="https://lc.dbazure.cn/dbfx/dbfx.data.js"></script>
     <script src="https://lc.dbazure.cn/dbfx/dbfx.commodel.js"></script>
     <script src="https://lc.dbazure.cn/dbfxui/dbfx.web.controls.js"></script>
-    <link rel="stylesheet" href="pagination01.css">
-    <script src="pagination.js"></script>
+    <link rel="stylesheet" href="pagination2.css">
+    <script src="pagination2.js"></script>
 </head>
 <body>
 <div id="div" style="width: 800px;height: 200px;border: 1px solid red">
@@ -20,17 +20,45 @@
     var pi = new DBFX.Web.Controls.Pagination();
 
     var divE = document.getElementById('div');
+    divE.ondblclick = function (ev) {
+
+        console.log("ondblclick");
+    }
+
+    divE.onclick = function (ev) {
+
+        if (!window.markerClicked) {
+            window.markerClicked = true;
+        } else {
+            window.markerClicked = false;
+            return;
+        }
+        setTimeout(function () {
+            window.markerClicked = false;
+        }, 500);
+        console.log("onclick");
+    }
+
     pi.VisualElement.style.display = "inline-block";
 
     divE.appendChild(pi.VisualElement);
-    pi.SetWidth("820px");
-    pi.SetHeight("80px");
+    pi.SetHeight("50px");
+    // pi.SetWidth("600px");
+    pi.Position = "absolute";
+    pi.Top = "20px";
+    pi.Left = "30px";
+    pi.Right = "130px";
+    //
+    //
+
+
+
     var datas = 2000;
     // pi.SetColor("red");
 
 
     pi.DataSource = {
-        dataCount:330,//总数据量
+        dataCount:330000,//总数据量
         perPageCount:30//每页加载数据量
     };
 
@@ -41,6 +69,14 @@
             perPageCount:30//每页加载数据量
         };
     }
+
+    pi.PageIndexChanged = function (e,pi) {
+        console.log(pi.currentPage);
+    }
+
+    // pi.SetPage(4);
+
+
 
     //
     // console.log(pi.DataSource.length);

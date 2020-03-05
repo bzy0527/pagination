@@ -11,7 +11,23 @@ DBFX.Web.Controls.Pagination = function (b) {
     pi.VisualElement = document.createElement("DIV");
     pi.VisualElement.className = "Pagination";
     pi.OnCreateHandle();
+    pi.OnCreateHandle = function () {
+        var ve = pi.VisualElement;
 
+        pi.innerContainer = document.createElement('div');
+        pi.innerContainer.className = "Pagination_InnerContainer";
+        ve.appendChild(pi.innerContainer);
+
+        //创建分页容器div
+        pi.container = document.createElement("div");
+        pi.container.className = "Pagination_Container";
+        pi.innerContainer.appendChild(pi.container);
+
+        //先刷新数据
+        pi.refreshData();
+        //布局按钮
+        pi.reLayoutViews();
+    }
 
     pi.defaults = {
         perPageDatasCount: 30,//每页展示数据量
@@ -59,12 +75,12 @@ DBFX.Web.Controls.Pagination = function (b) {
     pi.analysisSource = function (dataSource) {
 
         if (Object.prototype.toString.call(pi.dataSource) == "[object Object]") {
-            console.log(dataSource);
+            // console.log(dataSource);
             pi.totalDatasCount = dataSource.dataCount || 0;
             pi.defaults.perPageDatasCount = dataSource.perPageCount || 20;
         }
         if (Object.prototype.toString.call(pi.dataSource) == "[object String]") {
-            console.log("json字符串");
+            // console.log("json字符串");
             var jsonObj = JSON.parse(dataSource);
             pi.totalDatasCount = jsonObj.dataCount || 0;
             pi.defaults.perPageDatasCount = jsonObj.perPageCount || 20;
@@ -171,51 +187,6 @@ DBFX.Web.Controls.Pagination = function (b) {
         //当前页数
         var curPage = pi.defaults.currentPage;
 
-        //拿到控件的宽度和高度，进行相应的布局调整
-        // var cssObj = window.getComputedStyle(pi.VisualElement,null);
-        var w = parseFloat(pi.pWidth),
-            h = parseFloat(pi.pHeight);
-
-        //按钮宽高
-        var wh = 0;
-        //20191121
-        var BtnW = 0;
-        var BtnH = 0;
-
-        //按钮左、右间隔 假设为wh/6
-        var marginLR = 0;
-        //按钮上、下间隔
-        var marginTB = 0;
-        //浮动设置
-        var cssF = '';
-
-        if (w >= h) {//宽大于高时 横向排列
-            if (w > (pi.defaults.count * 2 + 3) * 7 / 3 * h) {
-                wh = h - 4;
-            } else {
-                wh = w / ((pi.defaults.count * 2 + 3) * 7 / 3) - 3;
-            }
-            marginLR = wh / 6;
-            marginTB = 0;
-            cssF = "left";
-
-            BtnH = wh;
-            BtnW = w * 0.1;
-        } else {
-            if (h > (pi.defaults.count * 2 + 3) * 7 / 3 * w) {
-                wh = w - 4;
-            } else {
-                wh = h / ((pi.defaults.count * 2 + 3) * 7 / 3) - 3;
-            }
-            marginLR = 0;
-            marginTB = wh / 6;
-            cssF = '';
-
-            BtnH = h * 0.1;
-            BtnW = wh;
-        }
-
-
         //按钮少于3个时
         if (pi.allBtnTexts.length < 3) {
             pi.container.innerText = pi.allBtnTexts[0];
@@ -226,67 +197,37 @@ DBFX.Web.Controls.Pagination = function (b) {
 
         //根据计算的显示字符集合创建按钮
         for (var j = 0; j < pi.allBtnTexts.length; j++) {
-            var liE = document.createElement('li');
+
+
+            var liE = document.createElement('div');
             liE.className = "Pagination_Button";
             var span = document.createElement('span');
             span.className = "Pagination_ButtonText";
             span.innerText = pi.allBtnTexts[j];
-            span.addEventListener('mousedown', pi.mouseClick, false);
+            liE.addEventListener('mousedown', pi.mouseClick, false);
             liE.appendChild(span);
-
-            //设定显示样式
-            // liE.classList.add("basedli");
-            //li样式
-            // liE.style.width = Math.floor(BtnW)+"px";
-            liE.style.width = "";
-            liE.style.minWidth = Math.floor(wh) + "px";
-            liE.style.minHeight = Math.floor(wh) + "px";
-            liE.style.fontSize = pi.fSize;
-            liE.style.fontStyle = pi.fStyle;
-            liE.style.fontFamily = pi.fFamily;
-
-            liE.style.cssFloat = cssF;
-
-            liE.style.marginLeft = Math.floor(marginLR) + "px";
-            liE.style.marginRight = Math.floor(marginLR) + "px";
-            liE.style.marginTop = Math.floor(marginTB) + "px";
-            liE.style.marginBottom = Math.floor(marginTB) + "px";
-            liE.style.color = pi.fColor;
-
-
-            //span样式
-            // span.style.borderRadius = pi.btnBorderR;
-            // span.style.border = pi.btnBorderW +" solid "+ pi.btnBorderC;
-            // span.style.backgroundColor = pi.btnBgC;
-            span.style.lineHeight = Math.floor(wh) + "px";
 
             //当前显示页面添加激活样式
             if (pi.allBtnTexts[j] == curPage) {
-                // span.classList.add("active");
-                span.className = "Pagination_ButtonSelected";
-                // span.style.backgroundColor = pi.selectedC;
-                // span.style.borderColor = pi.selectedC;
-                // span.style.color = pi.selectedTextC;
+
+                liE.classList.add("Pagination_ButtonSelected")
             }
 
             //设置前一页和后一页为不可用状态
             if ((curPage == 1 && j == 0) || (curPage == pi.defaults.totalPages && j == pi.allBtnTexts.length - 1)) {
                 //设置"不可用"样式
-                span.className = "Pagination_ButtonDisabled";
-                span.removeEventListener('mousedown', pi.mouseClick, false);
-            }
+                // liE.className = "Pagination_ButtonDisabled";
+                liE.classList.add("Pagination_ButtonDisabled");
 
+                liE.removeEventListener('mousedown', pi.mouseClick, false);
+            }
 
             //显示"省略号"时样式
             if (span.innerText == pi.defaults.ellipsis) {
                 span.className = "Pagination_ButtonEllipsis";
-                // span.style.cursor = "default";
-                // span.style.border = "0";
             }
-
             pi.container.appendChild(liE);
         }
-
     }
 
     //TODO:点击时执行的方法  参数包含：当前页码、总页码、每页数据量……
@@ -497,30 +438,11 @@ DBFX.Web.Controls.Pagination = function (b) {
     pi.SetColor = function (v) {
         pi.fColor = v;
     }
+    /**==================================平台属性配置end=======================================================*/
 
 
 
-    /*==================================平台属性配置end=======================================================*/
-
-    pi.onload = function () {
-        var ve = pi.VisualElement;
-
-        pi.innerContainer = document.createElement('div');
-        pi.innerContainer.className = "Pagination_InnerContainer";
-        ve.appendChild(pi.innerContainer);
-
-        //创建分页容器ul
-        pi.container = document.createElement("ul");
-        pi.container.className = "Pagination_Container";
-        pi.innerContainer.appendChild(pi.container);
-
-        //先刷新数据
-        pi.refreshData();
-        //布局按钮
-        pi.reLayoutViews();
-    }
-
-    pi.onload();
+    pi.OnCreateHandle();
     return pi;
 }
 

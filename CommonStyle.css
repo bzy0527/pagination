@@ -1,0 +1,7205 @@
+/*主题样式设置规则：
+    1、样式设置只能修改 不能注释掉或者删除！！！；
+*/
+body {
+    background-color: transparent;
+    margin: 0px;
+    padding: 0px;
+    font-size:9pt;
+    position:relative;
+    -webkit-user-select: none;
+    -moz-user-select: none; /* Firefox all */
+    -ms-user-select: none; /* IE 10+ */ /* No support for these yet, use at own risk */
+    -o-user-select: none;
+    user-select: none;
+    font-family:NSimSun;
+    -webkit-overflow-scrolling: touch;
+    box-sizing:border-box;
+    overflow:hidden;
+}
+
+button {
+    outline: none;
+}
+
+
+ControlCover{
+
+    background-color:white;
+    opacity:0.7;
+    position:absolute;
+    display:block;
+    top:0px;
+    left:0px;
+    bottom:0px;
+    right:0px;
+
+}
+
+
+.LayoutRoot {
+    display:block;
+    position:fixed;
+    top:0px;
+    left:0px;
+    bottom:0px;
+    right:0px;
+}
+
+.LayoutRootBlur {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    bottom: 0px;
+    right: 0px;
+    display: block;
+    opacity: 1;
+}
+
+.Overlay {
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    right:0px;
+    bottom:0px;
+    display: block;
+    background-color:transparent; /*rgba(0,0,0,0.1);*/
+   
+    /*opacity: 0.3;*/
+}
+
+
+.Button {
+    margin:2px;
+}
+
+.CheckBoxChecked {
+}
+
+.CheckBoxUnChecked {
+}
+
+.RadioButtonList {
+    background-color: white;
+    border: 1px solid #C0C0C0;
+    border-radius: 2px;
+    display: inline-block;
+    position:relative;
+    min-height:23px;
+    min-width:32px;
+    overflow:hidden;
+    padding:2px;
+}
+
+.RadioButtonItem {
+    position:relative;
+    display:inline-block;
+}
+.RadioButton {
+    margin:4px;
+    border:1px solid red;
+    display:inline-block;
+}
+
+.RadioButtonLabel {
+    display: inline-block;
+    position:relative;
+    top:-2px;
+}
+
+.RadioButton:checked {
+}
+
+@keyframes fade-in {
+    0% {
+        opacity: 0;
+    }
+    /*初始状态 透明度为0*/
+    40% {
+        opacity: 0.5;
+    }
+    /*过渡状态 透明度为0*/
+    100% {
+        opacity: 1;
+    }
+    /*结束状态 透明度为1*/
+}
+
+@-webkit-keyframes fade-in { /*针对webkit内核*/
+    0% {
+        opacity: 0;
+    }
+
+    40% {
+        opacity: 0.5;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes fade-out {
+    0% {
+        opacity: 1;
+    }
+    /*初始状态 透明度为0*/
+    40% {
+        opacity: 0.2;
+    }
+    /*过渡状态 透明度为0*/
+    100% {
+        opacity: 0;
+    }
+    /*结束状态 透明度为1*/
+}
+
+@-webkit-keyframes fade-out { /*针对webkit内核*/
+    0% {
+        opacity: 1;
+    }
+
+    40% {
+        opacity: 0.2;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+img[src=""], img:not([src]) {
+    opacity: 0;
+}
+
+.Form {
+    border: 1px solid gray;
+    background-color: white;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 0px 15px 8px;
+    border-radius: 3px;
+    overflow: hidden;
+    /*z-index: 2;*/
+    text-align: left;
+    transition: 0.1s left;
+    animation: fade-in;
+    animation-duration: 0.2s;
+    -webkit-animation: fade-in 0.2s;
+}
+
+.FormClose {
+    border: 1px solid gray;
+    background-color: white;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 0px 15px 8px;
+    border-radius: 3px;
+    overflow: hidden;
+    /*z-index: 2;*/
+    text-align: left;
+    transition: 0.4s left;
+    animation: fade-out;
+    animation-duration: 0.2s;
+    -webkit-animation: fade-out 0.2s;
+}
+
+.FormTitleDiv {
+    background-color: gray;
+    border-bottom: 1px solid gray;
+    height: 32px;
+    max-height: 32px;
+    position:absolute;
+    left:0px;
+    top:0px;
+    right:0px;
+}
+
+.FormLogo {
+    width: 24px;
+    height: 24px;
+    margin-left: 6px;
+    margin-top: 4px;
+    margin-right: 2px;
+    margin-bottom: 2px;
+    border: none;
+    background-repeat: no-repeat;
+    background-size: 16px 16px;
+    background-position-x: 4px;
+    background-position-y: 4px;
+    float:left;
+}
+
+.FormTitle {
+    font-size: 10pt;
+    font-weight: bold;
+    display:block;
+    margin:8px 4px 4px 4px;
+    display:block;
+}
+
+
+.FormClientDiv {
+    padding: 0px 0px 0px 0px;
+    margin: 0px;
+    /*background-color: white;*/
+    overflow:auto;
+    border:none;
+    position:absolute;
+    top:32px;
+    left:0px;
+    right:0px;
+    bottom:0px;
+
+}
+
+.FormControlButtonsDiv {
+
+    overflow:auto;
+    border:none;
+    float:right;
+    display:block;
+    position:relative;
+    padding:3px 2px 2px 2px;
+
+}
+
+.FormButton {
+    height: 22px;
+    width: 18px;
+    margin-top: 0px;
+    margin-right: 2px;
+    padding: 0px;
+    border: none;
+    background-color: transparent;
+}
+
+.DialogFormTitle {
+    display:block;
+    font-size:12pt;
+    font-weight:bold;
+    margin-bottom:4px;
+}
+
+
+.OverlayPanel {
+    opacity: 0.01;
+    background-color: white;
+}
+
+p {
+}
+
+/*20190806*/
+
+.SwitchControl {
+    background-color: transparent;
+    border: 1px solid #808080;
+    border-radius: 3px;
+    height: 18px;
+    width: 56px;
+    vertical-align: middle;
+    display: inline-block;
+}
+
+.Switch {
+    /*text-align: left;*/
+    width: 100%;
+    height: 100%;
+    display: inline-block;
+    /*margin: 4px;*/
+    box-sizing: border-box;
+}
+
+.SwitchOn {
+    position: relative;
+    background-color: rgba(68, 174, 4,0.8);
+    border: 1px solid #C0C0C0;
+    border-radius: 3px;
+    width: 50%;
+    height: 100%;
+    display: inline-block;
+    /*margin: 1px 1px 1px 1px;*/
+    display: inline-block;
+    transition: 0.3s left;
+    box-sizing: border-box;
+    left: 50%;
+}
+
+.SwitchOff {
+    position: relative;
+    background-color: rgba(160,160,160,0.8);
+    border: 1px solid #C0C0C0;
+    border-radius: 3px;
+    width: 50%;
+    height: 100%;
+    display: inline-block;
+    /*margin: 1px 1px 1px 1px;*/
+    transition: 0.3s left;
+    box-sizing: border-box;
+    left: 0px;
+}
+
+.Panel {
+
+    border: 0px solid #C0C0C0;
+    box-shadow: 1px 1px 1px 1px rgba(128, 128, 128,0.2);
+    /*border-radius: 1px;*/
+    text-align:left;
+    display: block;
+    overflow: hidden;
+    
+}
+
+
+.ImageControl {
+    display:inline-block;
+    position:relative;
+    overflow:hidden;
+}
+.ImageControl :disabled{
+    display: inline-block;
+    position: relative;
+    overflow: hidden;
+    opacity:0.3;
+}
+
+.Image {
+    display: block;
+    width:100%;
+    height:100%;
+}
+
+.TextBlock {
+    position: relative;
+    display: inline-block;
+    overflow: hidden;
+}
+
+.TextBlockSpan {
+    position: relative;
+    display: block;
+    word-break:break-all;
+    height:100%;
+    padding: 2px;
+    text-justify:trim;
+    /*20190617*/
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    text-overflow: ellipsis;
+}
+
+
+.TextArea {
+    display: inline-block;
+    position: relative;
+    min-height: 23px;
+    border: 1px solid gray;
+    border-radius: 2px;
+    background-color: white;
+    overflow:hidden;
+}
+
+.TextArea:hover {
+    position: relative;
+    display: inline-block;
+    min-height: 23px;
+    border: 1px solid rgba(255,32,64, 0.50);
+    border-radius: 2px;
+    background-color: white;
+
+}
+
+.TextAreaSelected {
+    position: relative;
+    display: inline-block;
+    min-height: 23px;
+    border: 1px solid rgba(255,32,64, 0.50);
+    border-radius: 2px;
+    background-color: white;
+    overflow:hidden;
+}
+
+
+.TextAreaDIV {
+
+   position:absolute;
+   display:block;
+   left:0px;
+   top:0px;
+   right:0px;
+   bottom:0px;
+   
+}
+
+.TextAreaInput {
+    width: 100%;
+    height: 100%;
+    border: none;
+    background-color: transparent;
+    overflow: auto;
+    outline:none;
+}
+
+
+.BreakLineDesignTime {
+
+    position:relative;
+    height:1px;
+    border:1px dotted gray;
+    display:block;
+    font-size:1px;
+    opacity:0.5;
+}
+
+.BreakLine {
+    
+    position:relative;
+    height:1px;
+    margin:1px;
+    border:none;
+    display:block;
+    font-size:1px;
+}
+
+.CheckedBox {
+
+    position:relative;
+    display:inline-block;
+    min-height: 23px;
+    overflow:hidden;
+    
+}
+
+.CheckedBoxLabel {
+
+    display:inline-block;
+    margin: 4px 2px 2px 2px;
+    cursor:default;
+    position:relative;
+
+}
+
+.CheckedBoxInput {
+    border: 1px solid gray;
+    margin: 4px;
+    float: left;
+    position: relative;
+    transform: scale(1.2);
+}
+
+.CheckedBoxInput:hover {
+    background-color: lightgray;
+    border: 1px solid rgba(255,0,0,0.4);
+    float: left;
+    margin: 4px;
+}
+
+
+.TextBox {
+    display:inline-block;
+    position:relative;
+    height:23px;
+    border:1px solid gray;
+    border-radius:2px;
+    background-color:white;
+    overflow: hidden;
+}
+
+.TextBox:hover {
+    position: relative;
+    display: inline-block;
+    height: 23px;
+    border: 1px solid rgba(255,32,64, 0.50);
+    border-radius: 2px;
+    /*color: lightgray;*/
+    background-color: white;
+    /*box-shadow: rgba(255,32,64,0.20) 0px 0px 6px 2px;*/
+    overflow: hidden;
+}
+
+.TextBoxTip {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    padding-top: 2px;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    color: gray;
+    padding: 2px;
+    white-space:nowrap;
+    text-overflow: ellipsis;
+    visibility: hidden;
+}
+
+.TextBoxContainerFocus {
+    position: relative;
+    display: inline-block;
+    height: 23px;
+    border: 1px solid rgba(255,32,64, 0.50);
+    border-radius: 2px;
+    color: black;
+    background-color: white;
+    /*box-shadow: rgba(255,32,64,0.20) 0px 0px 6px 2px;*/
+    overflow: hidden;
+}
+
+.TextBoxDiv {
+    display: flexbox;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: row;
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    overflow: hidden;
+}
+
+.TextBoxIcon {
+    display:none;
+    height: 18px;
+    width: 18px;
+    background-color: transparent;
+    margin-left: 2px;
+    margin-right: 2px;
+}
+
+.TextBoxInput {
+            background-color:transparent;
+            outline:none;
+            border:none;
+            width:100%;
+            height:100%;
+            transition:0.2s color;
+            margin:1px;
+            
+}
+
+    .TextBoxInput:focus {
+            background-color:transparent;
+            outline:none;
+            border:none;
+            width:100%;
+            height:100%;
+            transition:0.2s color;
+            margin:1px;
+    }
+
+    .TextBoxInput:active {
+        background-color: transparent;
+        outline: none;
+        border: none;
+        width: 100%;
+        height: 100%;
+        transition: 0.2s color;
+        margin:1px;
+    }
+
+.TextBoxErrImg {
+    height: 18px;
+    width: 18px;
+    margin-left: 2px;
+    margin-right: -20px;
+    transition: 0.2s margin;
+   
+}
+
+
+.LabelBorder {
+    position: relative;
+    display: inline-block;
+    height: 25px;
+    overflow: hidden;
+}
+
+.Label {
+    position: relative;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flexbox;
+    display: flexbox;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    height: 100%;
+    width: 100%;
+    /*text-overflow:ellipsis;*/
+}
+
+.LabelText {
+    display: block;
+    position: relative;
+    width: 100%;
+    margin-left: 2px;
+    /*20190617*/
+    overflow: hidden;
+    /*display: -webkit-box;*/
+    -webkit-box-orient: vertical;
+    text-overflow: ellipsis;
+}
+
+.LabelImage {
+    display: none;
+    position: relative;
+    height: calc(100% - 4px);
+    margin: 2px;
+}
+
+
+.CButtonBox {
+    position: relative;
+    height: 23px;
+    min-width: 32px;
+    overflow: hidden;
+    display: inline-block;
+    border: 1px solid gray;
+    border-radius: 1px;
+    outline: 1px solid transparent;
+}
+
+    .CButtonBox:hover {
+        box-shadow: 0px 0px 4px 2px rgba(64,64,64,0.2);
+    }
+
+    .CButtonBox:active {
+        box-radius: 32px;
+        animation: 0.5s ease 0s alternate none 1 ButtonClick;
+    }
+
+.CButtonBoxdisabled {
+    position: relative;
+    height: 23px;
+    min-width: 32px;
+    overflow: hidden;
+    display: inline-block;
+    border: 1px solid gray;
+    border-radius: 1px;
+    outline: 1px solid transparent;
+    opacity: 0.3;
+}
+
+
+.CButton {
+
+    border: none;
+    outline: none;
+    display: block;
+    width:100%;
+    height:100%;
+    
+}
+
+    .CButton:active {
+        outline: none;
+        display: block;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(192,192,192,0.8);
+}
+
+
+
+@keyframes ButtonClick {
+    from {
+        box-shadow: inset 0 0 85px 85px rgba(192,192,192,0.2), 0 0 0 rgba(192,192,192,0.2);
+    }
+
+    to {
+        box-shadow: inset 0 0 55px 55px transparent, 0 0 75px 75px transparent;
+    }
+}
+ 
+
+
+.Button_Image {
+
+    display:inline-block;
+    position:relative;
+    height:100%;
+    /*border:1px solid red;*/
+    vertical-align:middle;
+    text-align:center;
+}
+
+.Button_Text {
+    display: inline-block;
+    position: relative;
+    vertical-align: middle;
+    text-align: center;
+    cursor:default;
+}
+
+
+.DatePicker {
+    display:inline-block;
+    position:relative;
+    overflow:hidden;
+    min-height:23px;
+    border:1px solid gray;
+    border-radius:2px;
+    height:23px;
+}
+
+
+
+.DatePicker:hover {
+    display:inline-block;
+    position:relative;
+    overflow:hidden;
+    min-height:23px;
+    border:1px solid rgba(255,32,64, 0.50);
+    border-radius:2px;
+    box-shadow:rgba(255,32,64,0.20) 0px 0px 6px 2px;
+    height:23px;
+    
+}
+
+.DatePickerDiv {
+    display: flexbox;
+    display: flex;
+    justify-content:flex-start;
+    align-items: center;
+    flex-direction: row;
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    overflow: hidden;
+}
+
+
+.DatePickerFocus {
+    display: inline-block;
+    position: relative;
+    overflow: hidden;
+    min-height: 23px;
+    border: 1px solid rgba(255,32,64, 0.50);
+    border-radius: 2px;
+    box-shadow: rgba(255,32,64,0.20) 0px 0px 6px 2px;
+    height: 23px;
+}
+
+.DatePickerInput {
+    display:block;
+    position:relative;
+    border:none;
+    outline:none;
+    width:100%;
+
+    margin-left:2px;
+
+}
+
+.DatePickerImage {
+    display:block;
+    position:relative;
+    width:18px;
+    
+}
+
+.DatePicker_TipText {
+
+    position:absolute;
+    color:lightgray;
+    top:4px;
+    bottom:4px;
+    left:2px;
+    right:24px;
+    display:block;
+    text-align:left;
+    vertical-align:baseline;
+}
+
+
+.ComboBox {
+    display:inline-block;
+    min-height:23px;
+    border:1px solid gray;
+    outline:none;
+    border-radius:2px;
+    color:lightgray;
+    overflow:hidden;
+    background-color:white;
+    position:relative;
+    padding:0px;
+    vertical-align:top;
+}
+
+.ComboBox:hover {
+
+ 
+    border-color:rgba(255,32,64, 0.50);
+   
+
+}
+
+.ComboBoxActived {
+    display: inline-block;
+    min-height: 23px;
+    border: 1px solid rgba(255,32,64, 0.50);
+    outline: none;
+    border-radius: 2px;
+    color: lightgray;
+    overflow: hidden;
+    background-color: white;
+    /*box-shadow:rgba(64,64,64,0.20) 0px 0px 6px 2px;*/
+    padding: 0px;
+    position: relative;
+    vertical-align: top;
+}
+
+.ComboBoxTable {
+    width:100%;
+    height:100%;
+    display:flexbox;
+}
+
+.ComboBoxSearchBtn {
+    width:21px;
+    height:21px;
+    margin:0px 1px 1px 1px;
+    border: none;
+    outline:none;
+    border-radius: 2px;
+    background-color: transparent;
+    padding:0px;
+}
+
+.ComboBoxSearchBtn:focus{
+    width:21px;
+    height:21px;
+    margin:0px 1px 1px 1px;
+    border: none;
+    outline:none;
+    border-radius: 2px;
+    background-color: transparent;
+    padding:0px;
+}
+
+.ComboBoxIcon {
+    min-width: 1px;
+    margin: 1px; 
+}
+
+.ComboButtonImage {
+    width:12px;
+    height:12px;
+    margin: 1px; 
+}
+
+.ComboBoxTextBox {
+    border:none;
+    background-color:transparent;
+    outline:none;
+    width:100%;
+}
+
+.ComboBoxTextBox:focus {
+    border:none;
+    background-color:transparent;
+    width:100%;
+    display:block;
+}
+
+.ProgressBar {
+    position:relative;
+    display:inline-block;
+    height:23px;
+    overflow:hidden;
+
+}
+
+.ProgressBar_Progress {
+
+    position:relative;
+    display:block;
+    width:100%;
+    height:100%;
+}
+
+
+.ListBox {
+    border: 1px solid #C0C0C0;
+    display: block;
+    background-color: #FFFFFF;
+    border-radius: 1px;
+    overflow: auto;
+}
+
+.ListItem {
+    border: 1px solid #FFFFFF;
+    display: block;
+    cursor: default;
+}
+
+.ListItemHot {
+    border: 1px solid #FFFFFF;
+    display: block;
+    background-color: #C0C0C0;
+    cursor: default;
+}
+
+.ListItemSelected {
+    border: 1px solid #FFFFFF;
+    display: block;
+    background-color: #3399FF;
+    color: #FFFFFF;
+    cursor: default;
+}
+
+.Slider {
+    position:relative;
+    display:inline-block;
+    height:23px;
+    overflow:hidden;
+}
+
+.SliderInput {
+    width:100%;
+    height:100%;
+    margin:0px;
+    padding:0px;
+    display:block;
+}
+
+
+.Navigation {
+    display: block;
+    border: 1px solid Transparent;
+    overflow: auto;
+}
+
+.NavItem {
+
+    border: 1px solid Transparent;
+    border-radius:1px;
+    display: inline-block;
+    margin: 8px 8px 8px 8px;
+    padding: 2px;
+    box-shadow: 1px 1px 5px 1px White;
+
+}
+
+.NavItemHot {
+
+    border: 1px solid #C0C0C0;
+    border-radius:1px;
+    display: inline-block;
+    margin: 8px 8px 8px 8px;
+    padding: 2px;
+    box-shadow: 1px 1px 1px 1px White;
+    opacity:0.5;
+}
+
+.NavItemTouched {
+
+    border: 1px solid #C0C0C0;
+    border-radius:1px;
+    display: inline-block;
+    margin: 8px 8px 8px 8px;
+    padding: 2px;
+    box-shadow: 1px 1px 1px 1px White;
+    opacity:0.5;
+}
+
+.NavItemChecked {
+
+    border: 1px solid #808080;
+    background-color: #7BBDFF;
+    margin: 1px;
+    padding: 2px;
+
+}
+
+.NavItemIcon {
+    margin: 2px;
+    text-align: center;
+    display: block;
+}
+
+.NavItemTitle {
+    text-align: center;
+    margin: 2px;
+    color: gray;
+    display: block;
+}
+
+
+
+.ISlider_View {
+    border:0px solid lightgray;
+    display:block;
+    overflow:hidden;
+    position:relative;
+    background-color:white
+}
+
+.ISlider_PageView {
+    background-color:white;
+    position:absolute;
+    top:0px;
+    bottom:0px;
+    left:0px;
+    right:0px;
+
+}
+
+.ISlider_ImagePage {
+    position:absolute;
+    top:0px;
+    width:100%;
+    height:100%;
+    background-color:transparent;
+    opacity:0;
+
+    animation:fadeOut 1s;
+    -webkit-animation-name: fadeOut 1s;
+    animation-name: fadeOut 1s;
+    background-repeat:no-repeat;
+    background-size:cover;
+    background-position:center;
+}
+
+.ISlider_ImagePageActived {
+    position:absolute;
+    top:0px;
+    width:100%;
+    height:100%;
+    background-color:transparent;
+    display:block;
+    animation:fadeIn 1s;
+    -webkit-animation-name: fadeIn 1s;
+    animation-name: fadeIn 1s;
+    background-repeat:no-repeat;
+    background-size:cover;
+    background-position:center;
+}
+
+
+.ISlider_Pager {
+    display: block;
+    background-color: transparent;
+    height:30px;
+    text-align: center;
+    vertical-align: top;
+    position:absolute;
+    bottom:0px;
+    width:100%;
+    overflow:hidden;
+ 
+}
+
+.ISlider_SliderItem {
+    border: none;
+    background-color: white;
+    height: 10px;
+    width: 10px;
+    text-align: center;
+    vertical-align: top;
+    margin: 6px 12px 2px 12px;
+    outline: none;
+    color: lightgray;
+    font-size: 1pt;
+    display: inline-block;
+    cursor:default;
+    border:1px solid gray;
+    border-radius:10px;
+    opacity:0.4;
+}
+
+    .ISlider_SliderItem:hover {
+        border: none;
+        background-color: transparent;
+        height: 10px;
+        width: 10px;
+        text-align: center;
+        vertical-align: top;
+    margin: 6px 12px 2px 12px;
+        outline: none;
+        color: blue;
+        font-size: 1pt;
+        display: inline-block;
+        cursor: default;
+        border: 1px solid gray;
+        border-radius: 10px;
+            opacity:0.7;
+    }
+
+.ISlider_SliderItemSelected {
+    border: none;
+    background-color: white;
+    height: 10px;
+    width: 10px;
+    text-align: center;
+    vertical-align: top;
+    color: white;
+    margin: 6px 12px 2px 12px;
+    outline: none;
+    font-size: 1pt;
+    display: inline-block;
+    cursor: default;
+    border: 1px solid white;
+    border-radius: 10px;
+        opacity:0.8;
+}
+
+BR {
+    height:32px;
+    margin:4px;
+}
+
+.AppBar {
+    background-color:black;
+    opacity:0.8;
+}
+
+.AppBarGrid {
+    width:100%;
+}
+.AppBarButton {
+
+    background-color:transparent;
+    border:none;
+    margin-top:2px;
+}
+.AppBarMenuLogo {
+    height:24px;
+    width:24px;
+}
+.AppTitle {
+    min-width:1px;
+    color:white;
+}
+.AppClient {
+
+}
+.AppLang {
+    border:none;
+    border-right:1px solid gray;
+    padding:2px;
+    padding-right:6px;
+    color:white;
+    font-size:10pt;
+    height:24px;
+    background:transparent;
+}
+
+.AppUserButton {
+    background-color:transparent;
+    border:none;
+    margin-top:2px;
+    width:120px;
+    padding-right:2px;
+    border-right:1px solid gray;
+    border-radius:0px;
+}
+
+.AppIcon {
+
+    width:18px;
+    height:18px;
+
+}
+
+.AppSettingButton {
+    background-color:transparent;
+    border:none;
+    margin-top:2px;
+}
+
+.AppUserTitle {
+    font-size:10pt;
+    color:white;
+    text-wrap:none;
+    top:-4px;
+    position:relative;
+
+    
+}
+
+.GridPanel {
+    border: none;
+    /*position:relative;*/
+}
+
+.GridPanelTB {
+    border: none;
+}
+
+.GridTCell {
+    border:none;
+    vertical-align: top;
+}
+
+
+/*------------------PC打开页面 管理器-------------------*/
+.DockManager {
+    display: block;
+    border:1px solid gray;
+    position:relative;
+    text-align:left;
+}
+
+/*程序坞 上方工具栏*/
+.DockManagerTabStripTB {
+    width:100%;
+    border-bottom:1px solid #fb5f7d;
+    background-color:#FFFFFF;
+}
+
+/*程序坞上方 程序管理容器*/
+.DockManagerTabStripDiv {
+    height:31px;
+    overflow:hidden;
+    text-wrap:none;
+    width:100%;
+    position:relative;
+    display:block;
+    padding-left:3px;
+    padding-top:4px;
+    text-align:left;
+}
+
+/*程序坞的界面展示面板*/
+.DockManagerClientPanel {
+    overflow:auto;
+    background-color:white;
+    display:block;
+    position:absolute;
+    top:38px;
+    bottom:0px;
+    left:0px;
+    right:0px;
+}
+
+/*程序坞 工具栏的条目样式*/
+.DockManagerTabStripItem {
+
+    height:31px;
+    /*border-radius:3px 3px 0px 0px;*/
+    /*border-width:1px 1px 1px 1px;*/
+    /*border-style:solid;*/
+    /*border-color: gray;*/
+    position:relative;
+    top:1px;
+    border: none;
+    background-color: #eceff3;
+}
+
+/*程序坞 工具栏的条目鼠标悬停时样式*/
+.DockManagerTabStripItem:Hover {
+
+    opacity:0.8;
+
+}
+
+/*程序坞 工具栏的条目 选中时样式*/
+.DockManagerTabStripItemActived {
+  
+    height: 32px;
+    /*border-radius: 3px 3px 0px 0px;*/
+    background-color: #FFFFFF;
+    color: #fb5f7d;
+    /*border:4px solid gray;*/
+    /*border-right:none;*/
+    position:relative;
+    border: none;
+    border-bottom: 4px solid #fb5f7d;
+
+}
+
+/*程序坞 工具栏的 "更多" 按钮样式*/
+.DockManagerMoreButton {
+    width:24px;
+    height:16px;
+    background-color:transparent;
+    border:none;
+    padding:0px;
+    margin:4px;
+}
+
+
+.DockManagerMoreButtonTD {
+    width:18px;
+}
+
+/*程序坞 工具栏的 "更多" 按钮图片样式*/
+.DockManagerMoreButtonImage {
+    width:16px;
+    height:16px;
+    background-color:transparent;
+    border:none;
+    margin:5px 0px 0px 0px;
+
+}
+
+.DockManagerClient {
+    background:white;
+}
+
+
+
+/*------------------   -------------------*/
+.DMTStripItemImage {
+    background-color:transparent;
+    max-height:16px;
+    max-width:16px;
+}
+.DMTStripItemTitle {
+    cursor:default;
+}
+
+.DMTStripItemClose {
+    width:12px;
+    height:12px;
+}
+
+
+.DMTStripItemCloseButton {
+    background-color:transparent;
+    border:none;
+    height: 16px;
+    width: 22px;
+    opacity:0.3;
+    /*padding:0px;
+    margin-left:8px;*/
+}
+
+.DMTStripItemCloseButton:hover {
+    background-color: transparent;
+    border: none;
+    height: 16px;
+    width: 22px;
+    opacity: 1;
+    /*padding:0px;
+    margin-left:8px;*/
+}
+
+
+
+
+.MenuBar {
+    background-color:red;
+    border:1px solid gray;
+    height:40px;
+}
+
+.MenuBarGrip {
+    width:1px;
+}
+
+.MenuBarClient {
+    background-color:blue;
+}
+
+.MenuBarMoreGrip {
+    width:1px;
+}
+
+.MBMGButton {
+    border:none;
+    background-color:transparent;
+    margin:2px;
+}
+
+.MBMGBImage {
+    height:16px;
+    width:16px;
+}
+
+.MenuItem {
+    display:block;
+    text-align:left;
+    border-color:transparent;
+    border-radius:0px;
+    background-color:transparent;
+    padding:5px 32px 0px 5px;
+    cursor:default;
+    margin-top:4px;
+    margin-bottom:4px;
+}
+
+@media (max-width: 800px) 
+{
+  .MenuItem {
+    display:block;
+    text-align:left;
+    border-color:transparent;
+    border-radius:0px;
+    background-color:transparent;
+    padding:16px 32px 0px 5px;
+    cursor:default;
+    margin-top:1px;
+    margin-bottom:1px;
+    min-height:32px;
+  }
+
+}
+
+    .MenuItem:hover {
+
+        background-color: #C0C0C0;
+
+    }
+
+.MenuItemDisabled {
+    display:block;
+    text-align:left;
+    border-color:transparent;
+    border-radius:0px;
+    background-color:transparent;
+    padding:5px 32px 0px 5px;
+    cursor:default;
+    margin-top:4px;
+    margin-bottom:4px;
+    opacity:0.3;
+}
+
+.MenuSeparatorItem {
+    display:block;
+    height:1px;
+    border-top:1px solid rgba(128,128,128,0.4);
+    margin-top:2px;
+    margin-bottom:1px;
+
+}
+
+.MenuItemIcon {
+    background-color:transparent;
+    margin-right:4px;
+    height:16px;
+    width:16px;
+    visibility:hidden;
+}
+
+.MenuItemText {
+   vertical-align:top;
+}
+
+.MenuPad {
+    position: absolute;
+    border: 1px solid gray;
+    border-radius: 2px;
+    background-color: white;
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 0px 10px 4px;
+    padding: 2px;
+    z-index: 1001;
+    /*max-height:50%;*/
+    /*max-width:60%;*/
+    overflow: auto;
+    min-height: 32px;
+    min-width: 64px;
+    animation: fade-in;
+    animation-duration: 0.2s;
+    -webkit-animation: fade-in 0.2s;
+}
+
+.MenuPadClose {
+    position: absolute;
+    border: 1px solid gray;
+    border-radius: 2px;
+    background-color: white;
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 0px 10px 4px;
+    padding: 2px;
+    z-index: 1001;
+    /*max-height:50%;*/
+    /*max-width:60%;*/
+    overflow: auto;
+    min-height: 32px;
+    min-width: 64px;
+    animation: fade-out;
+    animation-duration: 0.3s;
+    -webkit-animation: fade-out 0.3s;
+}
+
+.MPC_HeaderContainer {
+    background-color:blue;
+
+}
+
+.MPC_HeaderText {
+    vertical-align:top;
+}
+
+.MPC_ClientContainer {
+    background-color:lightblue;
+}
+
+.MPC_PageController {
+    background-color:red;
+    height:24px;
+}
+
+.POPUP_Panel {
+    position: absolute;
+    background-color: white;
+    border: 1px solid gray;
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 0px 10px 4px;
+    min-height: 50px;
+    min-width: 50px;
+    /*z-index: 1001;*/
+}
+
+.PopupWindow {
+    display: flex;
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0,0,0,0.5);
+    animation: fadeIn 0.2s;
+    -webkit-animation-name: fadeIn 0.2s;
+    animation-name: fadeIn 0.2s;
+    -moz-animation: fadeIn 0.2s;
+    -o-animation: fadeIn 0.2s;
+}
+
+.PopupWindowClose {
+    display: flex;
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0,0,0,0.5);
+    animation: fadeOut 0.3s;
+    -webkit-animation-name: fadeOut 0.3s;
+    animation-name: fadeOut 0.3s;
+    -moz-animation: fadeOut 0.3s;
+    -o-animation: fadeOut 0.3s;
+}
+
+.PopMenu_Cover {
+    background-color:rgba(255,255,255,0.01);
+    /*opacity:0.01;*/
+    display:block;
+    position:fixed;
+    /*z-index:1000;*/
+}
+
+.LoadingPanel {
+    position:fixed;
+    top:0px;
+    left:0px;
+    right:0px;
+    bottom:0px;
+    display:flex;
+    flex-direction:row;  
+    justify-content:center;
+    align-items:center;
+    background-color:rgba(255,255,255,0.01);
+    /*z-index:100;*/
+}
+.LoadingAni {
+
+    background-color:rgba(255,255,255,0.3);
+    /*background-color:transparent;*/
+    /*border:1px solid lightgray;*/
+    border-radius:3px;
+    display:flex;
+    position:relative;
+    height:96px;
+    width:240px;
+    flex-direction:column;  
+    justify-content:center;
+    align-items:center;
+    /*box-shadow: rgba(0, 0, 0, 0.15) 0px 0px 10px 4px;*/
+
+}
+
+.LoadingAniImage {
+    display:block;
+    width:48px;
+    height:48px;
+    margin:8px auto 8px auto;
+    
+}
+.LoadingAniSpan {
+    display:block;
+    margin: 8px auto 8px auto;
+}
+
+.FormPart {
+    display:block;
+    overflow:auto;
+}
+
+.FileUploadBox {
+    display:inline-block;
+    border:1px solid gray;
+    position:relative;
+    overflow:hidden;
+    height:23px;
+}
+
+
+
+
+.FileUploadBox_Input {
+    display:none;
+    border:none;
+}
+
+.ImageUploadBox {
+    position:relative;
+    display:inline-block;
+    border:1px solid gray;
+    background-color:white;
+    background-repeat:no-repeat;
+    background-size:auto;
+    background-attachment:scroll;
+    background-position:center;
+    overflow:hidden;
+    box-shadow:1px 1px 1px 1px rgba(128, 128, 128,0.2);
+}
+
+
+.ImageUploadBox_Image {
+    width:100%;
+    height:100%;
+    display:none;
+}
+
+.ImageUploadBox_File {
+    display:none;
+
+}
+
+
+.ImageUploadBox_Tool {
+
+    opacity:0.6;
+    vertical-align:text-top;
+    text-align:right;
+}
+
+.ImageUploadBox_BrowseFile {
+    height:21px;
+    outline:none;
+    border:1px solid gray;
+}
+
+
+.ImageUploadBox_Upload {
+    height:21px;
+    outline:none;
+    border:1px solid gray;
+}
+
+.ImageUploadBox_ProgDiv {
+
+    border:1px solid gray;
+    background-color:white;
+    opacity:0.9;
+    display:none;
+    width:100%;
+    position:absolute;
+    vertical-align:middle;
+    text-align:center;
+    top:-1px;
+    left:-1px;
+    height:32px;
+
+}
+
+.ImageUploadBox_ProgressText{
+    font-size:11pt;
+    color:black;
+}
+
+.ImageUploadBox_Progress {
+    margin:2px;
+    background-color: white;
+    color: gray;
+    height:20px;
+    width:90%;
+    position:relative;
+}
+
+
+.ToolStrip {
+    display:block;
+    min-height:24px;
+    min-width:32px;
+    background-color:whitesmoke;
+    border-bottom:1px solid gray;
+    padding-top:2px;
+}
+
+.ToolStripItem {
+    margin-left:2px;
+    margin-right:2px;
+    margin-top:1px;
+    padding:3px;
+    display:inline-block;
+    min-width:16px;
+    vertical-align:middle;
+    border:1px solid Transparent;
+    position:relative;
+}
+
+ .ToolStripItem:hover {
+
+    border:1px solid gray;
+    opacity:0.9;
+    }
+
+
+
+.ToolStripItemDisabled {
+    margin-left:2px;
+    margin-right:2px;
+    margin-top:1px;
+    padding:3px;
+    display:inline-block;
+    min-width:16px;
+    vertical-align:middle;
+    border:1px solid Transparent;
+    position:relative;
+    opacity: 0.3;
+}
+
+.ToolStripItem_Image {
+    margin-top: 3px;
+    max-height: 18px;
+    max-width: 18px;
+    margin-top: 0px;
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.ToolStripItem_Label {
+
+    vertical-align:middle;
+    margin-top:3px;
+    display:inline-block;
+    margin-right:2px;
+    position:relative;
+
+}
+
+.ToolStripDropdownPanel {
+    margin-left: 2px;
+    margin-right: 2px;
+    margin-top:1px;
+    position: relative;
+    padding: 3px;
+    background-color: white;
+    border: 1px solid lightgray;
+    display: inline-block;
+    vertical-align: middle;
+    min-width: 16px;
+    border-radius: 2px;
+}
+
+.ToolStripDropdownPanel:hover {
+    border:1px solid gray;
+
+}
+
+.ToolStripDropdownPanelDisabled {
+    margin-left: 2px;
+    margin-right: 2px;
+    margin-top:1px;
+    position: relative;
+    padding: 3px;
+    background-color: white;
+    border: 1px solid lightgray;
+    display: inline-block;
+    vertical-align: middle;
+    opacity: 0.3;
+    border-radius: 2px;
+}
+
+
+.ToolStripDropdownList {
+    margin-left: 2px;
+    margin-right: 2px;
+    margin-top:2px;
+    position: relative;
+    padding: 3px;
+    background-color: white;
+    border: 1px solid lightgray;
+    display: inline-block;
+    vertical-align: middle;
+    min-width: 16px;
+    border-radius: 2px;
+}
+
+.ToolStripDropdownList:hover {
+
+    border:1px solid gray;
+
+}
+
+.ToolStripDropdownListDisabled {
+    margin-left: 2px;
+    margin-right: 2px;
+    margin-top:1px;
+    position: relative;
+    padding: 3px;
+    background-color: white;
+    border: 1px solid lightgray;
+    display: inline-block;
+    vertical-align: middle;
+    min-width: 16px;
+    opacity: 0.3;
+    border-radius: 2px;
+}
+
+.ToolStripItem_DropdownImage {
+    margin-left:6px;
+    margin-right:2px;
+    margin-top:3px;
+    height:12px;
+    width:12px;
+    float:right;
+}
+
+.ToolStripSeparator {
+    margin-left: 2px;
+    margin-right: 2px;
+    margin-top:1px;
+    position: relative;
+    background-color: transparent;
+    border: none;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.ToolStipItemSeparator_Image {
+    height:21px;
+    width:2px;
+}
+
+.ToolStripLabel {
+    margin-left: 2px;
+    margin-right: 2px;
+    margin-top:1px;
+    position: relative;
+    display: inline-block;
+    min-width: 16px;
+    vertical-align: middle;
+    border: 1px solid Transparent;
+    padding: 3px;
+}
+
+.ToolStripLabel_Label {
+    vertical-align:middle;
+    display:block;
+    margin-right:2px;
+    position:relative;
+    margin-top:3px;
+}
+
+.ToolStripLabel_Image {
+    max-height:18px;
+    max-width:18px;
+    margin-top:0px;
+    width:1px;
+    height:18px;
+    display:none;
+}
+
+
+.ToolStripTextBox {
+    margin-left: 2px;
+    margin-right: 2px;
+    margin-top:1px;
+    position: relative;
+    padding:3px;
+    display:inline-block;
+    min-width:16px;
+    vertical-align:middle;
+    border:1px solid lightgray;
+    background-color:white;
+}
+
+.ToolStripTextBox:hover {
+    border:1px solid gray;
+}
+
+.ToolStripTextBoxDisabled {
+    margin-left: 2px;
+    margin-right: 2px;
+    margin-top:1px;
+    position: relative;
+    padding:3px;
+    display:inline-block;
+    min-width:16px;
+    vertical-align:middle;
+    border:1px solid lightgray;
+    opacity:0.3;
+}
+
+.ToolStripTextBox_TextBox {
+    margin-top: 3px;
+    display: inline-block;
+    width: 100%;
+    border: none;
+    outline: none;
+    min-height: 18px;
+    background-color:transparent;
+    position:relative;
+}
+
+    .ToolStripTextBox_TextBox:hover {
+        margin-top: 3px;
+        display: inline-block;
+        width: 100%;
+        border: none;
+        outline: none;
+        min-height: 18px;
+        background-color: transparent;
+        position: relative;
+    }
+
+.ToolStripTextBox_TipText {
+    color: lightgray;
+    position:absolute;
+    left:0px;
+    display:inline-block;
+    margin:2px;
+}
+
+
+/*------------------------列表控件------------------------*/
+.ListView{
+
+    background-color:white;
+    display:block;
+    position:relative;
+    overflow:auto;
+
+}
+
+/*单行横向排列*/
+.ListViewM2 {
+    background-color: white;
+    display: flex;
+    position: relative;
+    overflow: auto;
+    align-items:center;
+    justify-content:flex-start;
+}
+
+
+.ListViewItem{
+    display:block;
+    position:relative;
+    /*background-color:transparent;*/
+    overflow:hidden;
+}
+
+/*item 鼠标悬停样式效果*/
+.ListViewItem:hover{
+
+    background-color:rgba(225, 225, 225,0.1);
+    -webkit-box-shadow: 0px 1px 7px 0px rgba(0,0,0,0.2);
+    -moz-box-shadow: 0px 1px 7px 0px rgba(0,0,0,0.2);
+    box-shadow: 0px 1px 7px 0px rgba(0,0,0,0.2);
+    -webkit-box-shadow: none;
+}
+
+.ListViewGroupItem {
+
+    display:block;
+}
+
+.ListViewGroupItemDiv {
+    display:block;
+}
+
+.ListViewGroupItemsPanelDiv {
+    display:block;
+    margin:0px;
+    overflow:visible;
+}
+
+.RtbBoxBase {
+    overflow:auto;
+    background-color:white;
+    display:block;
+    position:relative;
+    border:none;
+    outline:none;
+    -webkit-user-select: auto;
+}
+
+.RtbBoxBase:focus {
+    overflow:auto;
+    background-color:white;
+    display:block;
+    position:relative;
+    border:none;
+    outline:none;
+    -webkit-user-select: auto;
+}
+
+
+.RichTextBox {
+    border: 1px solid gray;
+    border-radius: 1px;
+    display: block;
+    position:relative;
+    background-color:white;
+}
+
+.RichTextBox_Panel {
+    display: block;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+}
+
+.RichTextBoxDocImage {
+    display:block;
+    width:100%;
+
+}
+
+.ColorPad_Item {
+    min-width:16px;
+    min-height:16px;
+
+}
+
+.ColorPicker {
+    border: 1px solid gray;
+    min-width: 24px;
+    display: inline-block;
+    overflow: hidden;
+    position: relative;
+    /*20190712*/
+    box-sizing: border-box;
+    display: flex; /* IE10 */
+    display: flexbox; /* IE10 */
+    display: -moz-box; /* Firefox */
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.ColorPicker_Image {
+    text-align: right;
+    max-height: 18px;
+    float: right;
+    margin-top: 2px;
+}
+
+/*20190712*/
+.ColorPicker_Input {
+    border-width: 0px;
+    display: inline-block;
+    min-width: 30px;
+    height: 100%;
+    width: 80%;
+}
+
+.ListBar {
+    border:1px solid gray;
+}
+
+.ListBar_ItemsPanel {
+    display:block;
+    position:relative;
+    overflow:hidden;
+    width:100%;
+    height:100%;
+}
+
+.ListBar_MoreButton {
+
+    height:16px;
+    width:16px;
+    margin-top:4px;
+}
+
+.ListBar_MoreButtonCell {
+    
+    width:24px;
+    text-align:center;
+}
+
+.ListBarItem {
+    display: inline-block;
+    border: 1px solid transparent;
+    border-bottom: 2px solid transparent;
+    position: relative;
+    padding: 2px;
+    padding-top: 6px;
+    margin:2px;
+    cursor:default;
+}
+
+.ListBarItem:hover {
+    display: inline-block;
+    border: 1px solid transparent;
+    border-bottom: 2px solid lightgray;
+    position: relative;
+    padding: 2px;
+    padding-top: 6px;
+    margin:2px;
+    cursor:default;
+}
+
+.ListBarItemSelected {
+    display: inline-block;
+    border: 1px solid transparent;
+    border-bottom: 2px solid blue;
+    position: relative;
+    padding: 2px;
+    padding-top: 6px;
+    margin:2px;
+    cursor:default;
+}
+
+.ListBarItem_Image {
+    border:none;
+    height:16px;
+    width:16px;
+
+}
+
+.ListBarItem_Text {
+
+    border:none;
+    vertical-align:top;
+
+
+}
+
+.SearchBar {
+    border:1px solid gray;
+    border-radius:3px;
+    background-color:white;
+    position:relative;
+    display:block;
+}
+
+.SearchBar_TBDiv {
+    position:absolute;
+    left:3px;
+    top:3px;
+    right:32px;
+    bottom:3px;
+
+}
+
+.SearchBar_TextBox {
+    border: none;
+    outline: none;
+    width: 100%;
+    background-color: transparent;
+}
+
+    .SearchBar_TextBox:focus {
+        border: none;
+        outline: none;
+        width: 100%;
+        background-color: transparent;
+    }
+
+
+.SearchBar_Button {
+    width: 24px;
+    height: 24px;
+    position: absolute;
+    text-align: right;
+    border: 0px solid gray;
+    right: 3px;
+}
+
+.SearchBar_TipLabel {
+
+    position:absolute;
+    left:8px;
+    top:5px;
+    right:36px;
+    bottom:5px;
+    color:lightgray;
+    text-align:left;
+    vertical-align:baseline;
+
+}
+
+.UIViewController {
+    display:block;
+    position:relative;
+}
+
+
+.UIPageView {
+
+    position:absolute;
+    top:0px;
+    left:0px;
+    right:0px;
+    bottom:0px;
+    animation:fadeIn 0.5s;
+    -webkit-animation-name:fadeIn 0.5s;
+    animation-name:fadeIn 0.5s;
+    -moz-animation:fadeIn 0.5s;
+    -o-animation:fadeIn 0.5s;
+    overflow:hidden;
+
+
+}
+
+.UIPageViewOut {
+
+    position:absolute;
+    top:0px;
+    left:0px;
+    right:0px;
+    bottom:0px;
+    animation:fadeOut 0.5s;
+    -webkit-animation-name:fadeOut 0.5s;
+    animation-name:fadeOut 0.5s;
+    -moz-animation:fadeOut 0.5s;
+    -o-animation:fadeOut 0.5s;
+    opacity:0;
+}
+
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeOut {
+    0% {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+    }
+}
+
+@-moz-keyframes myfirst /* Firefox */
+{
+}
+
+.MultiPageView {
+    display: block;
+    position: relative;
+    background-color:pink;
+    border:none solid white;
+}
+
+.MultiPageView_ItemsPanelM1 {
+    
+    display:block;
+    position:absolute;
+    bottom:52px;
+    top:0px;
+    left:0px;
+    right:0px;
+    background-color:white;
+    overflow-x:hidden;
+    overflow-y:auto;
+    border:none;
+}
+
+.MultiPageView_ItemsPanelM2 {
+    display:block;
+    position:absolute;
+    bottom:8px;
+    top:0px;
+    left:0px;
+    right:0px;
+    overflow-x:auto;
+    overflow-y:auto;
+    background-color:white;
+}
+
+.MultiPageView_ClientPanel {
+    position:absolute;
+    display:block;
+    top:0px;
+    bottom:0px;
+}
+
+.MultiPageView_NavTBC {
+    height:8px;
+    display:block;
+    position:absolute;
+    bottom:0px;
+    background-color:red;
+}
+
+.MultiPageView_NavBar {
+    height:50px;
+    display:block;
+    position:absolute;
+    bottom:0px;
+    background-color:white;
+    width:100%;
+    border:none;
+    text-align:center;
+}
+
+.MultiPageView_NavBarTable {
+    border-style:solid none none none;
+    border-width:1px 0px 0px 0px;
+    border-color:lightgray transparent transparent transparent;
+    padding:1px 0px 1px 0px;
+    margin:0px;
+    text-align:center;
+    vertical-align:middle;
+    background-color:whitesmoke;
+    opacity:1;
+    display:table;
+    width:100%;
+    height:100%;
+}
+.MultiPageView_NavBarRow {
+    min-height:32px;
+}
+
+.MultiPageView_TD {
+    /*border:1px solid red;*/
+
+}
+
+.MultiPageItem {
+
+    border:none;
+    padding:2px 2px 2px 2px;
+    margin:0px;
+    text-align:center;
+    vertical-align:middle;
+    background-color:transparent;
+    font-size:1px;
+    min-width:40px;
+    align-content:center;
+    display:inline;
+
+}
+
+.MultiPageItem:hover {
+
+    border:none;
+    padding:2px 2px 2px 2px;
+    margin:0px;
+    text-align:center;
+    vertical-align:middle;
+    background-color:transparent;
+    font-size:1px;
+    min-width:40px;
+}
+
+.MultiPageItem_Image {
+    height:24px;
+    width:24px;
+}
+
+.MultiPage_Label {
+    font-size:9pt;
+}
+
+
+.TreeListView {
+    position:relative;
+    display:block;
+    border:1px solid gray;
+    border-radius:1px;
+    overflow:auto;
+}
+
+.TreeListViewNode {
+
+    display:inline-block;
+    /*position:relative;*/
+}
+
+.TreeListViewNodeFR {
+
+    display:block;
+    /*position:relative*/
+}
+
+.TreeListViewNode_ItemsPanelE {
+
+    transition:all 1s;
+    -moz-transition:all 1s;
+    -webkit-transition:all 1s;	
+    -o-transition:all 1s;	
+    display:block;
+    opacity:1;
+    margin:0px 0px 0px 18px;
+}
+
+.TreeListViewNode_ItemsPanelC {
+
+    transition:all 1s;
+    -moz-transition:all 1s;	
+    -webkit-transition:all 1s;	
+    -o-transition:all 1s;	
+    display:block;
+    height:0px;
+    overflow:hidden;
+    opacity:0;
+    margin:0px 0px 0px 18px;
+
+}
+
+.TreeListViewNode_ItemsPanel {
+
+    display:none;
+    height:0px;
+    overflow:hidden;
+    opacity:0;
+    margin:0px 0px 0px 18px;
+
+}
+
+.TreeNodeECButtonNC {
+    border:none;
+    height:16px;
+    width:16px;
+    opacity:0.01;
+}
+
+.TreeNodeECButton {
+    border:none;
+    height:16px;
+    width:16px;
+    opacity:1;
+    display:inline-block;
+}
+
+.TreeNodeImageNC {
+    border: none;
+    height: 16px;
+    width: 16px;
+    opacity: 0;
+}
+
+.TreeNodeImage {
+    border: none;
+    height: 16px;
+    width: 16px;
+    opacity: 1;
+    display:inline-block;
+}
+
+.TreeNodeCheckBoxImageNC {
+    border: none;
+    height: 16px;
+    width: 16px;
+    display:none;
+}
+
+.TreeNodeCheckBoxImage {
+    border: none;
+    height: 16px;
+    width: 16px;
+    display:inline-block;
+}
+
+
+.ControlDockPanel {
+
+    display:block;
+    position:relative;
+    background-color:white;
+    overflow:hidden;
+    border:1px solid lightgray;
+}
+
+
+/*----------------------------汉堡菜单控件----------------------------*/
+.HamMenu {
+
+    border:1px solid gray;
+    background-color: #262626;
+    color: #FFFFFF;
+
+}
+
+/*汉堡头部样式*/
+.HamMenu_Header {
+
+    background-color:#262626;
+    position:absolute;
+    top:0px;
+    left:0px;
+    right:0px;
+    min-height:24px;
+
+    display: none;
+
+}
+
+/*汉堡头部图片*/
+.HamMenu_HeaderImage {
+
+    width:26px;
+    height:26px;
+    margin:2px;
+    float:left;
+    border:1px solid transparent;
+}
+
+/*汉堡头部头像 鼠标悬停效果*/
+.HamMenu_HeaderImage:hover {
+
+    width:26px;
+    height:26px;
+    margin:2px;
+    float:left;
+    border:1px solid lightgray;
+}
+
+
+/*汉堡头部标题文字样式*/
+.HamMenu_HeaderText {
+
+    font-size:12pt;
+    display:block;
+    margin-top:7px;
+    text-align:left;
+}
+
+/*汉堡控件 主体样式*/
+.HamMenu_Client {
+
+    position:absolute;
+    top:0px;
+    bottom:0px;
+    left:0px;
+    right:0px;
+    overflow:auto;
+}
+
+
+/*汉堡菜单 item样式*/
+.HamMenuItem {
+
+    display:block;
+    margin-top:1px;
+    margin-bottom:1px;
+    
+}
+
+/*汉堡菜单 item里条目样式*/
+.HamMenuItemBar {
+    
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flexbox;
+    display: flexbox;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: row;
+    position:relative;
+    height:30px;
+    border-bottom: 0px;
+
+}
+
+/*汉堡菜单 item里条目鼠标悬停样式*/
+.HamMenuItemBar:hover {
+
+    background-color:#fb5f7d;
+    
+}
+
+/*汉堡菜单 item里图片的样式*/
+.HamMenuItemImage {
+
+    position:relative;
+    height: 16px;
+    max-height: 24px;
+    margin:2px;
+    float:left;
+}
+/*汉堡菜单 item里条目中文字的样式*/
+.HamMenuItemText {
+
+    display:block;
+    position:relative;
+    text-wrap:none;
+    word-break:keep-all;    
+    margin:2px;
+    overflow:hidden;
+
+}
+/*汉堡菜单 item里折叠功能图片的样式*/
+.HamMenuItemECImage {
+
+    position:relative;
+    height:10px;
+    margin:2px 4px;
+    max-height: 16px;
+    opacity:0.3;
+    float:left;
+}
+
+/*汉堡菜单 item里折叠功能图片的鼠标悬停样式*/
+.HamMenuItemECImage:hover {
+
+    opacity:0.9;
+}
+/*汉堡菜单 item里折叠功能图片 激活样式*/
+.HamMenuItemECImage:active {
+
+    opacity:0.3;
+}
+
+
+/*items 展开时 子集的面板容器*/
+.HamMenuItemsPanel {
+
+    display:block;
+    background-color: #323232;
+
+}
+
+.HamMenuItemsPanel_Hide {
+
+    display:none;
+
+}
+
+
+/*----------------------------    ----------------------------*/
+.ContextMenu {
+    display: none;
+}
+
+
+.HorizantalSplitter {
+    position:relative;
+    cursor:col-resize;
+    background-color:rgba(128,128,128,0.2);
+    /*opacity:0.2;*/
+}
+
+
+.HorizantalSplitter:hover {
+    position: relative;
+    cursor: col-resize;
+    background-color: lightgray;
+    /*opacity: 0.9;*/
+}
+
+.HorizantalSplitterTab {
+    
+    border-width: 1px 0px 1px 0px;
+    border-color: lightgray;
+    border-style:solid;
+}
+
+.VerticalSplitter {
+    position: relative;
+    cursor:ns-resize;
+    background-color: rgba(128,128,128,0.2);
+    overflow:hidden;
+    /*opacity:0.2;*/
+}
+
+.VerticalSplitter:hover {
+    position: relative;
+    cursor: ns-resize;
+    background-color: lightgray;
+    /*opacity: 0.9;*/
+}
+
+.VerticalSplitterTab {
+    border-width: 1px 0px 1px 0px;
+    border-color: lightgray;
+    border-style: solid;
+}
+
+.HorizantalSplitterCBR {
+    height:64px;
+
+}
+
+.VerticalSplitterCBR {
+    width:64px;
+}
+
+.HorizantalSplitterControlButton {
+    opacity:0.5;
+    cursor:default;
+    width:4px;
+}
+
+.HorizantalSplitterControlButton:hover {
+    opacity: 1;
+    cursor: default;
+        width:4px;
+}
+
+    
+.VerticalSplitterControlButton {
+    opacity:1;
+    cursor:default;
+    height:4px;
+}
+
+.VerticalSplitterControlButton:hover {
+    opacity: 0.5;
+    cursor: default;
+        height:4px;
+}
+
+
+.InputTipLabel {
+    color: lightgray;
+    margin:2px;
+}
+
+.TimePicker {
+
+    border:1px solid gray;
+    border-radius:2px;
+    overflow:hidden;
+    position:relative;
+    display:inline-block;
+    min-height:23px;
+}
+
+
+.TimePicker:hover {
+    display:inline-block;
+    position:relative;
+    overflow:hidden;
+    min-height:23px;
+    border:1px solid rgba(255,32,64, 0.50);
+    border-radius:2px;
+    box-shadow:rgba(255,32,64,0.20) 0px 0px 6px 2px;
+    position:relative;
+
+    
+}
+
+
+.TimePickerFocus {
+    display:inline-block;
+    position:relative;
+    overflow:hidden;
+    min-height:23px;
+    border:1px solid rgba(255,32,64, 0.50);
+    border-radius:2px;
+    box-shadow:rgba(255,32,64,0.20) 0px 0px 6px 2px;
+    position:relative;
+}
+
+
+
+.TimePickerInput {
+    position:absolute;
+    top:1px;
+    left:1px;
+    right:1px;
+    bottom:1px;
+    border:none;
+    background-color:transparent;
+    outline:none;
+   
+}
+
+
+
+.NumberDomain {
+    display:inline-block;
+    position:relative;
+    overflow:hidden;
+    min-height:23px;
+    height:23px;
+    border:1px solid gray;
+    border-radius:2px;
+    /*box-shadow:rgba(255,32,64,0.20) 0px 0px 6px 2px;*/
+}
+
+
+
+.NumberDomain:hover {
+    display:inline-block;
+    position:relative;
+    overflow:hidden;
+    min-height:23px;
+    height:23px;
+    border:1px solid rgba(255,32,64, 0.50);
+    border-radius:2px;
+    /*box-shadow:rgba(255,32,64,0.20) 0px 0px 6px 2px;*/
+
+    
+}
+
+
+.NumberDomainFocus {
+    display:inline-block;
+    position:relative;
+    overflow:hidden;
+    min-height:23px;
+    height:23px;
+    border:1px solid rgba(255,32,64, 0.50);
+    border-radius:2px;
+    /*box-shadow:rgba(255,32,64,0.20) 0px 0px 6px 2px;*/
+
+}
+
+.NumberDomainDiv {
+
+    height: 100%;
+    width: 100%;
+    display: flex; /* IE10 */
+    display: flexbox; /* IE10  */
+    display: -moz-box; /* Firefox */
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+
+}
+
+.NumberDomain_IncreaseDiv {
+    /*border-left: 1px solid lightgray;*/
+    display: flex; /* IE10 */
+    display: flexbox; /* IE10  */
+    display: -moz-box; /* Firefox */
+    flex-direction: row;
+    justify-content:space-around;
+    align-items:center;
+    height:100%;
+    padding:8px;
+    width:40px;
+    margin-left: auto;
+    /*background-color:whitesmoke;*/
+}
+
+.NumberDomain_Increase {
+    width:100%;
+    position: relative;
+    display: block;
+    
+}
+.NumberDomain_DecreaseDiv {
+    /*border-right: 1px solid lightgray;*/
+    margin-right: auto;
+    padding:8px;
+    display: flex; /* IE10 */
+    display: flexbox; /* IE10  */
+    display: -moz-box; /* Firefox */
+    flex-direction: row;
+    justify-content:space-around;
+    align-items:center;
+    height:100%;
+    width:40px;
+    /*background-color:whitesmoke;*/
+}
+
+.NumberDomain_Decrease {
+
+    width:100%;
+    position:relative;
+    display:block;
+    
+}
+
+.NumberDomainInput {
+
+    display: block;
+    position: relative;
+    border: none;
+    background-color: transparent;
+    outline: none;
+    text-align: center;
+    width: 100%;
+    ime-mode:disabled;
+}
+
+
+
+.GroupPanel {
+    display:block;
+    position:relative;
+}
+
+.GroupPanelHeader {
+    padding:2px;
+    background-color:rgba(192,192,192,0.4);
+    border:1px solid lightgray;
+    min-height:24px;
+    cursor:default;
+}
+
+.GroupPanelHeaderSPAN {
+    float:left;
+    margin :3px 2px 2px 2px;
+}
+
+.GroupPanelHeaderECIMG {
+
+    height:16px;
+    width:16px;
+    float:right;
+    margin :6px 2px 2px 2px;
+    opacity:0.6;
+}
+
+    .GroupPanelHeaderECIMG:hover {
+        height: 16px;
+        width: 16px;
+        float: right;
+        margin: 6px 2px 2px 2px;
+        opacity: 1;
+    }
+
+.GroupPanelClient {
+
+}
+
+.AppSearchBar {
+    background-color:rgba(0,153,204,0.8);
+
+}
+
+.AppSearchBarTopMargin {
+    height:21px;
+}
+
+.ScanCodeButtonImage {
+    height:28px;
+    float:left;
+    margin: 5px 4px 4px 12px;
+}
+
+
+
+.SearchInputBorder {
+    border:1px solid rgba(225,225,225,0.9);
+    border-radius:8px;
+    margin:4px 56px 2px 48px;
+    height:28px;
+    background-color:rgba(225,225,225,0.9);
+    opacity:0.9
+}
+
+.SearchIcon {
+    height: 18px;
+    float: left;
+    margin: 4px 2px 2px 2px;
+}
+
+
+.SearchInputDIV {
+    border:none;
+    background-color:transparent;
+    margin:4px 10px 4px 22px;
+
+}
+
+.SearchInputDIV::selection {
+    border:none;
+    background-color:transparent;
+    margin:4px 12px 4px 22px;
+
+}
+
+.SearchTextBox {
+    border:none;
+    outline:none;
+    background-color:transparent;
+    height:100%;
+    width:100%;
+ }
+
+.SearchTextBox:focus {
+    border:none;
+    outline:none;
+ }
+
+.MessengerButton {
+    height: 28px;
+    float: right;
+    margin: 2px 10px 4px 4px;
+    position:relative;
+}
+
+.MessageIcon {
+    height: 28px;
+    margin: 4px 12px 4px 4px;
+}
+
+.MessageCounter {
+    height:14px;
+    width:14px;
+    color:white;
+    background-color:red;
+    border:1px solid red;
+    border-radius:16px;
+    position:absolute;
+    top:2px;
+    left:22px;
+    font-size:8pt;
+    text-align:center;
+}
+
+.AppMenuBar {
+    background-color:rgba(235,235,235,0.9);
+    border-width:1px 0px 0px 0px;
+    border-color:gray;
+    border-style:solid;
+    position:relative;
+    min-height:32px;
+    display:table;
+    width:100%;
+}
+
+.AppMenuBarItemTD {
+    text-align:center;
+}
+
+.AppMenuBarItem {
+    position:relative;
+    display:inline-block;
+    margin:2px 4px 2px 4px;
+    min-width:56px;
+    opacity:0.6
+}
+
+.AppMenuBarItem:hover {
+    position:relative;
+    display:inline-block;
+    margin:2px 4px 2px 4px;
+    min-width:56px;
+    opacity:0.9;
+}
+
+
+
+.AppMenuBarItemImage {
+    height: 32px;
+    position: relative;
+    text-align: center;
+}
+
+.AppMenuBarItemText {
+    display:block;
+    position:relative;
+    text-align:center;
+    margin-top:-6px;
+}
+
+
+.ItemsPanel {
+
+    display:block;
+    position:relative;
+
+}
+.ItemsPanelDiv {
+    position:relative;
+    display:flex;
+    flex-direction:column;
+    justify-content:flex-start;
+    align-items:flex-start;
+
+}
+    .ItemsPanel.Item {
+
+        border:none;
+        position:relative;
+
+    }
+
+/*////////////////TabWidget///////////////////////////*/
+
+.TabWidget {
+    position:absolute;
+    top:0px;
+    left:0px;
+    right:0px;
+    bottom:0px;
+}
+.TabWidget .TabContents {   
+    position:absolute;
+    top:0px;
+    left:0px;
+    right:0px;
+    bottom:58px;
+    overflow:hidden;
+}
+.TabWidget .TabContent {
+    width:100%;
+    height:100%;
+    display:inline-block;
+    position:absolute;
+    transition: margin 0.1s;
+    overflow-y:auto;
+}
+.TabWidget .TabItemsPanel {
+    
+    background-color:transparent;
+    display:flex;
+    flex-direction:row;
+    justify-content:space-around;
+    align-items:center;
+    position:absolute;
+    left:0px;
+    right:0px;
+    bottom:0px;
+    height:58px;
+    border-top:1px solid rgba(255,255,255,0.2);
+}
+.TabWidget .TabItemsPanel .TabItemPanel, .TabWidget .TabItemsPanel .TabBigItemPanel {
+    margin: 0px 2px 0px 2px;
+    /*width: 100%;
+    height: 100%;*/
+    color: #4c4c4c;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    /*z-index: 1;*/
+    position: relative;
+}
+.TabWidget .TabItemsPanel .TabBigItemPanel {
+    position:relative;
+    
+}
+
+.TabWidget .TabItemsPanel .TabItemPanel img {
+    width:24px;
+    height:24px;
+    margin:5px;
+}
+.TabWidget .TabItemsPanel .TabItemPanel span {
+    font-size:12px;
+    color:#4c4c4c;
+    cursor:default;
+}
+.TabWidget .TabItemsPanel .TabBigItemPanel .TabBigItemOverPanel {    
+    display:flex;
+    flex-direction:column;  
+    justify-content:space-around;
+    align-items:center;
+    position:relative;
+    /*margin-top:-36px;
+    margin-bottom:-20px;*/
+    /*height:80px;
+    width:80px;*/
+    /*border-radius:100%;*/
+    /*background-color:#f7f7f7;*/
+    /*padding:6px 4px 0px 4px;*/
+    /*border-top:1px solid #ccc;*/
+    overflow:hidden;
+
+}
+    .TabWidget .TabItemsPanel .TabBigItemPanel img {
+        /*width:50%;
+        height:50%;*/
+        /*background-color:#003da5;*/
+        /*padding:8px;*/
+        /*border-radius:100%;*/
+        width: 24px;
+        height: 24px;
+        margin: 5px;
+    }
+.TabWidget .TabItemsPanel .TabBigItemPanel span {
+    font-size:12px;
+}
+    .TabWidget .TabItemsPanel .Active {
+        /*background-color:#ccc;*/
+        /*box-radius: 16px;*/
+        animation: 0.2s ease 0s alternate none 1 ButtonClick;
+        border: none;
+        color: #4c4c4c;
+    }
+.TabWidget .TabItemsPanel .Active span{
+    color:#003da5;
+}
+
+
+
+.GroupBox {
+    display: inline-block;
+    position: relative;
+}
+
+.GroupBox_Header {
+    height:24px;
+    position:relative;
+    display:block;
+}
+
+.GroupBox_ECButton {
+    height:16px;
+    width:16px;
+    float:left;
+    margin:2px 2px 2px 2px;
+
+}
+
+.GroupBox_Text {
+    display:block;
+    position:relative;
+    font-weight:bold;
+    float:left;
+    margin:2px 2px 2px 4px;
+}
+
+.GroupBox_HLine {
+    display:block;
+    position:relative;
+    height:0px;
+    margin:10px 2px 2px 2px;
+    border:1px inset white;
+    opacity:0.6;
+}
+
+.GroupBox_ClientDiv {
+
+    display:block;
+    position:relative;
+    min-height:32px;
+    padding:4px;    
+}
+
+
+
+.ComboTreeBox {
+    
+    border:1px solid gray;
+    border-radius:2px;
+    background-color:white;
+    display:inline-block;
+    height:23px;
+    overflow:hidden;
+
+}
+
+.ComboTreeBoxDiv {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flexbox;
+    display: flexbox;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    height:100%;
+    padding:0px 2px 0px 2px;
+}
+
+.ComboTreeBox_Icon {
+
+    height:16px;
+    width:16px;
+    display:block;
+    border:1px solid;
+    display:none;
+}
+
+.ComboTreeBox_TextBox {
+    display:block;
+    border:none;
+    outline:none;
+    background-color:transparent;
+    width:100%;
+}
+
+.ComboTreeBox_DDImage {
+    /*float: right;*/
+    display: block;
+    height:12px;
+    width:12px;
+    margin:0px 4px 0px 2px;
+}
+
+
+.GroupPanelHeader {
+    padding:2px;
+    background-color:rgba(192,192,192,0.4);
+    border:1px solid lightgray;
+    min-height:24px;
+}
+
+.GroupPanelHeaderSPAN {
+    float:left;
+    margin :3px 2px 2px 2px;
+}
+
+.GroupPanelHeaderECIMG {
+
+    height:16px;
+    width:16px;
+    float:right;
+    margin :6px 2px 2px 2px;
+    opacity:0.6;
+}
+
+.GroupPanelHeaderECIMG:hover {
+    height: 16px;
+    width: 16px;
+    float: right;
+    margin: 6px 2px 2px 2px;
+    opacity: 1;
+}
+
+.NavPanelBorder 
+{
+    position:relative;
+    display:block;
+    overflow:hidden;
+
+}
+
+.NavPanel {
+    position:relative;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flexbox;
+    display: flexbox;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    width:100%;
+    height:100%;
+}
+
+.NavPanel_ClientDIV {
+    width:100%;
+    height:100%;
+    overflow-x:hidden;
+}
+
+.NavPanel_ImageDIV {
+    width:36px;
+    position:relative;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flexbox;
+    display: flexbox;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+
+}
+
+.NavPanel_Image {
+    height:16px;
+    width:16px;
+    opacity:0.5;
+}
+
+/*
+    xizijian
+    20170412
+    css
+*/
+.FormBar{
+	display:flex;
+	flex-direction:row;
+	border-bottom:1px solid #ccc;
+    height:64px;
+    overflow:hidden;
+}
+.FormBar .FormBarImgPanel{
+	padding:5px;
+	vertical-align: middle;
+    display: table-cell;
+    text-align: center;
+}
+    .FormBar .FormBarImgPanel .img {
+        width: 48px;
+        height: 48px;
+        margin: 0px 8px 0px 4px;
+    }
+    .FormBar .FormBarTitlePanel {
+        width: 100%;
+        margin: 0px;
+        padding-top: 10px;
+    }
+
+        .FormBar .FormBarTitlePanel .Title {
+            margin: 4px 0px 4px 0px;
+            padding: 0px;
+            opacity: 0.5;
+        }
+        .FormBar .FormBarTitlePanel .description {
+            margin: 4px 0px 0px 0px;
+            padding: 0px;
+            font-size: 13px;
+            opacity: 0.6;
+        }
+.FormBar  .line{
+	height:1px;
+	display:block;
+}
+
+/*DataGridView*/
+.DataGridViewBorder {
+    overflow: hidden;
+    /*background-color: lightgray;*/
+    border: 1px solid lightgray;
+}
+.DataGridView {
+    display: flexbox;
+    display: flex;
+    position: relative;
+    overflow: hidden;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: 100%;
+    height: 100%;
+}
+
+.DataGridView_GroupPanel {
+    display:block;
+    position:relative;
+    min-height:26px;
+    background-color:whitesmoke;
+    border-bottom:1px solid gray;
+    margin-top:1px;
+    width:100%;
+    padding:4px;
+}
+
+.DataGridView_GroupPanelImage {
+    float:left;
+    height:24px;
+    margin:0px 4px 0px 0px;
+}
+
+.DataGridView_Grabe {
+    display:block;
+    float:left;
+    width:28px;
+    height:28px;
+    border-right:1px solid lightgray;
+    border-bottom:1px solid lightgray;
+}
+
+.DataGridView_PagerPanel {
+    min-height: 24px;
+    background: linear-gradient(180deg,rgba(220,220,220,0.9),rgba(192,192,192,0.7));
+    display:none;
+    border-top:1px solid gray;
+}
+
+.DataGridView_DataClient {
+    display: flexbox;
+    display: flex;
+    position: relative;
+    overflow: hidden;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: 100%;
+    height: 100%;
+}
+.DataGridView_HDDiv {
+    display: block;
+    height: 32px;
+    position: relative;
+    cursor: default;
+    overflow:hidden;
+    /*border-bottom:1px solid lightgray;*/
+    border-left:1px solid lightgray;
+    width:100%;
+    
+}
+.DataGridView_HRBLine {
+    height:1px;
+    width:100%;
+    position:relative;
+    display:block;
+    background-color:lightgray;
+}
+.DataGridView_HRDiv {
+
+    display: flexbox;
+    display: flex;
+    justify-content: flex-start;
+    align-items: stretch;
+    flex-direction: row;
+    background-color:whitesmoke;
+    height: 100%;
+    padding: 0px 0px 2px 0px;
+    position: relative;
+    cursor: default;
+    min-width: 100%;
+    
+}
+
+
+
+.DataGridView_TBDiv {
+
+    display:block;
+    position:relative;
+    overflow:auto;
+    width:100%;
+    height:100%;
+    background-color: white;
+    outline: none;
+
+}
+
+.DataGridView_TBody {
+    display: inline-block;
+    min-width:100%;
+    position: relative;
+}
+
+.DataGridView_Row {
+
+        display: flexbox;
+        display: flex;
+        justify-content:flex-start;
+        align-items: stretch;
+        flex-direction: row;
+        height:32px;
+        border-bottom:1px solid lightgray;
+        padding-left:0.5px;
+
+}
+
+    .DataGridView_Row:hover {
+        /*background-color:rgba(200, 100, 160,0.3);*/
+
+    }
+
+.DataGridView_Row_Selected {
+    display: flexbox;
+    display: flex;
+    justify-content: flex-start;
+    align-items: stretch;
+    flex-direction: row;
+    height: 32px;
+    border-bottom: 1px solid lightgray;
+    background-color: rgba(225,225,225,0.6);
+    cursor: default;
+    padding-left: 0.5px;
+}
+
+.DataGridView_RNDiv {
+    display:none;
+    position:relative;
+    overflow:hidden;
+    min-height:28px;
+    /*background-color:rgb(192,192,192);*/
+    background-color:whitesmoke;
+    border-right:1px solid lightgray;
+    border-left:0px solid lightgray;
+    height:100%;
+    width:28px;
+}
+
+.DataGridView_RowNumber {
+    border:none;
+    display: inline-block;
+    position: relative;
+    min-width: 100%;
+}
+
+
+.DataGridView_RNRow {
+
+        display: flexbox;
+        display: flex;
+        justify-content:flex-start;
+        align-items: center;
+        flex-direction: row;
+        height:28px;
+        border-bottom:1px solid lightgray;
+}
+
+.DataGridView_RowNumberCell {
+    text-align:center;
+    padding: 2px;
+    word-break:keep-all;
+    word-wrap:normal;
+    /*height:32px;*/
+    width:100%;
+}
+
+.DataGridView_Splitter {
+    background-color:lightgray;
+    width:1px;
+    position:absolute;
+    top:2px;
+    bottom:1px;
+    z-index:1;
+}
+
+
+.DataGridView_ColumnText {
+    display:block;
+}
+
+.DataGridView_OrderImage {
+    display:none;
+    position:relative;
+    top:2px;
+    right:2px;
+    float:left;
+    height:14px;
+    margin:0px 6px 0px 2px;
+   
+}
+
+.DataGridView_GroupColumn {
+    display:inline-flexbox;
+    display:inline-flex;
+    border:1px solid gray;
+    border-radius:2px;
+    /*background:linear-gradient(rgb(192,192,192),rgb(220,220,220));*/
+    background-color:whitesmoke;
+    margin:0px 2px 0px 2px;
+    cursor:default;
+    /*width:auto;*/
+    height:20px;
+}
+
+    .DataGridView_GroupColumn:hover {
+        opacity: 0.8;
+        border: 1px solid gray;
+    }
+
+.DataGridView_RowGroupItem {
+    height:28px;
+    border-bottom:1px solid lightgray;
+    cursor:default;
+    background-color:whitesmoke;
+    /*z-index:1;*/
+    position:relative;
+    display:flexbox;
+    display:flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items:center;
+
+}
+    .DataGridView_RowGroupItem:hover {
+        /*background-color: rgb(240, 160, 200);*/
+    }
+
+.DataGridView_RowGroupItemEC {
+    margin:2px;
+    height:14px;
+    width:14px;
+    position:relative;
+}
+
+.DataGridView_RowGroupItemText {
+    position:relative;
+    width:100%;
+    margin:2px;
+}
+
+.DatagridView_CheckColImage {
+    height:24px;
+    margin:2px;
+}
+
+
+
+.PictureManagerView {
+
+    position:relative;
+    border:1px solid lightgray;
+    display:inline-block;
+}
+
+.PictureManagerView_ItemsPanel {
+    position:absolute;
+    display:block;
+    top:36px;
+    left:1px;
+    right:1px;
+    bottom:1px;
+    overflow:auto;
+}
+
+.PictureManageView_FileInput {
+    display:none;
+}
+
+.PictureManageView_AddPicture {
+    border: 1px solid lightgray;
+    position: relative;
+    display: flexbox;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.PictureManageView_AddPicture:hover {
+    border:1px solid gray;
+    background-color:lightgray;
+}
+
+.PictureManageView_AddButtonImage {
+
+    margin:4px;
+    display:block;
+
+}
+
+
+/************************************************/
+.WebFSListView-Panel{
+    position:relative;
+    min-height:300px;
+    display:block;
+}
+
+.WebFSListView-LeftPanel .TreeListView  .TreeNodeImage {
+    background-image:url("/themes/dbtheme/Images/WebFSExplorer/folder1.png");
+    background-size:contain;
+   
+}
+.WebFSListView-LeftPanel .TreeListView  .TreeNodeImageNC {
+   background-image:url("/themes/dbtheme/Images/WebFSExplorer/folder1.png");
+    background-size:contain;
+}
+
+.WebFSExplorer_PathText {
+    width:180px;
+}
+.WebFSExplorer_File {
+    display:none;
+}
+/*SVG*/
+
+
+/*
+    lishuang
+    20170512
+    css
+    */
+.RateTagBox {
+    display:inline-block;
+    border:1px solid #ccc;
+    border-radius:5px;
+    padding:3px 5px;
+}
+.RateTagBox-Selected {
+    border-color:pink;
+    color:pink;
+}
+.RateTagBox .RateTagBox_Title{
+    margin-right:5px;
+}
+.RateTagBox .RateTagBox_Count{
+
+}
+
+
+.SVG-Panel {
+    position:relative;
+}
+.SVGImage,
+.SVGChannel,
+.SVGBarCounter,
+.SVGToilet,
+.SVGSafeEXIT,
+.SVGDiningArea,
+.SVGShadow,
+.SVGEntrance,
+.SVGEXIT {
+    display:inline-block;
+}
+.SVGBarCounter svg,
+.SVGToilet svg,
+.SVGSafeEXIT svg,
+.SVGDiningArea svg,
+.SVGEXIT svg{
+    width:400px;
+    height:200px;
+}
+.SVGShadow svg,
+.SVGEXIT svg svg{
+     width:200px;
+    height:200px;
+}
+.SVGEntrance svg {
+    width:200px;
+    height:100px;
+}
+.DiningTable {
+    display:inline-flex;
+    flex-direction:column;    
+}
+
+.DiningTable .svg_stool1{
+    display:inline-flex;
+    flex-direction:row;    
+}
+.DiningTable .svg_tables {
+    border:2px solid #666;
+    border-radius:6px;
+    padding:0px 8px;
+}
+.DiningTable .svg_table1,
+.DiningTable .svg_table2{
+    display:block;
+    flex-direction:row;
+    flex-wrap:wrap;
+}
+.DiningTable .svg_table1 svg,
+.DiningTable .svg_table2 svg {
+    width:50px;
+    height:30px;
+    opacity:0.5;
+    
+}
+.DiningTable .svg_stool1,
+.DiningTable .svg_stool2 {
+   margin-left:11px;
+}
+.DiningTable .svg_stool2{
+    display:inline-flex;
+    flex-direction:row;
+}
+.DiningTable .svg_stool1 svg,
+.DiningTable .svg_stool2 svg{
+    height:9px;
+    width:50px;
+    opacity:0.3;
+}
+.SVGChannel {
+    background-color:#000;
+    display:inline-block;
+    width:100px;
+    height:40px;
+}
+.SVGChannel .SVGChannel-left {
+    border-bottom:2px dotted #fff;
+    height:50%;
+}
+
+.SVG-ClientPanel {
+    position:relative;
+    display:block;
+    /*overflow:hidden;*/
+}
+.SVG-ClientPanelDiv {
+    position: relative;
+    display: block;
+    overflow:hidden;
+}
+
+/***************************ScorePanel*****************/ 
+.ScorePanel {
+    position:relative; 
+    display:inline-block;
+    height:23px;  
+}
+.ScorePanel .Score-Panel-BG,
+.ScorePanel .Score-Panel-Center,
+.ScorePanel .Score-Panel-Font {
+    display:flex;
+    width:100%;
+    height:100%;
+    flex-direction:row;
+    justify-content:space-around;
+    align-items:center;   
+    position:absolute;
+    top:0px;
+    left:0px;
+    bottom:0px;
+    right:0px;
+}
+.ScorePanel .Score-Panel-BG .SVGStar,
+.ScorePanel .Score-Panel-Center .SVGStar ,
+.ScorePanel .Score-Panel-Font a {
+    height:100%;
+    display:block;
+    flex: 1;
+}
+.ScorePanel .Score-Panel-Font a {
+    width:100%;
+    height:100%;
+}
+
+
+
+/*============================================================================================
+***** NavControl Styles
+**********************************************************************************************/
+
+.NavControls_UIViewController {
+    position:relative;
+    overflow:hidden;
+    margin:0px;
+    padding:0px;
+}
+
+.NavControls_UIViewControllerDiv {
+    position:relative;
+    display:block;
+    height:100%;
+    min-width:100%;
+    margin:0px;
+    padding:0px;
+    /*transition:0.15s left;*/
+    overflow:hidden; 
+}
+
+.NavControls_UIViewPanel {
+    display: flex; /* IE10 */
+    display: flexbox; /* IE10 */
+    display: -moz-box; /* Firefox */
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    height: 100%;
+    transition: 0.12s left;
+    /*background-color:white;*/
+}
+
+.NavControls_UIViewPanelHeader {
+    position: relative;
+    height: 40px;
+    width: 100%;
+    display: flex; /* IE10 */
+    display: flexbox; /* IE10 */
+    display: -moz-box; /* Firefox */
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    background-color: rgb(32,32,32);
+    color:white;
+}
+
+.NavControls_UIViewPanelText {
+
+    position:relative;
+    width:100%;
+    margin:1px 24px 4px 4px;
+    font-size:12pt;
+    font-weight:bold;
+    text-align:center;
+
+}
+
+.NavControls_UIViewPanelImage {
+
+    height:24px;
+    width:24px;
+    margin:4px;
+    opacity:0.8;
+
+}
+.NavControls_UIViewPanelImage:hover {
+
+    height:24px;
+    width:24px;
+    margin:4px;
+    opacity:0.9;
+
+}
+
+.NavControls_UIViewPanelClient {
+
+    position: relative;
+    display: block;
+    height:100%;
+    width:100%;
+    overflow:auto;
+
+}
+
+
+
+
+.NavControls_NavigationView {
+    display: block;
+    position: relative;
+    margin: 1px;
+    cursor: default;
+}
+
+.NavControls_NavigationViewPanel {
+    position: relative;
+    min-height: 80px;
+    width: 100%;
+    height: 100%;
+    display: flex; /* IE10 */
+    display: flexbox; /* IE10 */
+    display: -moz-box; /* Firefox */
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+    overflow: hidden;
+    transition: all linear 0.1s;
+    /*flex-wrap:wrap;*/
+}
+
+.NavControls_NavigationViewPanelList {
+    position: relative;
+    min-height: 80px;
+    width: 100%;
+    height: 100%;
+    display: flex; /* IE10 */
+    display: flexbox; /* IE10 */
+    display: -moz-box; /* Firefox */
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    overflow: hidden;
+}
+
+.NavControls_NavItem {
+    position: relative;
+    display: inline-flex; /* IE10 */
+    display: inline-flexbox; /* IE10 */
+    display: -moz-box; /* Firefox */
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    margin: 4px;
+    min-width: 96px;
+}
+
+    .NavControls_NavItem:active {
+        box-radius: 16px;
+        animation: 0.2s ease 0s alternate none 1 ButtonClick;
+        border: none;
+    }
+
+.NavControls_NavItemContainer {
+    position: relative;
+}
+
+.NavControls_NavItemCounter {
+    width: 24px;
+    height: 24px;
+    border-radius: 24px;
+    background-color: rgb(255, 0, 0);
+    color: white;
+    display: flex; /* IE10 */
+    display: flexbox; /* IE10 */
+    display: -moz-box; /* Firefox */
+    position: absolute;
+    /*top:0px;*/
+    justify-content: center;
+    align-items: center;
+    /*border:1px solid white;*/
+    opacity: 0.9;
+    visibility: hidden;
+    /*10.31添加*/
+    font-size: 12px;
+    text-align: center;
+    top: 0px;
+    right: 0px;
+    transform: translate(50%,-10%);
+    padding: 1px;
+    font-weight: normal;
+}
+
+.NavControls_NavItemImage {
+    width: 48px;
+    height: 48px;
+    display: block;
+    text-align: center;
+    margin: 2px;
+}
+
+.NavControls_NavItemText {
+    display: block;
+    text-align: center;
+    margin: 1px;
+}
+
+.NavControls_NavItemDescription {
+    display: block;
+    text-align: center;
+    opacity: 0.3;
+    font-size: 9pt;
+    margin: 1px;
+}
+
+.NavControls_NavHorItem {
+    position: relative;
+    display: flex; /* IE10 */
+    display: flexbox; /* IE10  */
+    display: -moz-box; /* Firefox */
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    margin: 1px 0px 2px 0px;
+    width: 100%;
+    min-height: 32px;
+    padding-top: 6px;
+}
+
+.NavControls_NavHorItemContainer {
+    position: relative;
+}
+
+.NavControls_NavHorItemCounter {
+    width: 16px;
+    height: 16px;
+    border-radius: 16px;
+    background-color: rgb(255, 0, 0);
+    color: white;
+    display: flex; /* IE10 */
+    display: flexbox; /* IE10 */
+    display: -moz-box; /* Firefox */
+    position: absolute;
+    /*top:0px;*/
+    justify-content: center;
+    align-items: center;
+    /*border:1px solid white;*/
+    opacity: 0.9;
+    visibility: hidden;
+    /*10.31添加*/
+    font-size: 10px;
+    text-align: center;
+    top: 0px;
+    right: 0px;
+    transform: translate(50%,-50%);
+    padding: 1px;
+    font-weight: normal;
+}
+
+.NavControls_NavHorItemImage {
+    width: 24px;
+    height: 24px;
+    display: block;
+    text-align: center;
+    margin-left: 2px;
+}
+
+.NavControls_NavHorItemText {
+    display: block;
+    text-align: center;
+    margin-left: 4px;
+}
+
+.NavControls_NavHorItemDescription {
+    display: inline-block;
+    text-align: center;
+    opacity: 0.3;
+    font-size: 9pt;
+    margin-left: 8px;
+}
+
+.NavControls_NavHorItemGoImage {
+    width: 16px;
+    height: 16px;
+    position: relative;
+    cursor: default;
+    margin-left: auto;
+    margin-right: 8px;
+    opacity: 0.5;
+}
+
+
+
+/*************************NavControls_NavContentPart********************************************/
+
+
+.NavControls_NavContentPart {
+    display:block;
+    position:relative;
+    overflow:hidden;
+    background-color:white;
+}
+.NavControls_NavContentPartDiv {
+
+    position: relative;
+    min-height: 80px;
+    width: 100%;
+    height: 100%;
+    display: block;
+    /*display: flex; 
+    display: flexbox; 
+    display: -moz-box;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;*/
+
+}
+
+.NavControls_NavContentPartHeader {
+    position: relative;
+    width: 100%;
+    height: 32px;
+    display: flex; /* IE10 */
+    display: flexbox; /* IE10  */
+    display: -moz-box; /* Firefox */
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+   
+    border-bottom:1px solid rgba(192,192,192,0.2);
+
+}
+
+.NavControls_NavContentPartHeaderImage {
+
+    position:relative;
+    display:block;
+    font-weight:bold;
+    height:20px;
+    width:20px;
+    margin-left:4px;
+}
+.NavControls_NavContentPartHeaderText {
+    position:relative;
+    font-weight:bold;
+    font-size:10pt;
+    margin-left:4px;
+}
+.NavControls_NavContentPartHeaderDesc {
+   
+    position: relative;
+    display:block;
+    opacity: 0.3;
+    display: block;
+    margin-left:16px;
+
+}
+.NavControls_NavContentPartHeaderMDiv {
+    width:56px;
+    opacity:0.5;
+    float:right;
+    position:relative;
+    display:block;
+    cursor:default;
+    margin-left:auto;
+    margin-right:9px;
+}
+
+.NavControls_NavContentPartHeaderMText {
+    cursor: default;
+    float: right;
+    position: relative;
+    cursor: default;
+}
+
+.NavControls_NavContentPartHeaderMImage {
+    width: 16px;
+    height: 16px;
+    top: -1px;
+    position: relative;
+    cursor: default;
+    float:right;
+}
+
+.NavControls_NavContentPartPanel {
+    position:relative;
+    display:block;
+    width:100%;
+    min-height:64px;
+    overflow:visible;
+
+}
+
+.NavControls_AppPanel {
+
+    position:relative;
+    display:block;
+    height:38px;
+    background-color:rgb(32,32,32);
+    overflow:hidden;
+    padding-top:5px;
+
+}
+
+
+.NavControls_AppPanelScanImage {
+    display: block;
+    position: relative;
+    height: 24px;
+    width: 24px;
+    float: left;
+    margin-left: 8px;
+}
+
+.NavControls_AppPanelText {
+
+    display:block;
+    position:relative;
+    color:white;
+    font-size:12pt;
+    font-weight:bold;
+    text-align:center;
+    margin-left:40px;
+    margin-right:60px;
+    top:2px;
+}
+
+.NavControls_AppPanelMImage {
+    display: block;
+    position: relative;
+    height: 24px;
+    width: 24px;
+    float:right;
+    margin-right:12px;
+}
+
+
+.NavControls_SlideShowView {
+    position:relative;
+    display:block;
+    overflow:hidden;
+    text-align:center;
+}
+
+.NavControls_SlideShowViewDiv {
+    position:relative;
+    top:0px;
+    left:0px;
+    transition:1s top,1s left;
+}
+
+.NavControls_SlideShowViewIdcDiv {
+    position:absolute;
+    display: flex; /* IE10 */
+    display: flexbox; /* IE10 */
+    display: -moz-box; /* Firefox */
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height:16px;
+    bottom:6px;
+    left:0px;
+    right:0px;
+    margin-left:auto;
+    margin-right:auto;
+    overflow:hidden;
+}
+
+.NavControls_SlideShowViewIdcDivTL {
+    position: absolute;
+    display: flex; /* IE10 */
+    display: flexbox; /* IE10 */
+    display: -moz-box; /* Firefox */
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: 16px;
+    top: 6px;
+    left: 0px;
+    width:50%;
+    margin-left: auto;
+    margin-right: auto;
+    overflow: hidden;
+}
+
+.NavControls_SlideShowViewIdcDivTR {
+    position: absolute;
+    display: flex; /* IE10 */
+    display: flexbox; /* IE10 */
+    display: -moz-box; /* Firefox */
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: 16px;
+    top: 6px;
+    right: 0px;
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    overflow: hidden;
+}
+
+.NavControls_SlideShowViewIndicator {
+
+    height:10px;
+    width:10px;
+    margin-left:6px;
+    margin-right:6px;
+    border-radius:10px;
+    background-color:rgba(128,128,128,0.5);
+
+}
+
+.NavControls_SlideShowViewIndicatorC {
+
+    height:10px;
+    width:10px;
+    margin-left:6px;
+    margin-right:6px;
+    border-radius:10px;
+    background-color:rgba(255,255,255,0.6);
+
+}
+
+
+.NavControls_SlideShowViewItemHor {
+    margin:0px;
+    display:inline-block;
+    position:relative;
+}
+
+.NavControls_SlideShowViewItemVer {
+    margin:0px;
+    display:block;
+    position:relative;
+}
+
+.NavControls_SlideShowViewItem {
+    margin:0px;
+    display:block;
+    position:absolute;
+    top:0px;
+    left:0px;
+    width:100%;
+    height:100%;
+}
+
+.BarCodeControl {
+
+    position:relative;
+    display:block;
+
+}
+
+.BarCodeControl_Image {
+    height:100%;
+    width:100%;
+    display:block;
+}
+
+
+.DataAccessTimer {
+    position:relative;
+    display:none;
+    height:23px;
+    width:23px;
+    background-color:blue;
+    border:1px solid gray;
+    border-radius:8px;
+}
+
+.FormTimer {
+    position:relative;
+    display:none;
+    height:23px;
+    width:23px;
+    background-color:blue;
+    border:1px solid gray;
+    border-radius:8px;
+
+}
+
+.NotificationWatcher {
+    position:relative;
+    display:none;
+    height:23px;
+    width:23px;
+    background-color:red;
+    border:1px solid gray;
+    border-radius:8px;
+
+}
+
+
+.MetroNavView {
+    position: relative;
+    display: block;
+    /*10.31添加*/
+    /*文字取消选中效果*/
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.MetroNavViewPanel {
+    display: flex; /* IE10 */
+    display: flexbox; /* IE10 */
+    display: -moz-box; /* Firefox */
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    /*height:100%;*/
+    /*width:100%;*/
+    padding: 1px;
+}
+
+
+.MetroNavViewItem {
+    position: relative;
+    display: flex; /* IE10 */
+    display: flexbox; /* IE10 */
+    display: -moz-box; /* Firefox */
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 80px;
+    margin-top: 1px;
+    margin-bottom: 1px;
+}
+
+.MetroNavViewItemImgContainer {
+    position: relative;
+}
+
+.MetroNavViewItemImage {
+    min-width: 16px;
+    min-height: 16px;
+    
+}
+
+.MetroNavViewItemText {
+    overflow:hidden;
+    text-align:center;
+    text-overflow:ellipsis;
+    white-space:nowrap;
+    word-break:normal;
+    width:94%;
+}
+.MetroNavViewItemDesc {
+    overflow: hidden;
+    text-align: center;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    word-break: normal;
+    color: lightgray;
+    width: 94%;
+}
+.MetroNavViewItemCounter {
+    width: 24px;
+    height: 24px;
+    border-radius: 24px;
+    background-color: rgb(255, 0, 0);
+    color: white;
+    display: flex; /* IE10 */
+    display: flexbox; /* IE10 */
+    display: -moz-box; /* Firefox */
+    position: absolute;
+    /*top:0px;*/
+    justify-content: center;
+    align-items: center;
+    /*border:1px solid white;*/
+    opacity: 0.9;
+    visibility: hidden;
+    /*10.31添加*/
+    font-size: 12px;
+    text-align: center;
+    top: 0px;
+    right: 0px;
+    /*transform: translate(90%,-40%);*/
+    transform: translate(50%,-10%);
+    padding: 1px;
+    font-weight: normal;
+}
+
+
+.RingNavView {
+    position:relative;
+    display:block;
+    overflow:hidden;
+
+    
+}
+.RingNavViewDiv {
+    position: absolute;
+    transition: 0.5s opacity;
+    opacity: 0;
+    top:0px;
+    left:0px;
+    bottom:0px;
+    right:0px;
+}
+.RingNavViewInfoDiv {
+    position: absolute;
+    transition: 0.5s opacity;
+    opacity: 0;
+    display: flex; /* IE10 */
+    display: flexbox; /* IE10 */
+    display: -moz-box; /* Firefox */
+    flex-direction: column;
+    justify-content:center;
+    align-items: center;
+    top:0px;
+    left:0px;
+    bottom:0px;
+    right:0px;
+}
+.RingNavViewInfoTopDiv {
+    display:block;
+    width:520px;
+    height:260px;
+    border-radius:260px 260px 0px 0px;
+    background-color:rgba(96,96,96,0.3);
+}
+.RingNavViewInfoBottomDiv {
+    display:block;
+    width:520px;
+    height:260px;
+    border-radius:0px 0px 260px 260px;
+    background-color:rgba(88,88,88,0.3);
+}
+
+.FlexPanel {
+    position:relative;
+    display:block;
+    min-height:64px;
+    min-width:128px;
+}
+.FlexPanelDiv {
+    position: absolute;
+    display: flex; /* IE10 */
+    display: flexbox; /* IE10 */
+    display: -moz-box; /* Firefox */
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    overflow:auto;
+    height:100%;
+    width:100%;
+   
+}
+
+
+.Calendar {
+    width:300px;
+    margin:1px;
+}
+
+.Calendar_Table {
+    width:100%;
+}
+
+.Calendar_TimeDiv {
+    height: 32px;
+    display: block;
+    background-color: white;
+}
+
+.Calendar_YearDiv {
+    height:32px;
+    display:block;
+    background-color:white;
+}
+
+.Calendar_SwitchTB {
+    width: 100%;
+    font-size:10pt;
+    margin:2px;
+}
+
+.Calendar_DSCell {
+    height: 24px;
+    width:32px;
+    text-align: center;
+    vertical-align: middle;
+    cursor: default;
+    font-size: 10pt;
+    border: 1px solid transparent;
+}
+
+    .Calendar_DSCell:hover {
+        border: 1px solid gray;
+    }
+
+.Calendar_DSCellInput {
+    height:24px;
+    text-align:center;
+    vertical-align:middle;
+    cursor:default;
+    font-size:10pt;
+    border:1px solid transparent;
+
+}
+
+.Calendar_TimeInput {
+    border:1px solid transparent;
+    outline:1px solid transparent;
+    width:64px;
+}
+
+
+.Calendar_MDDiv {
+    /*height:186px;*/
+    display:block;
+    background-color:whitesmoke;
+}
+
+.Calendar_MDRow {
+    height: 30px;
+    border-bottom:1px white solid;
+}
+
+
+.Calendar_MDTD {
+    height:24px;
+    cursor:default;
+    text-align:center;
+    vertical-align:middle;
+    color:black;
+    border:1px solid transparent;
+    font-size:10pt;
+    font-weight:bold;
+}
+
+    .Calendar_MDTD:hover {
+        border:1px solid gray;
+    }
+
+    .Calendar_MDTDSelect {
+    height:24px;
+    cursor:default;
+    text-align:center;
+    vertical-align:middle;
+    color:black;
+    border:1px solid transparent;
+    font-size:10pt;
+    font-weight:bold;
+    background-color:lightblue;
+}
+
+    .Calendar_MDTDSelect:hover {
+        border:1px solid gray;
+    }
+
+.Calendar_MDTD1 {
+    height: 30px;
+    cursor: default;
+    text-align: center;
+    vertical-align: middle;
+    color: gray;
+    border: 1px solid transparent;
+    font-size: 10pt;
+}
+    .Calendar_MDTD1:hover {
+        border:1px solid gray;
+    }
+
+
+
+.Calendar_MDTH {
+    height:30px;
+    cursor:default;
+    text-align:center;
+    vertical-align:middle;
+    font-size:10pt;
+    font-weight:bold;
+    background-color:darkgray;
+    border-bottom:2px solid whitesmoke;
+}
+
+
+.RateTagBox {
+    display:inline-block;
+    border:1px solid #ccc;
+    border-radius:5px;
+    padding:3px 5px;
+    margin:4px;
+    cursor:default;
+}
+.RateTagBox-Selected {
+    border-color:pink;
+    color:pink;
+}
+.RateTagBox .RateTagBox_Title{
+    margin-right:5px;
+}
+.RateTagBox .RateTagBox_Count{
+
+}
+
+
+.HorizonScrollBar {
+    background-color: #C0C0C0;
+    height: 8px;
+    max-height:17px;
+    min-width:32px;
+    position: relative;
+}
+
+.HSCB_LArrowDiv {
+    position: absolute;
+    height: 100%;
+    width: 8px;
+    background-color: lightgray;
+    left: 0px;
+}
+
+.HSCB_RArrowDiv {
+    position: absolute;
+    height: 100%;
+    width: 8px;
+    background-color: lightgray;
+    right: 0px;
+}
+
+.HSCB_TrackBar {
+
+    position:absolute;
+    height:100%;
+    width:8px;
+    background-color:red;
+    left:8px;
+}
+
+.HSCB_TrackBar:hover {
+
+    background-color:lightblue;
+
+
+}
+
+.VerticalScrollBar {
+
+    background-color: #C0C0C0;
+    width: 8px;
+    max-width:17px;
+    min-height:32px;
+    position: relative;
+}
+
+.VSCB_TArrowDiv {
+    position:absolute;
+    height:8px;
+    width:100%;
+    background-color:lightgray;
+    top:0px;
+}
+
+.VSCB_BArrowDiv {
+    position: absolute;
+    height: 8px;
+    width: 100%;
+    background-color: lightgray;
+    bottom: 0px;
+}
+
+.VSCB_TrackBar {
+    position: absolute;
+    height: 8px;
+    width: 100%;
+    top: 8px;
+    background-color: red;
+}
+
+.VSCB_TrackBar:hover {
+
+    background-color:lightblue;
+
+
+}
+
+
+.RichTextBlock {
+
+    display:block;
+    position:relative;
+    overflow:hidden;
+    border:1px solid lightgray;
+}
+
+.RichTextBlockDIV {
+    display:block;
+    height:100%;
+    overflow:auto;
+}
+
+.DrawViewer {
+    display:block;
+    position:relative;
+}
+.DrawViewPaper {
+    display:block;
+    position:relative;
+    width:100%;
+    height:100%;
+}
+
+.DBChart {
+
+    display:inline-block;
+    position:relative;
+    overflow:hidden;
+
+}
+
+.DateTimePicker {
+    vertical-align: top;
+    overflow: hidden;
+    width: 100px;
+    height: 50px;
+    text-align: center;
+    line-height: 50px;
+    font-size: 12px;
+    border: 1px solid #8d8d8d;
+    /*color: #2980B9;*/
+}
+
+    .DateTimePicker .DateTimePicker_Container {
+        width: 100%;
+        height: 100%;
+        display: flex; /* IE10 */
+        display: flexbox; /* IE10 */
+        display: -moz-box; /* Firefox */
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .DateTimePicker .DateTimePicker_ContentLabel {
+        display: inline-block;
+        width: 100%;
+        height: 100%;
+    }
+
+.dtpicker-overlay {
+    z-index: 2000;
+    display: none;
+    min-width: 300px;
+    background: rgba(203, 203, 203, 0.2);
+    font-size: 12px;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+}
+
+
+.dtpicker-mobile {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /*z-index: 2000;*/
+    /*opacity: 1;*/
+    /*visibility: visible;*/
+    /*-webkit-transition: all 10s ease;*/
+    /*transition: all 10s ease;*/
+}
+
+.dtpicker-overlay * {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+.dtpicker-bg {
+    width: 100%;
+    height: 100%;
+    background: #666666;
+    font-family: Arial;
+}
+
+.dtpicker-cont {
+    border: 1px solid #ECF0F1;
+}
+
+.dtpicker-mobile .dtpicker-cont {
+    position: relative;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+    border: none;
+}
+
+.dtpicker-content {
+    margin: 0 auto;
+    /*padding: 1em 0;*/
+    max-width: 500px;
+    background: #fff;
+}
+
+.dtpicker-subcontent {
+    position: relative;
+}
+
+.dtpicker-header {
+    /*margin: 0.2em;*/
+    padding-top: 0.2em;
+}
+
+    .dtpicker-header .dtpicker-title {
+        color: #2980B9;
+        text-align: center;
+        font-size: 1.3em;
+        /*margin-top: 0.2em;*/
+    }
+
+    .dtpicker-header .dtpicker-close {
+        position: absolute;
+        top: 0.1em;
+        right: 0.1em;
+        padding: 0.1em 0.5em 0.5em 1em;
+        color: #FF3B30;
+        font-size: 2.0em;
+        cursor: pointer;
+    }
+
+        .dtpicker-header .dtpicker-close:hover {
+            color: #FF3B30;
+            /*color: #2a6496;*/
+        }
+
+    .dtpicker-header .dtpicker-value {
+        padding: 0.8em 0.2em 0.8em 0.2em;
+        /*color: #FF3B30;*/
+        text-align: center;
+        font-size: 1.4em;
+    }
+
+.dtpicker-components {
+    overflow: hidden;
+    /*margin: 0em 0em;*/
+    padding: 1em 1em;
+    background: #ccb542;
+    font-size: 1.8em;
+}
+
+
+    .dtpicker-components * {
+        margin: 0;
+        padding: 0;
+    }
+
+
+    .dtpicker-components .dtpicker-compOutline {
+        display: inline-block;
+        float: left;
+    }
+
+.dtpicker-comp2 {
+    width: 50%;
+}
+
+.dtpicker-comp3 {
+    width: 33.3%;
+}
+
+.dtpicker-comp4 {
+    width: 25%;
+}
+
+.dtpicker-comp5 {
+    width: 20%;
+}
+
+.dtpicker-comp6 {
+    width: 16.66%;
+}
+
+.dtpicker-comp7 {
+    width: 14.285%;
+}
+
+.dtpicker-components .dtpicker-comp {
+    margin: 2% 3%;
+    text-align: center;
+}
+
+    .dtpicker-components .dtpicker-comp > * {
+        display: block;
+        height: 30px;
+        color: #2980B9;
+        text-align: center;
+        line-height: 30px;
+    }
+
+        .dtpicker-components .dtpicker-comp > *:hover {
+            color: #2980B9;
+        }
+
+.dtpicker-components .dtpicker-compButtonEnable {
+    opacity: 1;
+}
+
+.dtpicker-components .dtpicker-compButtonDisable {
+    opacity: 0.5;
+}
+
+.dtpicker-components .dtpicker-compButton {
+    background-color: transparent;
+    font-size: 140%;
+    /*padding: .2em 0.2em;*/
+    /*margin: 0em 2.5em;*/
+    cursor: pointer;
+}
+
+.dtpicker-components .dtpicker-compValue {
+    margin: 0.4em 0;
+    width: 100%;
+    border: none;
+    /*background: #FFFFFF;*/
+    background-color: transparent;
+    font-size: 100%;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+}
+
+.dtpicker-overlay .dtpicker-compValue:focus {
+    outline: none;
+    background: #F2FCFF;
+}
+
+
+
+
+.dtpicker-buttonCont {
+    /*display: block;*/
+    overflow: hidden;
+    /*margin: 0.2em 1em;*/
+}
+
+    .dtpicker-buttonCont .dtpicker-button {
+        display: block;
+        padding: 0.6em 0;
+        width: 50%;
+        /*background: #FF3B30;*/
+        color: #666666;
+        text-align: center;
+        font-size: 1.2em;
+        border: 1px solid #d6d6d6;
+        cursor: pointer;
+    }
+
+        .dtpicker-buttonCont .dtpicker-button:hover {
+            color: #666666;
+        }
+
+.dtpicker-singleButton .dtpicker-button {
+    /*margin: 0.2em auto;*/
+}
+
+.dtpicker-twoButtons .dtpicker-buttonSet {
+    float: right;
+}
+
+.dtpicker-twoButtons .dtpicker-buttonClear {
+    float: left;
+}
+
+.show {
+    visibility: visible;
+}
+
+.textcursorAnimation {
+    animation: blink 1s infinite steps(1, start)
+}
+
+@keyframes blink {
+    0% {
+        background-color: transparent;
+    }
+    50% {
+        background-color: #666666;
+    }
+    100% {
+        background-color: transparent;
+    }
+}
+
+
+
+
+.NavControls_SlideShow {
+    position: relative;
+    box-sizing: border-box;
+    /*border: 1px solid #730099;*/
+    /*text-align:center;*/
+    overflow: hidden;
+}
+
+    .NavControls_SlideShow .NavControls_SlideShowDiv {
+        height: 100%;
+        box-sizing: border-box;
+        position: relative;
+        top: 0px;
+        left: 0px;
+        /*transition:1s top,1s left;*/
+    }
+
+.NavControls_SlideShowImgContainer {
+    height: 100%;
+    position: relative;
+    display: inline-block;
+    /*border: 1px solid red;*/
+    /*transition: opacity 500ms ease-in;*/
+    opacity: 1;
+}
+
+.NavControls_SlideShowImgContainer_next {
+    height: 100%;
+    position: relative;
+    display: inline-block;
+    /*border: 1px solid red;*/
+    transition: opacity 500ms ease-in-out 0s;
+    opacity: 1;
+}
+
+.NavControls_SlideShowImgContainer_pre {
+    height: 100%;
+    position: relative;
+    display: inline-block;
+    transition: opacity 500ms ease-in-out 0s;
+    opacity: 0;
+}
+
+
+.NavControls_SlideShowDiv .NavControls_SlideShowImg {
+    /*width: 100%;*/
+    height: 100%;
+}
+
+.NavControls_SlideShowSwitchDiv {
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    height: 60px;
+    top: 50%;
+    transform: translate(0,-50%);
+    /*background-color: silver;*/
+    display: none;
+    /*transition: 1s display;*/
+    /*border: 1px solid darkcyan;*/
+    pointer-events: none;
+}
+
+.NavControls_SlideShowSwitchLeft {
+    width: 30px;
+    height: 30px;
+    background-color: rgba(34, 34, 34, 0.3);
+    float: left;
+    margin-left: 10px;
+    pointer-events: auto;
+}
+
+.NavControls_SlideShowSwitchLeftImg, .NavControls_SlideShowSwitchRightImg {
+    width: 30px;
+    height: 30px;
+}
+
+.NavControls_SlideShowSwitchRight {
+    width: 30px;
+    height: 30px;
+    background-color: rgba(34, 34, 34, 0.3);
+    float: right;
+    margin-right: 10px;
+    pointer-events: auto;
+}
+
+.NavControls_SlideShow .NavControls_SlideShowIdcDiv {
+    position: absolute;
+    display: flex; /* IE10 */
+    display: flexbox; /* IE10 */
+    display: -moz-box; /* Firefox */
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    bottom: 10px;
+    left: 0px;
+    right: 0px;
+    height: 20px;
+}
+/*中下*/
+.NavControls_SlideShow .NavControls_SlideShowIdcDiv_bottom-center {
+    position: absolute;
+    display: flex; /* IE10 */
+    display: flexbox; /* IE10 */
+    display: -moz-box; /* Firefox */
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    bottom: 10px;
+    left: 0px;
+    right: 0px;
+    height: 20px;
+}
+/*左下*/
+.NavControls_SlideShow .NavControls_SlideShowIdcDiv_bottom-left {
+    position: absolute;
+    display: flex; /* IE10 */
+    display: flexbox; /* IE10 */
+    display: -moz-box; /* Firefox */
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    bottom: 10px;
+    left: 0px;
+    right: 0px;
+    height: 20px;
+}
+/*右下*/
+.NavControls_SlideShow .NavControls_SlideShowIdcDiv_bottom-right {
+    position: absolute;
+    display: flex; /* IE10 */
+    display: flexbox; /* IE10 */
+    display: -moz-box; /* Firefox */
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    bottom: 10px;
+    left: 0px;
+    right: 0px;
+    height: 20px;
+}
+
+/*中上*/
+.NavControls_SlideShow .NavControls_SlideShowIdcDiv_top-center {
+    position: absolute;
+    display: flex; /* IE10 */
+    display: flexbox; /* IE10 */
+    display: -moz-box; /* Firefox */
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    top: 10px;
+    left: 0px;
+    right: 0px;
+    height: 20px;
+}
+/*左上*/
+.NavControls_SlideShow .NavControls_SlideShowIdcDiv_top-left {
+    position: absolute;
+    display: flex; /* IE10 */
+    display: flexbox; /* IE10 */
+    display: -moz-box; /* Firefox */
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    top: 10px;
+    left: 0px;
+    right: 0px;
+    height: 20px;
+}
+/*右上*/
+.NavControls_SlideShow .NavControls_SlideShowIdcDiv_top-right {
+    position: absolute;
+    display: flex; /* IE10 */
+    display: flexbox; /* IE10 */
+    display: -moz-box; /* Firefox */
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    top: 10px;
+    left: 0px;
+    right: 0px;
+    height: 20px;
+}
+
+.NavControls_SlideShowIndicator {
+    box-sizing: border-box;
+    height: 10px;
+    width: 10px;
+    margin-left: 6px;
+    margin-right: 6px;
+    border-radius: 10px;
+    /*background-color:rgba(128,128,128,0.5);*/
+    background-color: transparent;
+    border: 2px solid rgba(255,255,255,0.6);
+}
+
+.NavControls_SlideShowIndicatorC {
+    box-sizing: border-box;
+    position: relative;
+    height: 10px;
+    width: 10px;
+    margin-left: 6px;
+    margin-right: 6px;
+    border-radius: 10px;
+    /*background-color:rgba(255,255,255,0.6);*/
+    background-color: rgba(255,255,255,1);
+    /*box-shadow: 0px 0px 10px #ffffff;*/
+    /*border: 1px solid transparent;*/
+    /*box-shadow: silver;*/
+    z-index: 2;
+}
+
+    .NavControls_SlideShowIndicatorC:after {
+        box-sizing: border-box;
+        content: "";
+        width: 16px;
+        height: 16px;
+        display: block;
+        background-color: transparent;
+        border: 3px solid rgba(255,255,255,0.3);
+        position: absolute;
+        left: -3px;
+        top: -3px;
+        border-radius: 50%;
+        z-index: 1;
+    }
+
+
+
+
+.MessageScrollBox {
+    width: 250px;
+    height: 40px;
+}
+
+
+    .MessageScrollBox .MessageScrollBox_Container {
+        display: flex;
+        flex-direction: column;
+        -webkit-flex-direction: column;
+        -webkit-justify-content: center;
+        justify-content: center;
+        width: 100%;
+        height: 100%;
+    }
+
+
+    .MessageScrollBox .MessageScrollBox_ScrollArea {
+        width: 100%;
+        height: 100%;
+        /*display: -webkit-box;*/
+        display: -webkit-flex;
+        /*display: -ms-flexbox;*/
+        /*display: -moz-box;*/
+        display: flex;
+        /*-webkit-box-orient: vertical;*/
+        /*-webkit-box-direction: normal;*/
+        /*-webkit-flex-direction: column;*/
+        flex-direction: column;
+        align-items: center;
+        -webkit-align-items: center;
+        -webkit-justify-content: center;
+        justify-content: center;
+        /*-webkit-box-pack: center;*/
+    }
+
+    .MessageScrollBox .MessageScrollBox_MessageUp {
+        cursor: pointer;
+        /*display: inline-block;*/
+        /*width: 100%;*/
+    }
+
+        .MessageScrollBox .MessageScrollBox_MessageUp:hover {
+            color: #3e40c9;
+            text-decoration-line: underline;
+        }
+
+    .MessageScrollBox .MessageScrollBox_MessageOld {
+        margin-left: 30px;
+    }
+
+    .MessageScrollBox .MessageScrollBox_Message {
+        cursor: pointer;
+        margin-left: 30px;
+    }
+
+        .MessageScrollBox .MessageScrollBox_Message:hover {
+            color: #3e40c9;
+            text-decoration-line: underline;
+        }
+
+
+/*css变量定义
+定义规范：--选择器名-伪类、伪元素名-样式名
+1、选择器名不多于三级，中间用下划线_链接；
+2、样式名使用JavaScript中规范的css样式名；
+3、变量值设置遵守css样式赋值规范；
+4、如果同个对象应用在不同层级下，则需要把css变量命名在对应的层级下；
+
+示例：--Pagination_Container_Button-borderRadius：50%；
+*/
+
+
+/*分页控件*/
+
+.Pagination {
+    vertical-align: top;
+    line-height: 25px;
+    text-align: center;
+    overflow: hidden;
+    border-radius: 5px;
+    border: 1px solid black;
+    background-color: transparent;
+}
+
+.Pagination .Pagination_InnerContainer {
+    width: 100%;
+    height: 100%;
+    position: relative;
+
+    display: flex; /* IE10 */
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.Pagination .Pagination_Container {
+    list-style: none;
+    padding: 0px;
+    margin: 0px;
+    text-align: center;
+    display: inline-block;
+
+    /*20191216*/
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.Pagination_Container .Pagination_Button{
+    box-sizing: border-box;
+    font-weight: bold;
+    text-align: center;
+    transition: background-color 0.5s;
+    border-radius: 50%;
+
+    display: inline-block;
+
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+
+
+    min-width: 20px;
+    height: 90%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #E5E5E5;
+    border-radius: 5px;
+    margin-left: 5px;
+}
+
+.Pagination_Container .Pagination_ButtonText {
+    display: block;
+    width: 100%;
+    cursor: pointer;
+    text-decoration: none;
+    box-sizing: border-box;
+    background-color: transparent;
+
+}
+
+.Pagination_Container .Pagination_ButtonDisabled {
+    color: silver;
+    border: 1px solid #E5E5E5;
+    background-color: transparent;
+}
+
+/*Pagination_ButtonSelected*/
+.Pagination_Container .Pagination_ButtonSelected {
+    cursor: pointer;
+    color: #f9f9f9;
+    /*   #fb5f7d   */
+    border:1px solid #fb5f7d;
+    background-color: #fb5f7d;
+    font-size: 16px;
+}
+
+.Pagination_Container .Pagination_Button .Pagination_ButtonEllipsis {
+    display: block;
+    width: 100%;
+    cursor: default;
+    text-decoration: none;
+    box-sizing: border-box;
+    border: 0px!important;
+}
+
+.VideoPlayer {
+    width: 320px;
+    height: 180px;
+    /*border: 1px solid sienna;*/
+    vertical-align: top;
+}
+
+    .VideoPlayer * {
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        -ms-box-sizing: border-box;
+        -o-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+
+    .VideoPlayer .float {
+        float: left;
+    }
+
+    .VideoPlayer .VideoPlayer_LoadError {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0px;
+        background-color: rgba(0,0,0,0.55);
+        color: #e5e5e5;
+        font-size: 10px;
+        font-family: "宋体";
+        font-weight: lighter;
+        display: flex; /* IE10 */
+        display: flexbox; /* IE10 */
+        display: -moz-box; /* Firefox */
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        /*文字取消选中效果*/
+        -webkit-touch-callout: none;
+        -webkit-user-select: none;
+        -khtml-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+    }
+
+    .VideoPlayer .VideoPlayer_LoadErrorHidden {
+        display: none;
+    }
+
+    .VideoPlayer .VideoPlayer_Wrapper {
+        width: 100%;
+        height: 100%;
+        position: relative;
+    }
+
+    .VideoPlayer .VideoPlayer_Video {
+        width: 100%;
+        height: 100%;
+        background-color: #2b2b2b;
+        object-fit: contain;
+    }
+
+    .VideoPlayer .VideoPlayer_ControlBar {
+        width: 100%;
+        min-height: 40px;
+        /*height: 40px;*/
+        position: absolute;
+        left: 0px;
+        right: 0px;
+        bottom: 0px;
+        background-color: rgba(0,0,0,0.5);
+        /*padding: 10px 0;*/
+        display: flex; /* IE10 */
+        display: flexbox; /* IE10 */
+        display: -moz-box; /* Firefox */
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .VideoPlayer .VideoPlayer_ControlBarHidden {
+        display: none;
+    }
+
+.VideoPlayer_ControlBar .VideoPlayer_VideoPlay {
+    width: 5%;
+    min-width: 5px;
+    text-align: center;
+    cursor: pointer;
+    display: flex; /* IE10 */
+    display: flexbox; /* IE10 */
+    display: -moz-box; /* Firefox */
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.VideoPlayer_VideoPlayImg {
+    display: inline-block;
+    max-height: 16px;
+    max-width: 16px;
+}
+
+.VideoPlayer_ControlBar .VideoPlayer_Slider {
+    width: 50%;
+    min-width: 10px;
+    position: relative;
+    z-index: 0;
+    display: inline-block;
+    overflow: hidden;
+}
+
+.VideoPlayer .VideoPlayer_SliderRange {
+    z-index: 3;
+    position: relative;
+    width: 100%;
+    /*background-color: transparent !important;*/
+    height: 1px;
+    border: none;
+    outline: 0px;
+    /*background-color: #c0392b !important;*/
+}
+
+.VideoPlayer_ControlBar input[type=range] {
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    border-radius: 2px;
+    vertical-align: middle;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-color: rgba(255, 255, 255, 0.7);
+    height: 2px;
+    border: none;
+    cursor: pointer;
+}
+
+    .VideoPlayer_ControlBar input[type=range]::-moz-range-track {
+        vertical-align: middle;
+        border-radius: 2px;
+        background-color: rgba(255, 255, 255, 0.7);
+        -moz-appearance: none;
+        background-color: white;
+        height: 2px;
+        cursor: pointer;
+    }
+
+    .VideoPlayer_ControlBar input[type=range]::-moz-range-thumb {
+        border-radius: 50%;
+        height: 8px;
+        width: 8px;
+        background-color: white;
+        border: 0;
+    }
+
+    .VideoPlayer_ControlBar input[type=range].light::-moz-range-thumb {
+        box-shadow: 0 0 8px 2px white;
+    }
+
+    .VideoPlayer_ControlBar input[type=range]::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        border-radius: 50%;
+        height: 8px;
+        width: 8px;
+        background-color: white;
+        border: 0;
+    }
+
+    .VideoPlayer_ControlBar input[type=range].light::-webkit-slider-thumb {
+        box-shadow: 0 0 8px 2px white;
+    }
+
+/*.custom-video-controlbar input[type=range]:active::-moz-range-track {*/
+/*background: orange;*/
+/*}*/
+
+.VideoPlayer .VideoPlayer_Time {
+    width: 20%;
+    min-width: 65px;
+    font-size: 10px;
+    color: #e0dfdf;
+    text-align: left;
+    padding-left: 5px;
+    line-height: 20px;
+    /*文字取消选中效果*/
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.VideoPlayer .VideoPlayer_Mute {
+    width: 5%;
+    min-width: 5px;
+    text-align: center;
+    cursor: pointer;
+    display: flex; /* IE10 */
+    display: flexbox; /* IE10 */
+    display: -moz-box; /* Firefox */
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.VideoPlayer .VideoPlayer_MuteImg {
+    /*height: 100%;*/
+    display: inline-block;
+    max-height: 16px;
+    max-width: 16px;
+}
+
+.VideoPlayer .VideoPlayer_Volume {
+    width: 15%;
+    min-width: 10px;
+    overflow: hidden;
+}
+
+.VideoPlayer .VideoPlayer_VolumeRange {
+    display: inline-block;
+    width: 96%;
+    outline: 0px;
+}
+
+.VideoPlayer .VideoPlayer_FullScreen {
+    width: 5%;
+    min-width: 5px;
+    text-align: center;
+    cursor: pointer;
+    display: flex; /* IE10 */
+    display: flexbox; /* IE10 */
+    display: -moz-box; /* Firefox */
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.VideoPlayer .VideoPlayer_FullScreenImg {
+    display: inline-block;
+    max-height: 16px;
+    max-width: 16px;
+}
+
+
+.VideoPlayer .VideoPlayer_CenterPlayBtn {
+    position: absolute;
+    z-index: 10000;
+    left: 50%;
+    top: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    width: 100px;
+    height: 100px;
+    display: block;
+    cursor: pointer;
+}
+
+.VideoPlayer .VideoPlayer_CenterPlayBtnHidden {
+    display: none;
+}
+
+
+.VideoPlayer .VideoPlayer_CenterPlayImg {
+    width: 100%;
+    height: 100%;
+}
+
+.rotate90 {
+    -webkit-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    -o-transform: rotate(90deg);
+    transform: rotate(90deg);
+}
+
+
+
+/*搜索视图*/
+.SearchBarView {
+    /*width: 600px;*/
+    height: 40px;
+    border: 2px solid dimgray;
+    box-sizing: border-box;
+}
+
+    /*搜索视图外观*/
+    .SearchBarView .SearchBarViewContainer {
+        width: 100%;
+        height: 100%;
+        position: relative;
+    }
+
+    /*搜索图标*/
+    .SearchBarView .SearchBarViewSearchIcon {
+        width: 5%;
+        height: 100%;
+        float: left;
+        box-sizing: border-box;
+        display: flex; /* IE10 */
+        display: flexbox; /* IE10 */
+        display: -moz-box; /* Firefox */
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        /*border: 1px solid aqua;*/
+    }
+
+    .SearchBarView .SearchBarViewSearchIconImg {
+        width: 80%;
+    }
+
+    /*搜索框*/
+    .SearchBarView .SearchBarViewSearchBox {
+        height: 100%;
+        width: 75%;
+        display: inline-block;
+        float: left;
+        box-sizing: border-box;
+        display: flex; /* IE10 */
+        display: flexbox; /* IE10 */
+        display: -moz-box; /* Firefox */
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: center;
+        /*border: 1px solid #ffaa30;*/
+    }
+
+    /*输入框*/
+    .SearchBarView .SearchBarViewSearchInputBox {
+        display: inline-block;
+        width: 92%;
+        height: 90%;
+        border: none;
+        outline: none;
+        font-size: 12px;
+        color: #3c3f41;
+    }
+
+    /*搜索按钮*/
+    .SearchBarView .SearchBarViewSearchButton {
+        width: 20%;
+        height: 100%;
+        display: inline-block;
+        float: right;
+        box-sizing: border-box;
+        display: flex; /* IE10 */
+        display: flexbox; /* IE10 */
+        display: -moz-box; /* Firefox */
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        background-color: #696969;
+        /*border: 1px solid seagreen;*/
+        /*文字取消选中效果*/
+        -webkit-touch-callout: none;
+        -webkit-user-select: none;
+        -khtml-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+    }
+
+        .SearchBarView .SearchBarViewSearchButton:hover {
+            cursor: pointer;
+            /*color: #ffaa30;*/
+            background-color: #858889;
+        }
+
+    /*搜索按钮图标*/
+    .SearchBarView .SearchBarViewSearchButtonImg {
+        height: 80%;
+        /*margin-left: 5px;*/
+    }
+
+    /*按钮文字*/
+    .SearchBarView .SearchBarViewSearchButtonText {
+        display: inline-block;
+        width: 80%;
+        text-align: center;
+        font-size: 14px;
+        color: #fff;
+    }
+
+    /*搜索结果展示列表*/
+    .SearchBarView .SearchBarViewResultsList {
+        /*width: 100%;*/
+        min-height: 40px;
+        max-height: 400px;
+        position: absolute;
+        z-index: 7000;
+        box-sizing: border-box;
+        left: -2px;
+        right: -2px;
+        top: 40px;
+        border: 1px solid red;
+        display: none;
+        overflow: auto;
+    }
+
+
+.OutlookBar {
+    /*OutlookBar背景色设置*/
+    --OutlookBar-backgroundColor: #cbcbcb;
+    /*OutlookBar头部区域背景色设置*/
+    --OutlookBar_Header-backgroundColor: #2b68dc;
+    /*OutlookBar头部区域字体颜色设置*/
+    --OutlookBar_HeaderText-color: #f9f9f9;
+    /*OutlookBar控制区域设置*/
+    --OutlookBar_Control-fontSize: 14px;
+    --OutlookBar_Control-backgroundColor: #00c167;
+    /*OutlookBar 菜单区域设置*/
+    --OutlookBar_Body-backgroundColor: #00c167;
+    /*OutlookBar 一级菜单样式设置*/
+    --OutlookBarItemBar-backgroundColor: #00c167;
+    --OutlookBarItemBar-hover-backgroundColor: #cbcbcb;
+    --OutlookBarItemBar-color: #f9f9f9;
+    --OutlookBarItemBar-fontSize: 14px;
+    /*选中样式*/
+    --OutlookBarItemBar_Selected-fontSize: 16px;
+    --OutlookBarItemBar_Selected-backgroundColor: #00c167;
+    --OutlookBarItemBar_Selected-color: white;
+    /*OutlookBar1 二级菜单样式设置*/
+    --OutlookBarItem1Bar-backgroundColor: #70cb98;
+    --OutlookBarItem1Bar-color: #393939;
+    --OutlookBarItem1Bar-fontSize: 12px;
+    /*选中样式*/
+    --OutlookBarItem1Bar_Selected-fontSize: 14px;
+    --OutlookBarItem1Bar_Selected-backgroundColor: #00c167;
+    --OutlookBarItem1Bar_Selected-color: white;
+    /*滚动条样式*/
+    --ScrollBar_Color: #858889;
+    --ScrollBar_Width: 6px;
+    --ScrollBar_BorderRadius: 3px;
+}
+
+.OutlookBar {
+    background-color: var(--OutlookBar-backgroundColor);
+    height: 100%;
+    width: 100%;
+    border: 1px solid #3c3f41;
+    position: relative;
+    box-sizing: border-box;
+    /*overflow: hidden;*/
+    /*文字取消选中效果*/
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+    /*默认展开样式*/
+    .OutlookBar .OutlookBar_Header {
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -moz-flex;
+        display: -ms-flexbox;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        flex-direction: row;
+        position: absolute;
+        overflow: hidden;
+        right: 0px;
+        left: 0px;
+        top: 0px;
+        background-color: var(--OutlookBar_Header-backgroundColor);
+        height: 44px;
+    }
+
+.OutlookBar_Header .OutlookBar_HeaderText {
+    font-size: 16px;
+    /*margin-left: 14px;*/
+    display: inline-block;
+    word-break: keep-all;
+    white-space: nowrap;
+    overflow: hidden;
+    /*text-overflow: ellipsis;*/
+    color: var(--OutlookBar_HeaderText-color);
+}
+
+.OutlookBar_HeaderImage {
+    max-height: 40px;
+    max-width: 40px;
+    /*margin-left: 16px;*/
+}
+
+/*-------------------折叠样式---------------------*/
+.OutlookBar .OutlookBar_Header_fold {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flexbox;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    position: absolute;
+    overflow: hidden;
+    right: 0px;
+    left: 0px;
+    top: 0px;
+    background-color: var(--OutlookBar_Header-backgroundColor);
+    height: 44px;
+    justify-content: center;
+}
+
+.OutlookBar_Header_fold .OutlookBar_HeaderText {
+    display: none;
+}
+
+
+.OutlookBar .OutlookBar_Control {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flexbox;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: row;
+    position: absolute;
+    right: 0px;
+    left: 0px;
+    bottom: 0px;
+    height: 35px;
+    line-height: 35px;
+    overflow: hidden;
+    word-break: keep-all;
+    white-space: nowrap;
+    overflow: hidden;
+    font-size: var(--OutlookBar_Control-fontSize);
+    background-color: var(--OutlookBar_Control-backgroundColor);
+}
+
+.OutlookBar .OutlookBar_ControlImage {
+    cursor: pointer;
+    max-height: 26px;
+    display: inline-block;
+}
+
+.OutlookBar .OutlookBar_Body {
+    overflow: auto;
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    top: 44px;
+    bottom: 35px;
+    background-color: var(--OutlookBar_Body-backgroundColor);
+    /*padding-left: 5px;*/
+}
+
+    /*设置滚动条样式 start*/
+    .OutlookBar .OutlookBar_Body::-webkit-scrollbar {
+        width: var(--ScrollBar_Width,6px);
+        /*background-color: var(--OutlookBar_Body-backgroundColor);*/
+        background-color: transparent;
+    }
+
+    .OutlookBar .OutlookBar_Body::-webkit-scrollbar-track {
+        /*background-color: var(--OutlookBar_Body-backgroundColor);*/
+    }
+
+    .OutlookBar .OutlookBar_Body::-webkit-scrollbar-thumb {
+        background-color: var(--ScrollBar_Color,#858889);
+        border-radius: var(--ScrollBar_BorderRadius);
+    }
+/*设置滚动条样式 end*/
+
+
+.OutlookBarItem .OutlookBarItemBar {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flexbox;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: row;
+    overflow: hidden;
+    height: 40px;
+    background-color: var(--OutlookBarItemBar-backgroundColor);
+    color: var(--OutlookBarItemBar-color);
+    font-size: var(--OutlookBarItemBar-fontSize);
+}
+
+/*选中样式设置*/
+.OutlookBar .OutlookBarItem .OutlookBarItemBar_Selected {
+    background-color: var(--OutlookBarItemBar_Selected-backgroundColor);
+    color: var(--OutlookBarItemBar_Selected-color);
+    font-size: var(--OutlookBarItemBar_Selected-fontSize);
+}
+
+.OutlookBar .OutlookBarItem1 .OutlookBarItemBar_Selected {
+    background-color: var(--OutlookBarItem1Bar_Selected-backgroundColor);
+    color: var(--OutlookBarItem1Bar_Selected-color);
+    font-size: var(--OutlookBarItem1Bar_Selected-fontSize);
+}
+
+
+
+.OutlookBarItem .OutlookBarItemBar .OutlookBarItemECImage {
+    min-width: 20px;
+    min-height: 20px;
+    max-width: 35px;
+    max-height: 35px;
+    display: inline-block;
+    position: absolute;
+    right: 5px;
+}
+
+.OutlookBarItem .OutlookBarItemImage {
+    max-height: 35px;
+    max-width: 35px;
+}
+
+.OutlookBarItem .OutlookBarItemBar .OutlookBarItemText {
+    margin-left: 10px;
+    /*vertical-align: top;*/
+}
+
+/*折叠样式*/
+.OutlookBarItem .OutlookBarItemBar_fold {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flexbox;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    overflow: hidden;
+    height: 40px;
+    background-color: var(--OutlookBarItemBar-backgroundColor);
+    color: var(--OutlookBarItemBar-color);
+    font-size: var(--OutlookBarItemBar-fontSize);
+}
+
+    .OutlookBarItem .OutlookBarItemBar_fold:hover {
+        background-color: var(--OutlookBarItemBar-hover-backgroundColor);
+    }
+
+    .OutlookBarItem .OutlookBarItemBar_fold .OutlookBarItemECImage {
+        display: none;
+    }
+
+    .OutlookBarItem .OutlookBarItemBar_fold .OutlookBarItemText {
+        display: none;
+    }
+
+
+.OutlookBarItem .OutlookBarItemsPanel {
+    display: block;
+}
+
+.OutlookBarItem .OutlookBarItemsPanel_hidden {
+    display: none;
+}
+
+.OutlookBarItem1 .OutlookBarItemBar {
+    height: 35px;
+    background-color: var(--OutlookBarItem1Bar-backgroundColor);
+    color: var(--OutlookBarItem1Bar-color);
+    font-size: var(--OutlookBarItem1Bar-fontSize);
+}
+
+.OutlookBarItemBar:hover {
+    background-color: var(--OutlookBarItemBar-hover-backgroundColor);
+}
+
+.OutlookBarItem1 .OutlookBarItemBar .OutlookBarItemECImage {
+    min-width: 15px;
+    min-height: 15px;
+    max-width: 30px;
+    max-height: 30px;
+    display: none;
+}
+
+.OutlookBarItem1 .OutlookBarItemBar .OutlookBarItemImage {
+    max-height: 30px;
+    max-width: 30px;
+    min-width: 15px;
+    min-height: 15px;
+    display: none;
+}
+
+.OutlookBarItem1 .OutlookBarItemBar .OutlookBarItemText {
+    margin-left: 45px;
+}
+
+.OutlookBarItem2 .OutlookBarItemBar {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flexbox;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: row;
+    overflow: hidden;
+    height: 30px;
+}
+
+.PNV_NavigationView
+{
+    display:inline-block;
+    padding:4px;
+    position:relative;
+}
+
+.PNV_Image
+{
+    width:100%;
+    height:100%;
+}
+
+.PNV_PanelView {
+    display: inline-block;
+    position: absolute;
+    transition: 0.2s left;
+    animation: fade-in;
+    animation-duration: 0.2s;
+    -webkit-animation: fade-in 0.2s;
+    box-shadow: rgba(0, 0, 0, 0.15) 1px 1px 8px 1px;
+}
+
+
+
+.TabPageView {
+    width: 100px;
+    height: 180px;
+    box-sizing: border-box;
+    /*border: 1px solid aquamarine;*/
+    /*overflow-x: auto;*/
+}
+
+.TabPageViewContainer {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    box-sizing: border-box;
+    /*border: 1px solid red;*/
+}
+
+.TabPageView .TabPageViewPagesPanel {
+    /*width: 100%;*/
+    height: 32px;
+    border-bottom: 1px solid #999999;
+    /*overflow: auto;*/
+    /*overflow-x: auto;*/
+    /*overflow-y: hidden;*/
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    right: 0px;
+    box-sizing: border-box;
+    display: flex; /* IE10 */
+    display: flexbox; /* IE10 */
+    display: -moz-box; /* Firefox */
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: flex-end;
+    flex-wrap: wrap;
+}
+
+.TabPageView .TabPageViewPagesPanel_Bottom {
+    /*width: 100%;*/
+    height: 32px;
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    box-sizing: border-box;
+    display: flex; /* IE10 */
+    display: flexbox; /* IE10 */
+    display: -moz-box; /* Firefox */
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
+
+
+.TabPageView .TabPageViewWebView {
+    /*width: 100%;*/
+    /*height: 146px;*/
+    /*border:1px solid #2a27ff;*/
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    top: 32px;
+}
+
+.TabPageViewItem {
+    height: 100%;
+    width: 50px;
+    display: inline-block;
+    box-sizing: border-box;
+    text-align: center;
+    position: relative;
+    /*文字取消选中效果*/
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    float: left;
+    display: flex; /* IE10 */
+    display: flexbox; /* IE10 */
+    display: -moz-box; /* Firefox */
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+/*垂直*/
+.TabPageViewItem_Vertical {
+    height: 100%;
+    display: inline-block;
+    box-sizing: border-box;
+    text-align: center;
+    position: relative;
+    /*文字取消选中效果*/
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    float: left;
+    display: flex; /* IE10 */
+    display: flexbox; /* IE10 */
+    display: -moz-box; /* Firefox */
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+/*水平*/
+.TabPageViewItem_Horizontal {
+    height: 100%;
+    display: inline-block;
+    box-sizing: border-box;
+    text-align: center;
+    position: relative;
+    /*文字取消选中效果*/
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    float: left;
+    display: flex; /* IE10 */
+    display: flexbox; /* IE10 */
+    display: -moz-box; /* Firefox */
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+
+.TabPageViewItemImage {
+    width: 32px;
+    height: 32px;
+}
+
+.TabPageViewItemImageHidden {
+    display: none;
+}
+
+.TabPageViewItemTitle {
+    font-size: 14px;
+    color: #666;
+}
+
+.TabPageViewItemSubTitle {
+    font-size: 12px;
+    color: #777777;
+}
+
+.TabPageViewItemSubTitleHidden {
+    display: none;
+}
+
+.TabPageViewItemTitle_Current {
+    font-size: 14px;
+    color: #2a27ff;
+}
+
+.TabPageViewItemIndicator {
+    width: 50%;
+    height: 3px;
+    /*background-color: cadetblue;*/
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    transform: translate(50%,0);
+    /*animation: width 5s ease-in-out;*/
+    transition: background-color 200ms;
+}
+
+.TabPageViewItemIndicator_Current {
+    /*width: 100%;*/
+    height: 4px;
+    /*background-color: #2a27ff;*/
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    transition: width 200ms;
+}
+
+
+.Map {
+    /*display: block;*/
+    border: 1px solid gray;
+    /*box-shadow: rgba(64,64,64,0.20) 0px 0px 1px 1px;*/
+    width: 200px;
+    height: 400px;
+}
+
+.MapView {
+    /*display:block;*/
+    width: 100%;
+    height: 100%;
+}
+
+.MapInfoPanel {
+    display: none;
+    position: absolute;
+    width: 200px;
+    height: 400px;
+    left: 100px;
+    top: 30px;
+    /*background-color: #ffaa30;*/
+    /*z-index: 20;*/
+    overflow: auto;
+}
+
+/*设置标记Label*/
+.amap-marker-label {
+    border: 1px solid rgba(61, 87, 255, 0.18);
+    background-color: rgba(176, 196, 222, 0.27);
+}
+
+    .amap-marker-label .MapUserMarkerLabel {
+    }
+
+.Map .MapPOIList {
+    position: absolute;
+    background-color: white;
+    max-height: 70%;
+    overflow-y: auto;
+    top: 10px;
+    right: 10px;
+    width: 60%;
+    /*border-bottom: solid 1px silver;*/
+}
+
+.MapTool {
+    position: absolute;
+    width: 50%;
+    height: 40px;
+    background-color: rgba(66, 68, 240, 0.4);
+    top: 30px;
+    left: 50%;
+    transform: translate(-50%,0);
+    box-sizing: border-box;
+    display: flex; /* IE10 */
+    display: flexbox; /* IE10 */
+    display: -moz-box; /* Firefox */
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    border-radius: 10px;
+}
+
+.MapSearchInput {
+    display: inline-block;
+    height: 60%;
+    width: 35%;
+    border: none;
+    outline: none;
+    font-size: 12px;
+    color: black;
+    /*border-radius: 5px;*/
+}
+
+.MapMarkBtn {
+    /*width: 10%;*/
+    display: inline-block;
+    height: 24px;
+    color: green;
+    font-size: 12px;
+    background-color: rgba(255, 255, 255, 0.76);
+    text-align: center;
+    cursor: pointer;
+    line-height: 24px;
+    padding: 2px;
+    border-radius: 5px;
+    border: 1px solid #818485;
+}
+
+.MapRouteSelect {
+    display: inline-block;
+    width: 25%;
+    height: 70%;
+    color: #3d57ff;
+    outline: none;
+    border-color: #3d57ff;
+}
+
+.MapRouteSelectDisabled {
+    display: inline-block;
+    width: 25%;
+    height: 70%;
+    color: #858889;
+    outline: none;
+    border-color: #858889;
+}
+
+
+.ReportViewer
+{
+    position:relative;
+    display:block;
+    border:1px solid gray;
+    overflow:hidden;
+}
+
+.ReportViewerPanel {
+    display:block;
+    position: absolute;
+    top: 36px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    text-align: center;
+    overflow: auto;
+
+}
+
+
+.ReportPageDiv {
+    display:inline-block;
+    width: 21cm;
+    height: 29.7cm;
+    border: 1px solid gray;
+    background-color: white;
+    margin: 8px;
+    overflow: hidden;
+    box-shadow: 1px 1px 1px 1px rgba(128, 128, 128,0.2);
+    text-align:left;
+}
+/*报表页面*/
+.ReportPage {
+    height:100%;
+    display: flex;
+    flex-direction:column;
+    position: relative;
+}
+
+/*报表页头*/
+.ReportPageHeader {
+    height: 2cm;
+    display: block;
+    position: relative;
+    background-color: whitesmoke;
+    padding: 14px;
+    overflow:hidden;
+}
+
+/*报表页面*/
+.ReportPageClient{
+
+    display:block;
+    position:relative;
+    height:100%;
+    padding:14px;
+    overflow:hidden;
+
+}
+
+/*报表页脚*/
+.ReportPageFooter {
+    height: 2cm;
+    display: block;
+    position: relative;
+    background-color: whitesmoke;
+    padding: 14px;
+    overflow: hidden;
+}
+
+.RptHorLine {
+    background-color: black;
+    display: block;
+    min-height: 32px;
+    position: relative;
+}
+
+.RptBox {
+    border: 1px solid black;
+    display: block;
+    position: relative;
+    overflow:hidden;
+}
+
+.RptContainer {
+    border: 1px solid black;
+    position: relative;
+}
+
+.ReportDataList {
+    border: 1px solid black;
+    display: block;
+    overflow: hidden;
+    position: relative;
+}
+
+DTB {
+    border: 2px solid black;
+    border-left: 1px solid black;
+    border-bottom: 1px solid black;
+    display: block;
+    overflow: hidden;
+    position: relative;
+    flex-direction: column;
+}
+
+DTH {
+    display: flex;
+    min-height: 32px;
+    height: 32px;
+    overflow: hidden;
+    border: none;
+    border-bottom: 1px solid black;
+    align-items: flex-start;
+    position: relative;
+}
+DTRBody{
+    position:relative;
+    display:block;
+    overflow:hidden;
+}
+
+DTR {
+    display: flex;
+    height: 32px;
+    border: none;
+    border-bottom:1px solid black;
+    align-items: flex-start;
+}
+
+DTF {
+    display: flex;
+    min-height: 32px;
+    border: none;
+    border-left: 1px solid black;
+    align-items: center;
+}
+
+DTC {
+
+    display: inline-flex;
+    min-height: 32px;
+    border:none;
+    border-right: 1px solid black;
+    align-items: center;
+    align-items:center;
+    justify-content:center;
+    overflow:hidden;
+}
+
+CV{
+    margin:2px;
+    overflow:hidden;
+    max-width:100%;
+    max-height:80%;
+    display:flex;
+    align-items:center;
+}
+
+IFView
+{
+    border:1px solid gray;
+    display:block;
+    position:relative;
+    overflow:hidden;
+}
+IFViewPanel
+{
+    width:100%;
+    height:100%;
+    display:flex;
+    border:none;
+    position:relative;
+    flex-direction:column;
+    align-items:flex-start;
+
+}
+.IFrameView_Title
+{
+    display:flex;
+    position:relative;
+    align-items:center;
+    padding:2px;
+    justify-content:center;
+    width:100%;
+    min-height:32px;
+}
+
+.IFrameView_FrameView {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+    display: block;
+    border: none;
+}
+
+
+
+/*搜索视图*/
+.SearchBox {
+    /*width: 600px;*/
+    height: 40px;
+    border: 2px solid dimgray;
+    box-sizing: border-box;
+}
+
+    /*搜索视图外观*/
+    .SearchBox .SearchBoxContainer {
+        width: 100%;
+        height: 100%;
+        position: relative;
+    }
+
+    /*搜索图标*/
+    .SearchBox .SearchBoxSearchIcon {
+        width: 5%;
+        height: 100%;
+        float: left;
+        box-sizing: border-box;
+        display: flex; /* IE10 */
+        display: flexbox; /* IE10 */
+        display: -moz-box; /* Firefox */
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        /*border: 1px solid aqua;*/
+    }
+
+    .SearchBox .SearchBoxSearchIconImg {
+        width: 80%;
+    }
+
+    /*搜索框*/
+    .SearchBox .SearchBoxSearchBox {
+        height: 100%;
+        width: 75%;
+        display: inline-block;
+        float: left;
+        box-sizing: border-box;
+        display: flex; /* IE10 */
+        display: flexbox; /* IE10 */
+        display: -moz-box; /* Firefox */
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: center;
+        /*border: 1px solid #ffaa30;*/
+    }
+
+    /*输入框*/
+    .SearchBox .SearchBoxSearchInputBox {
+        display: inline-block;
+        width: 92%;
+        height: 90%;
+        border: none;
+        outline: none;
+        font-size: 12px;
+        color: #3c3f41;
+    }
+
+    /*TODO:语音识别按钮*/
+    .SearchBox .SearchBoxASRBtn {
+        display: none;
+    }
+
+    /*TODO:拍照按钮*/
+    .SearchBox .SearchBoxCameraBtn {
+        display: none;
+    }
+
+
+    /*搜索按钮*/
+    .SearchBox .SearchBoxSearchButton {
+        width: 20%;
+        height: 100%;
+        display: inline-block;
+        float: right;
+        box-sizing: border-box;
+        display: flex; /* IE10 */
+        display: flexbox; /* IE10 */
+        display: -moz-box; /* Firefox */
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        background-color: #696969;
+        /*border: 1px solid seagreen;*/
+        /*文字取消选中效果*/
+        -webkit-touch-callout: none;
+        -webkit-user-select: none;
+        -khtml-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+    }
+
+        .SearchBox .SearchBoxSearchButton:hover {
+            cursor: pointer;
+            /*color: #ffaa30;*/
+            background-color: #858889;
+        }
+
+    /*搜索按钮图标*/
+    .SearchBox .SearchBoxSearchButtonImg {
+        height: 80%;
+        /*margin-left: 5px;*/
+    }
+
+    /*按钮文字*/
+    .SearchBox .SearchBoxSearchButtonText {
+        display: inline-block;
+        width: 80%;
+        text-align: center;
+        font-size: 14px;
+        color: #fff;
+    }
+
+    /*搜索结果展示列表*/
+    .SearchBox .SearchBoxResultsList {
+        width: 100%;
+        /*min-height: 40px;*/
+        /*max-height: 400px;*/
+        height: 300px;
+        position: absolute;
+        /*z-index: 7000;*/
+        box-sizing: border-box;
+        left: -2px;
+        right: -2px;
+        top: 40px;
+        border: 1px solid #8d8d8d;
+        display: none;
+        overflow: auto;
+    }
+
+.AlertBox {
+    /*width: 100%;*/
+    /*height: 700px;*/
+    /*background-color: #d8dbdc;*/
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    box-sizing: border-box;
+    display: flex; /* IE10 */
+    display: flexbox; /* IE10 */
+    display: -moz-box; /* Firefox */
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+    .AlertBox .AlertBox_MSGBox {
+        /*display: inline-block;*/
+        /*width: 120px;*/
+        /*height: 100px;*/
+        /*max-width: 200px;*/
+        background-color: rgba(158, 158, 158, 0.28);
+        border-radius: 8px;
+        padding: 5px;
+        box-sizing: border-box;
+        display: flex; /* IE10 */
+        display: flexbox; /* IE10 */
+        display: -moz-box; /* Firefox */
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+    }
+
+    .AlertBox .AlertBox_Image {
+        /*display: inline-block;*/
+        width: 50px;
+        height: 50px;
+    }
+
+
+        .AlertBox .AlertBox_Image[src=""], .AlertBox_Image:not([src]) {
+            display: none;
+        }
+
+    .AlertBox .AlertBox_Text {
+        display: inline-block;
+        font-size: 12px;
+        color: #343434;
+        text-align: center;
+        overflow: hidden;
+        padding-left: 6px;
+        padding-right: 6px;
+    }
+
+
+.TurnPlate {
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Chrome/Safari/Opera */
+    -khtml-user-select: none; /* Konqueror */
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+    user-select: none; /* Non-prefixed version, currently not supported by any browser */
+    width: 300px;
+    height: 300px;
+    background-size: 100% 100%;
+    position: relative;
+}
+
+.TurnPlate_Canvas {
+    width: 100%;
+    height: 100%;
+}
+
+.TurnPlate_StartImg {
+    position: absolute;
+    width: 31.5%;
+    height: 42.5%;
+    left: 34.6%;
+    top: 23%;
+}
+
+
+/*-------------20190808 MessageBox-弹出框样式start----------------*/
+.MessageBox{
+
+    border: none;
+    background-color: white;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 0px 10px 5px;
+    border-radius: 3px;
+    overflow: hidden;
+    /* z-index: 2; */
+    text-align: left;
+    transition: 0.1s left;
+    animation: fade-in;
+    animation-duration: 0.2s;
+    -webkit-animation: fade-in 0.2s;
+    min-width: 240px;
+}
+
+.MessageBox_Overlay{
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    display: block;
+    background-color: #000;
+    opacity: 0.3;
+}
+
+.MessageBox_TopPanel{
+
+    border: 0px solid #C0C0C0;
+    text-align: left;
+    box-shadow: none;
+    display: block;
+    overflow: visible;
+    padding: 32px 16px 0px 8px;
+
+}
+
+.MessageBox_BottomPanel{
+    border: 0px solid #C0C0C0;
+    text-align: left;
+
+    background-color: white;
+    height: 56px;
+    overflow-x: hidden;
+    margin: 40px 0px 0px;
+    box-shadow: none;
+    border-radius: 0px;
+    border-width: 0px;
+    border-top: 1px solid lightgray;
+
+}
+
+/*确定按钮 通用样式*/
+.MessageBox_ButtonOK_Common{
+    background-color: Green;
+    width: 80px;
+    margin: 10px 20px 4px 20px;
+    height: 30px;
+    float: right;
+}
+
+/*确定按钮 App样式*/
+.MessageBox_ButtonOK_Mobile{
+    width: 30%;
+    height: 40px;
+    float: left;
+    border-color: transparent;
+    background-color: #fd5f7b;
+    box-sizing: border-box;
+    display: inline-block;
+    margin: 10px 10%;
+    border-radius: 5px;
+    color: white;
+}
+
+
+/*关闭按钮 通用样式*/
+.MessageBox_ButtonCancel_Common{
+    background-color: Red;
+    width: 80px;
+    margin: 10px 20px 4px 40px;
+    height: 30px;
+    float: right;
+}
+
+
+/*关闭按钮 App样式*/
+.MessageBox_ButtonCancel_Mobile{
+    background-color: transparent;
+    width: 30%;
+    height: 40px;
+    float: left;
+    border-color: transparent;
+    border: 1px solid lightgray;
+    box-sizing: border-box;
+    display: inline-block;
+    margin: 10px 10%;
+    border-radius: 5px;
+}
+
+.MessageBox_ButtonOK_Mobile .CButton {
+    background-color: #fd5f7b;
+    border-radius: 5px;
+    color: white;
+}
+
+/*-------------20190808 MessageBox-弹出框样式end----------------*/

@@ -37,8 +37,8 @@
 
 .Pagination {
     vertical-align: top;
-    width: 400px;
-    height: 25px;
+    /*width: 400px;*/
+    /*height: 25px;*/
     line-height: 25px;
     text-align: center;
     overflow: hidden;
@@ -98,7 +98,7 @@
     text-decoration: none;
     box-sizing: border-box;
     color: var(--Pagination_Container_ButtonDisabled-color);
-    cursor: not-allowed;
+    /*cursor: not-allowed;*/
     border: var(--Pagination_Container_ButtonDisabled-border);
     border-radius: var(--Pagination_Container_ButtonDisabled-borderRadius);
     background-color: var(--Pagination_Container_ButtonDisabled-backgroundColor);

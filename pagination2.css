@@ -1,8 +1,6 @@
 
 .Pagination {
     vertical-align: top;
-    /*width: 400px;*/
-    /*height: 25px;*/
     line-height: 25px;
     text-align: center;
     overflow: hidden;
@@ -28,6 +26,13 @@
     margin: 0px;
     text-align: center;
     display: inline-block;
+
+    /*20191216*/
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
 }
 
 .Pagination_Container .Pagination_Button{
@@ -37,12 +42,25 @@
     transition: background-color 0.5s;
     border-radius: 50%;
 
+    display: inline-block;
+
     -webkit-touch-callout: none;
     -webkit-user-select: none;
     -khtml-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
+
+
+    min-width: 20px;
+    height: 90%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #E5E5E5;
+    border-radius: 5px;
+    margin-left: 5px;
 }
 
 .Pagination_Container .Pagination_ButtonText {
@@ -51,35 +69,23 @@
     cursor: pointer;
     text-decoration: none;
     box-sizing: border-box;
-    border: 1px solid #E5E5E5;
-    border-radius: 5px;
     background-color: transparent;
-    /*font-size: 12px;*/
+
 }
 
 .Pagination_Container .Pagination_ButtonDisabled {
-    display: block;
-    width: 100%;
-    text-decoration: none;
-    box-sizing: border-box;
     color: silver;
-    /*cursor: not-allowed;*/
     border: 1px solid #E5E5E5;
-    border-radius: 5px;
     background-color: transparent;
 }
 
 /*Pagination_ButtonSelected*/
 .Pagination_Container .Pagination_ButtonSelected {
-    display: block;
-    width: 100%;
     cursor: pointer;
-    text-decoration: none;
-    box-sizing: border-box;
     color: #f9f9f9;
+    /*   #fb5f7d   */
     border:1px solid #13d1be;
     background-color: #13d1be;
-    border-radius: 5px;
     font-size: 16px;
 }
 
