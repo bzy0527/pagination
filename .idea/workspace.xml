@@ -3,11 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="ba3502d9-5d45-4bde-96d3-f1e841e4e2f7" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pageIndex.html" beforeDir="false" afterPath="$PROJECT_DIR$/pageIndex.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pagination.css" beforeDir="false" afterPath="$PROJECT_DIR$/pagination.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pagination.js" beforeDir="false" afterPath="$PROJECT_DIR$/pagination.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pagination01.css" beforeDir="false" afterPath="$PROJECT_DIR$/pagination01.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test.html" beforeDir="false" afterPath="$PROJECT_DIR$/test.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PaginationDesigner.scrp" beforeDir="false" afterPath="$PROJECT_DIR$/PaginationDesigner.scrp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pagination2.css" beforeDir="false" afterPath="$PROJECT_DIR$/pagination2.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pagination2.js" beforeDir="false" afterPath="$PROJECT_DIR$/pagination2.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test.html" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -66,7 +65,7 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="HbShouldOpenHtmlAsHb" value="" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../DBSoft_DBFX" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
@@ -122,6 +121,8 @@
       <workItem from="1577059602487" duration="176000" />
       <workItem from="1578470311610" duration="11000" />
       <workItem from="1579162869241" duration="1012000" />
+      <workItem from="1595811162678" duration="5729000" />
+      <workItem from="1595828181681" duration="2905000" />
     </task>
     <servers />
   </component>

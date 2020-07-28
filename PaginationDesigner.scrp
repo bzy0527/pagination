@@ -8,6 +8,8 @@
   </xns>
 
   <controls>
+    <c T="wc:CheckedBox" Text="显示跳转组件"  Margin="3px 2px 2px 16px"  DataBindings="{&quot;Path&quot;:&quot;ShowSkipP&quot;,&quot;Mode&quot;:&quot;OneWay&quot;,&quot;Source&quot;:&quot;&quot;}"/>
+
     <c T="dv:TypeEditors.EventList" Name="EventListBox" Text="事件处理程序" Shadow="node" Margin="2px 0px 2px 0px" MinWidth="64px">
     </c>
   </controls>

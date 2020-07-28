@@ -14,15 +14,46 @@ DBFX.Web.Controls.Pagination = function (b) {
     pi.OnCreateHandle = function () {
         var ve = pi.VisualElement;
 
-        pi.innerContainer = document.createElement('div');
-        pi.innerContainer.className = "Pagination_InnerContainer";
-        ve.appendChild(pi.innerContainer);
+        // pi.innerContainer = document.createElement('div');
+        // pi.innerContainer.className = "Pagination_InnerContainer";
+        // ve.appendChild(pi.innerContainer);
+        //
+        // //创建分页容器div
+        // pi.container = document.createElement("div");
+        // pi.container.className = "Pagination_Container";
+        // pi.innerContainer.appendChild(pi.container);
 
-        //创建分页容器div
-        pi.container = document.createElement("div");
-        pi.container.className = "Pagination_Container";
-        pi.innerContainer.appendChild(pi.container);
+        ve.innerHTML = "<div class='Pagination_InnerContainer'><div class='Pagination_Container'></div><div class='Pagination_SkipPage' show='0'><span>跳转到</span><input type='number' class='Pagination_InputPage'><span>页</span><span class='Pagination_ConfirmBtn'>确定</span></div></div>";
+        pi.innerContainer = ve.querySelector("div.Pagination_InnerContainer");
+        pi.container = ve.querySelector("div.Pagination_Container");
+        pi.ConfirmBtn = ve.querySelector("span.Pagination_ConfirmBtn");
+        pi.inputBox = ve.querySelector("input.Pagination_InputPage");
+        pi.skipPage = ve.querySelector("div.Pagination_SkipPage");
+        pi.inputBox.min = "1";
+        pi.inputBox.max = 1000;
 
+        pi.ConfirmBtn.onmousedown = function(e){
+            e.cancelBubble = true;
+
+            var page = pi.inputBox.value;
+            page = (isNaN(page*1) || page*1<=0) ? 1 : page*1;
+            pi.SetPage(page);
+            pi.inputBox.value = pi.currentPage;
+        }
+
+        pi.inputBox.onfocus = function(e){
+            this.value = "";
+        }
+
+        pi.inputBox.oninput = function(e){
+            if(this.value>pi.defaults.totalPages){
+                this.value = pi.defaults.totalPages;
+            }
+            if(this.value<1){
+                this.value = 1;
+            }
+
+        }
         //先刷新数据
         pi.refreshData();
         //布局按钮
@@ -385,6 +416,24 @@ DBFX.Web.Controls.Pagination = function (b) {
         }
     });
 
+    pi.showSkipP = false;
+    Object.defineProperty(pi, "ShowSkipP", {
+        get: function () {
+            return pi.showSkipP;
+        },
+        set: function (v) {
+
+            if(v==1 || v==true || v=="true"){
+                pi.showSkipP = true;
+                pi.skipPage.setAttribute("show","1");
+            }else {
+                pi.skipPage.setAttribute("show","0");
+                pi.showSkipP = false;
+            }
+
+        }
+    });
+
 
 
     /*==================================平台属性配置begin=======================================================*/
@@ -449,12 +498,8 @@ DBFX.Web.Controls.Pagination = function (b) {
 DBFX.Serializer.PaginationSerializer = function () {
     //系列化
     this.Serialize = function (c, xe, ns) {
-        // DBFX.Serializer.SerialProperty("BtnBorderW", c.BtnBorderW, xe);
-        // DBFX.Serializer.SerialProperty("BtnBorderR", c.BtnBorderR, xe);
-        // DBFX.Serializer.SerialProperty("BtnBorderC", c.BtnBorderC, xe);
-        // DBFX.Serializer.SerialProperty("BtnBgC", c.BtnBgC, xe);
-        // DBFX.Serializer.SerialProperty("SelectedC", c.SelectedC, xe);
-        // DBFX.Serializer.SerialProperty("SelectedTextC", c.SelectedTextC, xe);
+        DBFX.Serializer.SerialProperty("ShowSkipP", c.ShowSkipP, xe);
+
         //序列化方法
         DBFX.Serializer.SerializeCommand("PageIndexChanged", c.PageIndexChanged, xe);
 
@@ -462,12 +507,8 @@ DBFX.Serializer.PaginationSerializer = function () {
 
     //反系列化
     this.DeSerialize = function (c, xe, ns) {
-        // DBFX.Serializer.DeSerialProperty("BtnBorderW", c, xe);
-        // DBFX.Serializer.DeSerialProperty("BtnBorderR", c, xe);
-        // DBFX.Serializer.DeSerialProperty("BtnBorderC", c, xe);
-        // DBFX.Serializer.DeSerialProperty("BtnBgC", c, xe);
-        // DBFX.Serializer.DeSerialProperty("SelectedC", c, xe);
-        // DBFX.Serializer.DeSerialProperty("SelectedTextC", c, xe);
+        DBFX.Serializer.DeSerialProperty("ShowSkipP", c, xe);
+
         //对方法反序列化
         DBFX.Serializer.DeSerializeCommand("PageIndexChanged", xe, c);
     }
@@ -483,15 +524,15 @@ DBFX.Design.ControlDesigners.PaginationDesigner = function () {
             od.DataContext = obdc.dataContext;
             //设计器中绑定事件处理
             od.EventListBox = od.FormContext.Form.FormControls.EventListBox;
-            od.EventListBox.ItemSource = [{EventName:"PageIndexChanged",EventCode:undefined,Command:od.dataContext.PageIndexChanged,Control:od.dataContext}];
+            od.EventListBox.ItemSource = [{ EventName: "PageIndexChanged", EventCode: undefined, Command: od.dataContext.PageIndexChanged, Control: od.dataContext }];
         }, obdc);
     }
 
     //事件处理程序
     obdc.DataContextChanged = function (e) {
         obdc.DataBind(e);
-        if(obdc.EventListBox != undefined){
-            obdc.EventListBox.ItemSource = [{EventName:"PageIndexChanged",EventCode:undefined,Command:obdc.dataContext.PageIndexChanged,Control:obdc.dataContext}];
+        if (obdc.EventListBox != undefined) {
+            obdc.EventListBox.ItemSource = [{ EventName: "PageIndexChanged", EventCode: undefined, Command: obdc.dataContext.PageIndexChanged, Control: obdc.dataContext }];
         }
     }
 
@@ -501,3 +542,4 @@ DBFX.Design.ControlDesigners.PaginationDesigner = function () {
     obdc.Text = "分页导航控件";
     return obdc;
 }
+
